@@ -1,0 +1,60 @@
+const CACHE_PREFIX = "recetaheas-";
+const CACHE_NAME = `${CACHE_PREFIX}v1-20261028-01`;
+const LEGACY_CACHES = [];
+
+const APP_SHELL = [
+  "./",
+  "./index.html",
+  "./styles.css?v=recetaheas-20261028-01",
+  "./app.js?v=recetaheas-20261028-01",
+  "./manifest.webmanifest?v=recetaheas-20261028-01",
+  "./icons/icon-32.png",
+  "./icons/icon-192.png",
+  "./icons/icon-512.png",
+  "./icons/icon-1024.png",
+  "./data/medicamentos.json",
+  "./data/cartera_servicios.json",
+];
+
+self.addEventListener("install", (event) => {
+  self.skipWaiting();
+  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)));
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches
+      .keys()
+      .then((keys) =>
+        Promise.all(
+          keys
+            .filter((key) => (key.startsWith(CACHE_PREFIX) || LEGACY_CACHES.includes(key)) && key !== CACHE_NAME)
+            .map((key) => caches.delete(key)),
+        ),
+      )
+      .then(() => self.clients.claim()),
+  );
+});
+
+self.addEventListener("fetch", (event) => {
+  if (event.request.method !== "GET") return;
+
+  if (event.request.mode === "navigate") {
+    event.respondWith(fetch(event.request).catch(() => caches.match("./index.html")));
+    return;
+  }
+
+  event.respondWith(
+    caches.match(event.request).then((cached) => {
+      return (
+        cached ||
+        fetch(event.request).then((response) => {
+          if (!response || response.status !== 200 || response.type === "opaque") return response;
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          return response;
+        })
+      );
+    }),
+  );
+});

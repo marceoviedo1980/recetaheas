@@ -1,0 +1,4192 @@
+[
+  {
+    "programa": "sus",
+    "codigo": "V0301-SUS",
+    "medicamento": "Acetil Cisteina",
+    "forma": "Inyectable",
+    "concentracion": "10%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "D0603-SUS",
+    "medicamento": "Aciclovir",
+    "forma": "Crema dérmica",
+    "concentracion": "5%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-J0545",
+    "medicamento": "Aciclovir",
+    "forma": "Inyectable",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0101-SUS",
+    "medicamento": "Ácido acetil salicílico",
+    "forma": "Comprimido",
+    "concentracion": "100 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A1102-SUS",
+    "medicamento": "Ácido Ascórbico (Vitamina C)",
+    "forma": "Inyectable",
+    "concentracion": "500 mg/ml (2 ml)",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0301-SUS",
+    "medicamento": "Ácido fólico",
+    "forma": "Comprimido",
+    "concentracion": "5 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0207-SUS",
+    "medicamento": "Ácido Tranexámico",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0206-SUS",
+    "medicamento": "Ácido Tranexámico",
+    "forma": "Inyectable",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "M0504-LCC-SUS",
+    "medicamento": "Ácido Zoledrónico",
+    "forma": "Inyectable",
+    "concentracion": "4 mg",
+    "cantidad": null,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-B0501",
+    "medicamento": "Agua para inyección",
+    "forma": "inyectable",
+    "concentracion": "5 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC001-SUS",
+    "medicamento": "Aguja descartable",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 18G x 1 1/2\"",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC015-SUS",
+    "medicamento": "Aguja para anestesia (A-25)",
+    "forma": "Sobre estéril",
+    "concentracion": "Plexos A-25",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC021-SUS",
+    "medicamento": "Aguja para anestesia epidural (Tuohy N°18)",
+    "forma": "Sobre estéril",
+    "concentracion": "N°18 x 3 1/4\" Tuohy",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC014a-SUS",
+    "medicamento": "Aguja para anestesia raquídea (N°22)",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 22",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC027c-SUS",
+    "medicamento": "Agujas de biopsia",
+    "forma": "Sobre estéril",
+    "concentracion": "Aguja de tipo Jamshidi conica",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC025a - SUS",
+    "medicamento": "Agujas de biopsia",
+    "forma": "Pieza",
+    "concentracion": "14G x 10 cm",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC027a-SUS",
+    "medicamento": "Agujas de biopsia N°16",
+    "forma": "Sobre estéril",
+    "concentracion": "Aguja de 16 Gauge por 70 mm",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC027b-SUS",
+    "medicamento": "Agujas de biopsia N°16",
+    "forma": "Sobre estéril",
+    "concentracion": "Aguja de 16 Gauge por 100 mm",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DTO002-SUS",
+    "medicamento": "Alambre guía",
+    "forma": "Sobre estéril",
+    "concentracion": "Uso diferentes proced. adulto",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0502-SUS",
+    "medicamento": "Albúmina humana",
+    "forma": "Inyectable",
+    "concentracion": "20%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0104-SUS",
+    "medicamento": "Amikacina",
+    "forma": "Inyectable",
+    "concentracion": "500mg /2 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "C0102-SUS",
+    "medicamento": "Amiodarona (clorhidrato)",
+    "forma": "Comprimido",
+    "concentracion": "200 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "C0807-SUS",
+    "medicamento": "Amlodipina",
+    "forma": "Comprimido",
+    "concentracion": "10 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0105-SUS",
+    "medicamento": "Amoxicilina",
+    "forma": "Comprimido",
+    "concentracion": "1 g",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0157-SUS",
+    "medicamento": "Amoxicilina",
+    "forma": "Suspensión",
+    "concentracion": "500 mg/5 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0108-SUS",
+    "medicamento": "Amoxicilina",
+    "forma": "Inyectable",
+    "concentracion": "1 g",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0110-SUS",
+    "medicamento": "Amoxicilina + inhibidor betalactamasa",
+    "forma": "Suspensión",
+    "concentracion": "250 mg + Según disponibilidad",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0112-SUS",
+    "medicamento": "Ampicilina",
+    "forma": "Inyectable",
+    "concentracion": "1 g",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "D-C1001",
+    "medicamento": "Atorvastatina",
+    "forma": "Comprimido",
+    "concentracion": "10 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "C1001-SUS",
+    "medicamento": "Atorvastatina",
+    "forma": "Comprimido",
+    "concentracion": "10 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "M0301-SUS",
+    "medicamento": "Atracurio besilato",
+    "forma": "Inyectable",
+    "concentracion": "10 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0162-SUS",
+    "medicamento": "Azitromicina",
+    "forma": "Suspensión",
+    "concentracion": "200 mg/5 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0113-SUS",
+    "medicamento": "Azitromicina",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "D0102-SUS",
+    "medicamento": "Bacitracina + Neomicina sulfato",
+    "forma": "Crema o Pomada",
+    "concentracion": "500 UI + 5 mg/g",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0116-SUS",
+    "medicamento": "Bencilpenicilina benzatínica",
+    "forma": "Inyectable",
+    "concentracion": "2.400.000 UI",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0115-SUS",
+    "medicamento": "Bencilpenicilina benzatínica",
+    "forma": "Inyectable",
+    "concentracion": "1.200.000 UI",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "H0201-SUS",
+    "medicamento": "Betametasona (fosfato)",
+    "forma": "Inyectable",
+    "concentracion": "4 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0504-SUS",
+    "medicamento": "Bicarbonato de sodio",
+    "forma": "Inyectable",
+    "concentracion": "8%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DTO004-SUS",
+    "medicamento": "Bigotera para oxígeno",
+    "forma": "Pieza",
+    "concentracion": "Neonatal - siliconado",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DTO003 -SUS",
+    "medicamento": "Bigotera para oxígeno",
+    "forma": "Pieza",
+    "concentracion": "Adulto siliconado",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DTO005-SUS",
+    "medicamento": "Bigotera para oxígeno",
+    "forma": "Pieza",
+    "concentracion": "Pediátrica",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A0602-SUS",
+    "medicamento": "Bisacodilo",
+    "forma": "Comprimido",
+    "concentracion": "5 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DB019-SUS",
+    "medicamento": "Bolsa EVA (2000 ml)",
+    "forma": "Bolsa estéril",
+    "concentracion": "Con equipo 2000ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC029-SUS",
+    "medicamento": "Bolsa simple de transfusión (sangría)",
+    "forma": "Sobre estéril",
+    "concentracion": "Pieza",
+    "cantidad": null,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0101-SUS",
+    "medicamento": "Bupivacaina clorhidrato",
+    "forma": "Inyectable",
+    "concentracion": "0,5%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A0304-SUS",
+    "medicamento": "Butilbromuro de Hioscina (Butilescopolamina)",
+    "forma": "Inyectable",
+    "concentracion": "20 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A0302-SUS",
+    "medicamento": "Butilbromuro de Hioscina (Butilescopolamina)",
+    "forma": "Comprimido",
+    "concentracion": "10 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "H0105 - PR",
+    "medicamento": "Cabertocina",
+    "forma": "inyectable",
+    "concentracion": "100 mcg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DTO006-SUS",
+    "medicamento": "Cánula de Guedel",
+    "forma": "Adulto Juego x 5 piezas",
+    "concentracion": "N°1.5 N°2 N°3 N°4 N°5",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0304-SUS",
+    "medicamento": "Carbamazepina",
+    "forma": "Comprimido",
+    "concentracion": "200 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "C0705-SUS",
+    "medicamento": "Carvedilol",
+    "forma": "Comprimido",
+    "concentracion": "12,5 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "C0704-SUS",
+    "medicamento": "Carvedilol",
+    "forma": "Comprimido",
+    "concentracion": "6,25 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC060-SUS",
+    "medicamento": "Catéter Venoso Central",
+    "forma": "Sobre estéril",
+    "concentracion": "Triple lumen Set 7FRx12\"(30cm)",
+    "cantidad": null,
+    "observacion": "Solo UTI y Emergencia",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC065-SUS",
+    "medicamento": "Catéter venoso periférico (N°18)",
+    "forma": "Sobre estéril",
+    "concentracion": "Nº 18Gx1 1/2\"c/aletas de fij.",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC066-SUS",
+    "medicamento": "Catéter venoso periférico (N°20)",
+    "forma": "Sobre estéril",
+    "concentracion": "Nº 20Gx1 1/2\" c/aletas de fij.",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC067-SUS",
+    "medicamento": "Catéter venoso periférico (N°22)",
+    "forma": "Sobre estéril",
+    "concentracion": "Nº 22 G x 1\"c/aletas de fij.",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC068-SUS",
+    "medicamento": "Catéter venoso periférico (N°24)",
+    "forma": "Sobre estéril",
+    "concentracion": "Nº 24 Gx1/2\" c/aletas de fij.",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-J0121",
+    "medicamento": "Cefazolina",
+    "forma": "Inyectable",
+    "concentracion": "1 g",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0158-SUS",
+    "medicamento": "Cefixima",
+    "forma": "Comprimido o Cápsula",
+    "concentracion": "400 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0163-SUS",
+    "medicamento": "Cefixima",
+    "forma": "Suspensión",
+    "concentracion": "100 mg/5 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-J0122",
+    "medicamento": "Cefotaxima",
+    "forma": "Inyectable",
+    "concentracion": "1 g",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0123-SUS",
+    "medicamento": "Cefradina",
+    "forma": "Cápsula o Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0126-SUS",
+    "medicamento": "Ceftriaxona",
+    "forma": "Inyectable",
+    "concentracion": "1 g",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A1104-SUS",
+    "medicamento": "Cianocobalamina (Vitamina B12)",
+    "forma": "Inyectable",
+    "concentracion": "1 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0128-SUS",
+    "medicamento": "Ciprofloxacina",
+    "forma": "Inyectable",
+    "concentracion": "200 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DNP001-SUS",
+    "medicamento": "Clamp umbilical con doble broche de seguridad",
+    "forma": "Sobre estéril",
+    "concentracion": "Material plástico resistente",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0129-SUS",
+    "medicamento": "Claritromicina",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0130-SUS",
+    "medicamento": "Claritromicina",
+    "forma": "Suspensión",
+    "concentracion": "250 mg/5 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0164-SUS",
+    "medicamento": "Clindamicina",
+    "forma": "Inyectable",
+    "concentracion": "600 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0306-SUS",
+    "medicamento": "Clonazepam",
+    "forma": "Comprimido ranurado",
+    "concentracion": "2 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false,
+    "controlado": "psicotropico"
+  },
+  {
+    "programa": "sus",
+    "codigo": "R0601-SUS",
+    "medicamento": "Clorfenamina (Clorfeniramina)",
+    "forma": "Comprimido",
+    "concentracion": "4 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0506-SUS",
+    "medicamento": "Cloruro de potasio",
+    "forma": "Inyectable",
+    "concentracion": "20%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-B0507",
+    "medicamento": "Cloruro de sodio",
+    "forma": "Inyectable",
+    "concentracion": "20%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0507-SUS",
+    "medicamento": "Cloruro de sodio",
+    "forma": "Inyectable",
+    "concentracion": "20%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0136-SUS",
+    "medicamento": "Cloxacilina",
+    "forma": "Inyectable",
+    "concentracion": "1 g",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-J0167",
+    "medicamento": "Colistina",
+    "forma": "Inyectable",
+    "concentracion": "100 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-A1106",
+    "medicamento": "Complejo B (B1 + B6 + B12)",
+    "forma": "Comprimido o Capsula",
+    "concentracion": "Según concentración estándar",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "V0802-SUS",
+    "medicamento": "Contraste iodado",
+    "forma": "Inyectable",
+    "concentracion": "Según disponibilidad (50 ml)",
+    "cantidad": null,
+    "observacion": "Solo para pacientes del HEAS previa autorizacion de imagenologia",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0140-SUS",
+    "medicamento": "Cotrimoxazol (Sulfametoxazol + Trimetoprima)",
+    "forma": "Comprimido",
+    "concentracion": "400 mg + 80 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0137-SUS",
+    "medicamento": "Cotrimoxazol (Sulfametoxazol + Trimetoprima)",
+    "forma": "Comprimido",
+    "concentracion": "800 mg + 160 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "H0204-SUS",
+    "medicamento": "Dexametasona",
+    "forma": "Inyectable",
+    "concentracion": "4 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0505-SUS",
+    "medicamento": "Diazepam",
+    "forma": "Inyectable",
+    "concentracion": "10 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false,
+    "controlado": "psicotropico"
+  },
+  {
+    "programa": "sus",
+    "codigo": "M0101-SUS",
+    "medicamento": "Diclofenaco Sódico",
+    "forma": "Pomada o Gel",
+    "concentracion": "1%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0141-SUS",
+    "medicamento": "Dicloxacilina sódica",
+    "forma": "Cápsula",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-J0144",
+    "medicamento": "Doxiciclina",
+    "forma": "Cápsula o Comprimido",
+    "concentracion": "100 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSD010-SUS",
+    "medicamento": "Drenaje Penrose (1\")",
+    "forma": "Sobre estéril",
+    "concentracion": "Tamaño 1 pulgada",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSD008-SUS",
+    "medicamento": "Drenaje Penrose (1/2\")",
+    "forma": "Sobre estéril",
+    "concentracion": "Tamaño 1/2 pulgada",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DMQ012",
+    "medicamento": "Electrodos",
+    "forma": "Sobre",
+    "concentracion": "De espuma para adulto",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "C0110-SUS",
+    "medicamento": "Epinefrina (Adrenalina)",
+    "forma": "Inyectable",
+    "concentracion": "1 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC071-SUS",
+    "medicamento": "Equipo bomba de infusión",
+    "forma": "Sobre estéril",
+    "concentracion": "Con depósito",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC073-SUS",
+    "medicamento": "Equipo de trasfusión",
+    "forma": "Sobre estéril",
+    "concentracion": "Bolsa C/cámara goteo flexible",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC074-SUS",
+    "medicamento": "Equipo de venoclisis",
+    "forma": "Sobre estéril",
+    "concentracion": "C/control d goteo, aguja Nº 21",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "G0203-SUS",
+    "medicamento": "Ergometrina maleato",
+    "forma": "Comprimido",
+    "concentracion": "0,2 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "G0204-SUS",
+    "medicamento": "Ergometrina maleato",
+    "forma": "Inyectable",
+    "concentracion": "0,2 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "C0302-SUS",
+    "medicamento": "Espironolactona",
+    "forma": "Comprimido",
+    "concentracion": "100 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0307-SUS",
+    "medicamento": "Fenitoína",
+    "forma": "Inyectable",
+    "concentracion": "50 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0105-SUS",
+    "medicamento": "Fentanilo con conservante",
+    "forma": "Inyectable",
+    "concentracion": "0,05 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false,
+    "controlado": "estupefaciente"
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0106-SUS",
+    "medicamento": "Fentanilo sin conservante",
+    "forma": "Inyectable",
+    "concentracion": "0,05 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false,
+    "controlado": "estupefaciente"
+  },
+  {
+    "programa": "sus",
+    "codigo": "L0301-SUS",
+    "medicamento": "Filgrastrim",
+    "forma": "Inyectable",
+    "concentracion": "300 mcg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DOT035-SUS",
+    "medicamento": "Filtro antimicrobiano",
+    "forma": "Sobre estéril",
+    "concentracion": "Para respiradores para oxígeno",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "G0401-SUS",
+    "medicamento": "Finasterida",
+    "forma": "Comprimido",
+    "concentracion": "5 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0202-SUS",
+    "medicamento": "Fitomenadiona (Vitamina K1)",
+    "forma": "Inyectable",
+    "concentracion": "10 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0202-SUS",
+    "medicamento": "Fluconazol",
+    "forma": "Inyectable",
+    "concentracion": "200 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0208-SUS",
+    "medicamento": "Fluconazol",
+    "forma": "Comprimido o Cápsula",
+    "concentracion": "150 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DL205-SUS",
+    "medicamento": "Frascos de plástico de 100 ml -ORINA",
+    "forma": "Con tapa rosca",
+    "concentracion": "Pieza",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "C0304-SUS",
+    "medicamento": "Furosemida",
+    "forma": "Comprimido ranurado",
+    "concentracion": "40 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "C0305-SUS",
+    "medicamento": "Furosemida",
+    "forma": "Inyectable",
+    "concentracion": "10 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0510-SUS",
+    "medicamento": "Gluconato Cálcico (Calcio Gluconato)",
+    "forma": "Inyectable",
+    "concentracion": "10%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DMQ020-SUS",
+    "medicamento": "Guantes quirúrgicos (6 1/2)",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 6 1/2 puño largo",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DMQ022-SUS",
+    "medicamento": "Guantes quirúrgicos (7 1/2)",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 7 1/2 puño largo",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DMQ021-SUS",
+    "medicamento": "Guantes quirúrgicos (7)",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 7 puño largo",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DMQ023-SUS",
+    "medicamento": "Guantes quirúrgicos (8)",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 8 puño largo",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0103-SUS",
+    "medicamento": "Heparina de bajo peso molecular",
+    "forma": "Inyectable",
+    "concentracion": "Según disponibilidad",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0104-SUS",
+    "medicamento": "Heparina sódica",
+    "forma": "Inyectable",
+    "concentracion": "5.000 UI/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "D0704-SUS",
+    "medicamento": "Hidrocortisona acetato",
+    "forma": "Crema o Pomada",
+    "concentracion": "1%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "H0205-SUS",
+    "medicamento": "Hidrocortisona succinato sódico",
+    "forma": "Inyectable",
+    "concentracion": "100 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DMQ025-SUS",
+    "medicamento": "Hoja de bisturí Nº 21",
+    "forma": "Sobre estéril",
+    "concentracion": "Nº 21",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DMQ028-SUS",
+    "medicamento": "Hojas de bisturí N° 11",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 11",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DMQ030-SUS",
+    "medicamento": "Hojas de bisturí N° 15",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 15",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "M0104-SUS",
+    "medicamento": "Ibuprofeno",
+    "forma": "Suspensión",
+    "concentracion": "100 mg/5 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "M0105-SUS",
+    "medicamento": "Ibuprofeno",
+    "forma": "Comprimido",
+    "concentracion": "400 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DI014a-SUS",
+    "medicamento": "IM-Conector simple (medios de Contraste)",
+    "forma": "Pieza",
+    "concentracion": "Pieza",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-J0150",
+    "medicamento": "Imipenem + Cilastatina",
+    "forma": "Inyectable",
+    "concentracion": "500 mg + 500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A1002-SUS",
+    "medicamento": "Insulina recombinante humana NPH",
+    "forma": "Inyectable",
+    "concentracion": "100 UI/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A1003-SUS",
+    "medicamento": "Insulina zinc cristalina recombinante humana",
+    "forma": "Inyectable",
+    "concentracion": "100 UI/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DJ005-SUS",
+    "medicamento": "Jeringa descartable (10ml)",
+    "forma": "Sobre estéril",
+    "concentracion": "10ml c/aguja 21x1 1/2\" c/rosca",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DJ006-SUS",
+    "medicamento": "Jeringa descartable (20ml)",
+    "forma": "Sobre estéril",
+    "concentracion": "20ml c/aguja 21x1 1/2\" c/rosca",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DJ004-SUS",
+    "medicamento": "Jeringa descartable (5ml)",
+    "forma": "Sobre estéril",
+    "concentracion": "5ml c/aguja 21x1 1/2\" c/rosca",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DJ008-SUS",
+    "medicamento": "Jeringa insulina descartable (1ml)",
+    "forma": "Sobre estéril",
+    "concentracion": "1 ml c/aguja fija N° 29G",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0108-SUS",
+    "medicamento": "Ketamina (Cetamina)",
+    "forma": "Inyecable",
+    "concentracion": "50 mg/ml",
+    "cantidad": null,
+    "observacion": "Solo Quirofano",
+    "baja_rotacion": false,
+    "controlado": "psicotropico"
+  },
+  {
+    "programa": "sus",
+    "codigo": "M0110-SUS",
+    "medicamento": "Ketoprofeno",
+    "forma": "Inyectable",
+    "concentracion": "100 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "M0109-SUS",
+    "medicamento": "Ketorolaco",
+    "forma": "Inyectable",
+    "concentracion": "30 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0168-SUS",
+    "medicamento": "Levofloxacina",
+    "forma": "Inyectable",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0166-SUS",
+    "medicamento": "Levofloxacina",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0112-SUS",
+    "medicamento": "Lidocaína clorhidrato sin conservante",
+    "forma": "Inyectable",
+    "concentracion": "2%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC089-SUS",
+    "medicamento": "Llave de 3 vías s/a",
+    "forma": "Sobre estéril",
+    "concentracion": "Sin alargador",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC088-SUS",
+    "medicamento": "Llave de 3 vías c/a",
+    "forma": "Sobre estéril",
+    "concentracion": "Con alargador 50 cm - 10cm",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "C0902-SUS",
+    "medicamento": "Losartán",
+    "forma": "Comprimido",
+    "concentracion": "50 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DTO022-SUS",
+    "medicamento": "Máscara laríngea",
+    "forma": "Juego",
+    "concentracion": "Juego",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DTO028-SUS",
+    "medicamento": "Máscara para anestesia siliconada",
+    "forma": "Pieza",
+    "concentracion": "Adulto N° 3, N° 4, N° 5",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DTO023-SUS",
+    "medicamento": "Máscara para nebulización",
+    "forma": "Pieza",
+    "concentracion": "Para adultos",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DTO024-SUS",
+    "medicamento": "Máscara para nebulización",
+    "forma": "Pieza",
+    "concentracion": "Para pediatrica",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "P0205-SUS",
+    "medicamento": "Mebendazol",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "G0313-SUS",
+    "medicamento": "Medroxiprogesterona acetato",
+    "forma": "Inyectable",
+    "concentracion": "150 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "P0105",
+    "medicamento": "Meglumina antimoniato",
+    "forma": "Inyectable",
+    "concentracion": "1,5 g/5 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-J0169",
+    "medicamento": "Meropenem",
+    "forma": "Inyectable",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0205-SUS",
+    "medicamento": "Metamizol (Dipirona)",
+    "forma": "Inyectable",
+    "concentracion": "1 g",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A1004-SUS",
+    "medicamento": "Metformina",
+    "forma": "Comprimido",
+    "concentracion": "850 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "C0204-SUS",
+    "medicamento": "Metildopa (Alfametildopa)",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A0307-SUS",
+    "medicamento": "Metoclopramida",
+    "forma": "Comprimido",
+    "concentracion": "10 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A0308-SUS",
+    "medicamento": "Metoclopramida",
+    "forma": "Inyectable",
+    "concentracion": "10mg / 2ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "L0125-SUS",
+    "medicamento": "Metotrexato",
+    "forma": "Inyectable",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "L0124-SUS",
+    "medicamento": "Metotrexato",
+    "forma": "Inyectable",
+    "concentracion": "50 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "L0126-SUS",
+    "medicamento": "Metotrexato",
+    "forma": "Comprimido",
+    "concentracion": "2,5 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "P0109-SUS",
+    "medicamento": "Metronidazol",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "P0107-SUS",
+    "medicamento": "Metronidazol",
+    "forma": "Inyectable",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC091-SUS",
+    "medicamento": "Microgotero",
+    "forma": "Sobre estéril",
+    "concentracion": "c/deposito rigido 100ml-150ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0511-SUS",
+    "medicamento": "Midazolam",
+    "forma": "Inyectable",
+    "concentracion": "15 mg/3 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false,
+    "controlado": "psicotropico"
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0206-SUS",
+    "medicamento": "Morfina",
+    "forma": "Cápsula o Comprimido",
+    "concentracion": "10 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false,
+    "controlado": "estupefaciente"
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0207-SUS",
+    "medicamento": "Morfina (con y sin conservante)",
+    "forma": "Inyectable",
+    "concentracion": "10 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false,
+    "controlado": "estupefaciente"
+  },
+  {
+    "programa": "sus",
+    "codigo": "A1109-SUS",
+    "medicamento": "Multivitaminas",
+    "forma": "Comprimido",
+    "concentracion": "Según concentración estándar",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A1110-SUS",
+    "medicamento": "Multivitaminas",
+    "forma": "Jarabe",
+    "concentracion": "Según concentración estándar",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0705-SUS",
+    "medicamento": "Neostigmina",
+    "forma": "Inyectable",
+    "concentracion": "0,5 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "J0151-SUS",
+    "medicamento": "Nitrofurantoína",
+    "forma": "Comprimido",
+    "concentracion": "100 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "C0115-SUS",
+    "medicamento": "Noradrenalina",
+    "forma": "Inyectable",
+    "concentracion": "1 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A0202-SUS",
+    "medicamento": "Omeprazol",
+    "forma": "Cápsula",
+    "concentracion": "20 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A0205-SUS",
+    "medicamento": "Omeprazol",
+    "forma": "Inyectable",
+    "concentracion": "40 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A0401-SUS",
+    "medicamento": "Ondansetrón",
+    "forma": "Inyectable",
+    "concentracion": "8 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "V0310-SUS",
+    "medicamento": "Oxígeno",
+    "forma": "Gas",
+    "concentracion": "93% - 99%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-G0209",
+    "medicamento": "Oxitocina",
+    "forma": "Inyectable",
+    "concentracion": "5 UI/ml o 10 UI/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0210-SUS",
+    "medicamento": "Paracetamol (Acetaminofeno)",
+    "forma": "Gotas",
+    "concentracion": "100 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0218-SUS",
+    "medicamento": "Paracetamol (Acetaminofeno)",
+    "forma": "Inyectable",
+    "concentracion": "1 gr",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0208-SUS",
+    "medicamento": "Paracetamol (Acetaminofeno)",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0209-SUS",
+    "medicamento": "Paracetamol (Acetaminofeno)",
+    "forma": "Jarabe",
+    "concentracion": "120 mg/5 ml o 125 mg/5 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-J0175",
+    "medicamento": "Piperacilina + Tazobactam",
+    "forma": "Inyectable",
+    "concentracion": "4 g/500 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "H0209-SUS",
+    "medicamento": "Prednisona",
+    "forma": "Comprimido ranurado",
+    "concentracion": "20 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0113-SUS",
+    "medicamento": "Propofol",
+    "forma": "Inyectable",
+    "concentracion": "10 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0116-SUS",
+    "medicamento": "Remifentanilo",
+    "forma": "Inyectable",
+    "concentracion": "5 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false,
+    "controlado": "estupefaciente"
+  },
+  {
+    "programa": "sus",
+    "codigo": "DTO101a-SUS",
+    "medicamento": "Resucitador Manual (bolsa auto-inflable)",
+    "forma": "Caja",
+    "concentracion": "Pediátrica c/bolsa reservorio",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "A1116-PR",
+    "medicamento": "Retinol (Vitamina A)",
+    "forma": "Cápsula o Perla",
+    "concentracion": "200.000 UI",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "M0303-SUS",
+    "medicamento": "Rocuronio bromuro",
+    "forma": "Inyectable",
+    "concentracion": "10 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "R0311-SUS",
+    "medicamento": "Salmeterol + Fluticasona",
+    "forma": "Aerosol",
+    "concentracion": "25 mcg + 125 mcg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSC009-SUS",
+    "medicamento": "Seda negra trenzada (N° 2/0)",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 2/0 10 hebras x 75 cm",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0114-SUS",
+    "medicamento": "Sevoflurano (Trifluorometil etil)",
+    "forma": "Solución",
+    "concentracion": "250 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0517",
+    "medicamento": "Solucion de glucosa",
+    "forma": "Solucion parenteral de gran vo",
+    "concentracion": "10% (500 ml)",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "D-B0519",
+    "medicamento": "Solucion de glucosa",
+    "forma": "Solucion parenteral de gran vo",
+    "concentracion": "50% (500 ml)",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0516-SUS",
+    "medicamento": "Solución de glucosa",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "5% (1.000 ml)",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-B0515",
+    "medicamento": "Solución de glucosa",
+    "forma": "Solución paren de gran volu",
+    "concentracion": "5% (500 ml)",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0515-SUS",
+    "medicamento": "Solución de glucosa",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "5% (500 ml)",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "NC-B0519",
+    "medicamento": "Solución de glucosa",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "50% (500 ml)",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0521-SUS",
+    "medicamento": "Solución de Manitol",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "20% (500 ml)",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0523-SUS",
+    "medicamento": "Solución Fisiológica",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "0,9% (1.000 ml)",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0525-SUS",
+    "medicamento": "Solución glucosada clorurada",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "1000 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0530-SUS",
+    "medicamento": "Solución ringer lactato",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "1000 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0531-SUS",
+    "medicamento": "Solución ringer normal",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "500 ml",
+    "cantidad": null,
+    "observacion": "Solo Procedimiento de transfusion",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0532-SUS",
+    "medicamento": "Solución ringer normal",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "1000 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSD015-SUS",
+    "medicamento": "Sonda de aspiración N° 14",
+    "forma": "Sobre estéril",
+    "concentracion": "C/sist. control de flujo N°14",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSD011-SUS",
+    "medicamento": "Sonda de aspiración N° 6",
+    "forma": "Sobre estéril",
+    "concentracion": "C/control de flujo N° 6",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSD012-SUS",
+    "medicamento": "Sonda de Aspiración N° 8",
+    "forma": "Sobre estéril",
+    "concentracion": "C/control de flujo N° 8",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSD014-SUS",
+    "medicamento": "Sonda de aspiracion N°12",
+    "forma": "Sobre estéril",
+    "concentracion": "C/sist. control de flujo N° 12",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSD026-SUS",
+    "medicamento": "Sonda Foley N° 16",
+    "forma": "Sobre estéril",
+    "concentracion": "2 vías N° 16 c/pico luer",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSD040-PR",
+    "medicamento": "Sonda nasogástrica",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 14",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSD037-SUS",
+    "medicamento": "Sonda nasogástrica N° 6",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 6",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0533-SUS",
+    "medicamento": "Sulfato de Magnesio",
+    "forma": "Inyectable",
+    "concentracion": "10%",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "B0308-SUS",
+    "medicamento": "Sulfato ferroso + Ac. Fólico + Vitamina C",
+    "forma": "Comprimido",
+    "concentracion": "200 mg + 0,5 mg + 150 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "R0701-SUS",
+    "medicamento": "Surfactante pulmonar",
+    "forma": "Inyectable",
+    "concentracion": "25 a 35 mg/ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSC017-PR",
+    "medicamento": "Sutura Cat Gut cromado",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 4/0 c/aguja",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSC012-SUS",
+    "medicamento": "Sutura Cat Gut cromado (N° 0)",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 0 c/aguja",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSC026-SUS",
+    "medicamento": "Sutura de seda",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 0 c/aguja 3.5 cm. 1/2 circ.",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSC013",
+    "medicamento": "Sutura Cat Gut cromado (N° 1)",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 1 c/aguja 4.8 cm 1/2 circ.",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSC019",
+    "medicamento": "Sutura Cat Gut simple (N° 0)",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 0 c/aguja 4.0 cm.",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSC020-SUS",
+    "medicamento": "Sutura Cat Gut simple (N° 1)",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 1 c/aguja",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSC028-SUS",
+    "medicamento": "Sutura de seda",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 2/0 c/aguja 2.5 cm 1/2 circ",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSC027-SUS",
+    "medicamento": "Sutura de seda (N°1)",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 1 c/aguja",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSC043-SUS",
+    "medicamento": "Sutura nylon",
+    "forma": "Sobre esteril",
+    "concentracion": "N°3/0 c/aguja 2.5 cm cuticular",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSC042-SUS",
+    "medicamento": "Sutura nylon (N° 2/0)",
+    "forma": "Sobre esteril",
+    "concentracion": "N°2/0 c/agu 3cm cuticular",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSC053-SUS",
+    "medicamento": "Sutura poliglactina 910 (0)",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 0c/a 4cm 1/2círc",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DSC054-SUS",
+    "medicamento": "Sutura poliglactina 910 (N°1)",
+    "forma": "Sobre estéril",
+    "concentracion": "N°1 c/aguja",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DAC093-SUS",
+    "medicamento": "Tapón heparinizado",
+    "forma": "Pieza",
+    "concentracion": "Pieza",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "N0214-SUS",
+    "medicamento": "Tramadol",
+    "forma": "Inyectable",
+    "concentracion": "100 mg/2 ml",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DTO088-SUS",
+    "medicamento": "Tubo endotraqueal descartable",
+    "forma": "Sobre esteril",
+    "concentracion": "N° 6.5 c/balón de baja presión",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DTO089-SUS",
+    "medicamento": "Tubo endotraqueal descartable N°7",
+    "forma": "Sobre estéril",
+    "concentracion": "N°7 con balón de baja presión",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DTO090-SUS",
+    "medicamento": "Tubo endotraqueal descartable N°7.5",
+    "forma": "Sobre estéril",
+    "concentracion": "N°7.5 c/balón de baja presión",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "D0203-SUS",
+    "medicamento": "Ungüento dérmico eucalipto mentol",
+    "forma": "Ungüento o crema",
+    "concentracion": "Según disponibilidad",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DOT071-SUS",
+    "medicamento": "Venda de gasa 4\"",
+    "forma": "Rollo",
+    "concentracion": "4\"",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DOT075-SUS",
+    "medicamento": "Venda de yeso",
+    "forma": "Rollo",
+    "concentracion": "4\"",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "DOT074-SUS",
+    "medicamento": "Venda de yeso 6\"",
+    "forma": "Rollo",
+    "concentracion": "6\"",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "sus",
+    "codigo": "D-A1206",
+    "medicamento": "Zinc (como sulfato)",
+    "forma": "Comprimido",
+    "concentracion": "20 mg",
+    "cantidad": null,
+    "observacion": "SIN RESTRICCION",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "renal",
+    "codigo": "D0603-SUS",
+    "medicamento": "Aciclovir",
+    "forma": "Crema dérmica",
+    "concentracion": "5%",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0101-SUS",
+    "medicamento": "Ácido acetil salicílico",
+    "forma": "Comprimido",
+    "concentracion": "100 mg",
+    "cantidad": 898,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "A1102-SUS",
+    "medicamento": "Ácido Ascórbico (Vitamina C)",
+    "forma": "Inyectable",
+    "concentracion": "500 mg/ml (2 ml)",
+    "cantidad": 15,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DSG002-SR-SUS",
+    "medicamento": "Acido citrico",
+    "forma": "Solución",
+    "concentracion": "50% (5 Litros)",
+    "cantidad": 32,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0301-SUS",
+    "medicamento": "Ácido fólico",
+    "forma": "Comprimido",
+    "concentracion": "5 mg",
+    "cantidad": 2013,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DSG002a-SR-SUS",
+    "medicamento": "Ácido peracético 2%",
+    "forma": "Bidón",
+    "concentracion": "Solución 2%",
+    "cantidad": 207,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DAC023-SR-SUS",
+    "medicamento": "Aguja para Fístula Arterial venosa",
+    "forma": "Sobre",
+    "concentracion": "Par N° 16",
+    "cantidad": 1397,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DAC024-SR-SUS",
+    "medicamento": "Aguja para Fístula Arterial venosa",
+    "forma": "Sobre",
+    "concentracion": "Par N° 17",
+    "cantidad": 725,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0502-SUS",
+    "medicamento": "Albúmina humana",
+    "forma": "Inyectable",
+    "concentracion": "20%",
+    "cantidad": 32,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DOT003",
+    "medicamento": "Algodón",
+    "forma": "Paquete",
+    "concentracion": "200 grs.",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DOT005",
+    "medicamento": "Algodón",
+    "forma": "Paquete",
+    "concentracion": "100 grs.",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "J0104-SUS",
+    "medicamento": "Amikacina",
+    "forma": "Inyectable",
+    "concentracion": "500mg /2 ml",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0503-SUS",
+    "medicamento": "Aminoácidos",
+    "forma": "Solución",
+    "concentracion": "10%",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "C0807-SUS",
+    "medicamento": "Amlodipina",
+    "forma": "Comprimido",
+    "concentracion": "10 mg",
+    "cantidad": 2980,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DOT018-SR-SUS",
+    "medicamento": "Apósitos adhesivos (10 x 12)",
+    "forma": "Sobre",
+    "concentracion": "Dimensiones 10",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "C1001-SUS",
+    "medicamento": "Atorvastatina",
+    "forma": "Comprimido",
+    "concentracion": "10 mg",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "J0113-SUS",
+    "medicamento": "Azitromicina",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": 10,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "D0102-SUS",
+    "medicamento": "Bacitracina + Neomicina sulfato",
+    "forma": "Crema o Pomada",
+    "concentracion": "500 UI + 5 mg/g",
+    "cantidad": 1,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DPP003-SR-SUS",
+    "medicamento": "Barbijo (pieza)",
+    "forma": "Pieza",
+    "concentracion": "Pieza",
+    "cantidad": 8800,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DTO003 -SUS",
+    "medicamento": "Bigotera para oxígeno",
+    "forma": "Pieza",
+    "concentracion": "Adulto siliconado",
+    "cantidad": 101,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DB002",
+    "medicamento": "Bolsa colectora de orina",
+    "forma": "Bolsa",
+    "concentracion": "2000 ml c/válvula",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "A0304-SUS",
+    "medicamento": "Butilbromuro de Hioscina (Butilescopolamina)",
+    "forma": "Inyectable",
+    "concentracion": "20 mg/ml",
+    "cantidad": 14,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "A0302-SUS",
+    "medicamento": "Butilbromuro de Hioscina (Butilescopolamina)",
+    "forma": "Comprimido",
+    "concentracion": "10 mg",
+    "cantidad": 40,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "A1202-SUS",
+    "medicamento": "Calcio + Vitamina D",
+    "forma": "Comprimido",
+    "concentracion": "500 mg (ion cal",
+    "cantidad": 1680,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "C0705-SUS",
+    "medicamento": "Carvedilol",
+    "forma": "Comprimido",
+    "concentracion": "12,5 mg",
+    "cantidad": 1490,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "C0704-SUS",
+    "medicamento": "Carvedilol",
+    "forma": "Comprimido",
+    "concentracion": "6,25 mg",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DAC043-SR-SUS",
+    "medicamento": "Catéter doble lumen para hemodiálisis",
+    "forma": "Sobre",
+    "concentracion": "Doble lumen 12",
+    "cantidad": 15,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DAC065-SUS",
+    "medicamento": "Catéter venoso periférico (N°18)",
+    "forma": "Sobre estéril",
+    "concentracion": "Nº 18Gx1 1/2\"c/aletas de fij.",
+    "cantidad": 5,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "R0607-SUS",
+    "medicamento": "Cetirizina",
+    "forma": "Cápsula",
+    "concentracion": "10 mg",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "J0127-SUS",
+    "medicamento": "Ciprofloxacina",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": 6,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "R0601-SUS",
+    "medicamento": "Clorfenamina (Clorfeniramina)",
+    "forma": "Comprimido",
+    "concentracion": "4 mg",
+    "cantidad": 5,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0507-SUS",
+    "medicamento": "Cloruro de sodio",
+    "forma": "Inyectable",
+    "concentracion": "20%",
+    "cantidad": 30,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "J0136-SUS",
+    "medicamento": "Cloxacilina",
+    "forma": "Inyectable",
+    "concentracion": "1 g",
+    "cantidad": 20,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "A1105-SUS",
+    "medicamento": "Colecalciferol (Vitamina D3)",
+    "forma": "Comprimido",
+    "concentracion": "0,25 mcg",
+    "cantidad": 440,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "A1107-SUS",
+    "medicamento": "Complejo B (B1 + B6 + B12)",
+    "forma": "Inyectable",
+    "concentracion": "Según concentra",
+    "cantidad": 79,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "NC-A1106",
+    "medicamento": "Complejo B (B1 + B6 + B12)",
+    "forma": "Comprimido o Capsula",
+    "concentracion": "Según concentración estándar",
+    "cantidad": 3700,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "A1106-SUS",
+    "medicamento": "Complejo B (B1 + B6 + B12)",
+    "forma": "Comprimido o Capsula",
+    "concentracion": "Según concentración estándar",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "M0101-SUS",
+    "medicamento": "Diclofenaco Sódico",
+    "forma": "Pomada o Gel",
+    "concentracion": "1%",
+    "cantidad": 18,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "M0103-SUS",
+    "medicamento": "Diclofenaco Sódico",
+    "forma": "Inyectable",
+    "concentracion": "75 mg",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "J0141-SUS",
+    "medicamento": "Dicloxacilina sódica",
+    "forma": "Cápsula",
+    "concentracion": "500 mg",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DMQ012",
+    "medicamento": "Electrodos",
+    "forma": "Sobre",
+    "concentracion": "De espuma para adulto",
+    "cantidad": 10,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "C0110-SUS",
+    "medicamento": "Epinefrina (Adrenalina)",
+    "forma": "Inyectable",
+    "concentracion": "1 mg/ml",
+    "cantidad": 24,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DAC073-SUS",
+    "medicamento": "Equipo de trasfusión",
+    "forma": "Sobre estéril",
+    "concentracion": "Bolsa C/cámara goteo flexible",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DAC074-SUS",
+    "medicamento": "Equipo de venoclisis",
+    "forma": "Sobre estéril",
+    "concentracion": "C/control d goteo, aguja Nº 21",
+    "cantidad": 893,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0311-SR-SUS",
+    "medicamento": "Eritropoyetina",
+    "forma": "Inyectable",
+    "concentracion": "4000 UI",
+    "cantidad": 90,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0302-SR-SUS",
+    "medicamento": "Eritropoyetina",
+    "forma": "Inyectable",
+    "concentracion": "10.000 UI",
+    "cantidad": 1568,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DAC081-SR-SUS",
+    "medicamento": "Filtro para hemodiálisis N°7",
+    "forma": "Sobre",
+    "concentracion": "Libre de polisu",
+    "cantidad": 34,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DAC082-SR-SUS",
+    "medicamento": "Filtro para hemodiálisis N°8",
+    "forma": "Sobre",
+    "concentracion": "Libre de polisu",
+    "cantidad": 254,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "C0304-SUS",
+    "medicamento": "Furosemida",
+    "forma": "Comprimido ranurado",
+    "concentracion": "40 mg",
+    "cantidad": 100,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0510-SUS",
+    "medicamento": "Gluconato Cálcico (Calcio Gluconato)",
+    "forma": "Inyectable",
+    "concentracion": "10%",
+    "cantidad": 5,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DPP006-SR-SUS",
+    "medicamento": "Gorras descartables",
+    "forma": "pieza",
+    "concentracion": "pieza",
+    "cantidad": 8800,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DPP012",
+    "medicamento": "Guantes descartables",
+    "forma": "Caja x 100 unidades",
+    "concentracion": "De latex talla M",
+    "cantidad": 120,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DPP011",
+    "medicamento": "Guantes descartables",
+    "forma": "Caja x 100 unidades",
+    "concentracion": "De latex talla S",
+    "cantidad": 110,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DMQ020-SR-SUS",
+    "medicamento": "Guantes quirúrgicos (6 1/2)",
+    "forma": "Sobre",
+    "concentracion": "N° 6 1/2 puño l",
+    "cantidad": 518,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DMQ020-SUS",
+    "medicamento": "Guantes quirúrgicos (6 1/2)",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 6 1/2 puño largo",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DMQ021-SR-SUS",
+    "medicamento": "Guantes quirúrgicos (7)",
+    "forma": "Sobre",
+    "concentracion": "N° 7 puño largo",
+    "cantidad": 497,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0104-SR-SUS",
+    "medicamento": "Heparina sódica",
+    "forma": "Inyectable",
+    "concentracion": "5.000 UI/ml",
+    "cantidad": 1304,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0304-SR-SUS",
+    "medicamento": "Hierro",
+    "forma": "Inyectable",
+    "concentracion": "100 mg - IM o I",
+    "cantidad": 255,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DMQ025-SUS",
+    "medicamento": "Hoja de bisturí Nº 21",
+    "forma": "Sobre estéril",
+    "concentracion": "Nº 21",
+    "cantidad": 5,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DMQ028-SUS",
+    "medicamento": "Hojas de bisturí N° 11",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 11",
+    "cantidad": 5,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DMQ030-SUS",
+    "medicamento": "Hojas de bisturí N° 15",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 15",
+    "cantidad": 5,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "M0105-SUS",
+    "medicamento": "Ibuprofeno",
+    "forma": "Comprimido",
+    "concentracion": "400 mg",
+    "cantidad": 30,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DJ005-SUS",
+    "medicamento": "Jeringa descartable (10ml)",
+    "forma": "Sobre estéril",
+    "concentracion": "10ml c/aguja 21x1 1/2\" c/rosca",
+    "cantidad": 102,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DJ006-SUS",
+    "medicamento": "Jeringa descartable (20ml)",
+    "forma": "Sobre estéril",
+    "concentracion": "20ml c/aguja 21x1 1/2\" c/rosca",
+    "cantidad": 2074,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DJ003-SUS",
+    "medicamento": "Jeringa descartable (3ml)",
+    "forma": "Sobre estéril",
+    "concentracion": "3 ml c/aguja 21x1 1/2\" c/rosca",
+    "cantidad": 2723,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DJ007-SUS",
+    "medicamento": "Jeringa descartable (50ml)",
+    "forma": "Sobre estéril",
+    "concentracion": "50 ml Luer",
+    "cantidad": 10,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DJ004-SUS",
+    "medicamento": "Jeringa descartable (5ml)",
+    "forma": "Sobre estéril",
+    "concentracion": "5ml c/aguja 21x1 1/2\" c/rosca",
+    "cantidad": 20,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DJ008-SUS",
+    "medicamento": "Jeringa insulina descartable (1ml)",
+    "forma": "Sobre estéril",
+    "concentracion": "1 ml c/aguja fija N° 29G",
+    "cantidad": 10,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "M0110-SUS",
+    "medicamento": "Ketoprofeno",
+    "forma": "Inyectable",
+    "concentracion": "100 mg",
+    "cantidad": 23,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "M0109-SUS",
+    "medicamento": "Ketorolaco",
+    "forma": "Inyectable",
+    "concentracion": "30 mg/ml",
+    "cantidad": 21,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "J0166-SUS",
+    "medicamento": "Levofloxacina",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": 20,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "N0112-SUS",
+    "medicamento": "Lidocaína clorhidrato sin conservante",
+    "forma": "Inyectable",
+    "concentracion": "2%",
+    "cantidad": 8,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DAC087-SR-SUS",
+    "medicamento": "Línea Arteriovenosa",
+    "forma": "Pieza",
+    "concentracion": "Pieza.",
+    "cantidad": 216,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DAC089-SUS",
+    "medicamento": "Llave de 3 vías s/a",
+    "forma": "Sobre estéril",
+    "concentracion": "Sin alargador",
+    "cantidad": 6,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DAC088-SUS",
+    "medicamento": "Llave de 3 vías c/a",
+    "forma": "Sobre estéril",
+    "concentracion": "Con alargador 50 cm - 10cm",
+    "cantidad": 10,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "C0902-SUS",
+    "medicamento": "Losartán",
+    "forma": "Comprimido",
+    "concentracion": "50 mg",
+    "cantidad": 3960,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "N0205-SUS",
+    "medicamento": "Metamizol (Dipirona)",
+    "forma": "Inyectable",
+    "concentracion": "1 g",
+    "cantidad": 224,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "C0204-SUS",
+    "medicamento": "Metildopa (Alfametildopa)",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "A0307-SUS",
+    "medicamento": "Metoclopramida",
+    "forma": "Comprimido",
+    "concentracion": "10 mg",
+    "cantidad": 67,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "A0308-SUS",
+    "medicamento": "Metoclopramida",
+    "forma": "Inyectable",
+    "concentracion": "10mg / 2ml",
+    "cantidad": 49,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "P0109-SUS",
+    "medicamento": "Metronidazol",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "N0207-SUS",
+    "medicamento": "Morfina (con y sin conservante)",
+    "forma": "Inyectable",
+    "concentracion": "10 mg/ml",
+    "cantidad": 5,
+    "observacion": "",
+    "baja_rotacion": false,
+    "controlado": "estupefaciente"
+  },
+  {
+    "programa": "renal",
+    "codigo": "A1109-SUS",
+    "medicamento": "Multivitaminas",
+    "forma": "Comprimido",
+    "concentracion": "Según concentración estándar",
+    "cantidad": 800,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "A1110-SUS",
+    "medicamento": "Multivitaminas",
+    "forma": "Jarabe",
+    "concentracion": "Según concentración estándar",
+    "cantidad": 8,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "C0115-SUS",
+    "medicamento": "Noradrenalina",
+    "forma": "Inyectable",
+    "concentracion": "1 mg/ml",
+    "cantidad": 10,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "A0202-SUS",
+    "medicamento": "Omeprazol",
+    "forma": "Cápsula",
+    "concentracion": "20 mg",
+    "cantidad": 873,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "A0205-SUS",
+    "medicamento": "Omeprazol",
+    "forma": "Inyectable",
+    "concentracion": "40 mg/ml",
+    "cantidad": 28,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "V0310-SUS",
+    "medicamento": "Oxígeno",
+    "forma": "Gas",
+    "concentracion": "93% - 99%",
+    "cantidad": 484,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "N0208-SUS",
+    "medicamento": "Paracetamol (Acetaminofeno)",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": 120,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0513-SR-SUS",
+    "medicamento": "Solucion Acida",
+    "forma": "Solución",
+    "concentracion": "Según disponibi",
+    "cantidad": 322,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0514-SR-SUS",
+    "medicamento": "Solución Básica",
+    "forma": "Solución",
+    "concentracion": "Según disponibi",
+    "cantidad": 321,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "D-B0519",
+    "medicamento": "Solucion de glucosa",
+    "forma": "Solucion parenteral de gran vo",
+    "concentracion": "50% (500 ml)",
+    "cantidad": 36,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0515-SUS",
+    "medicamento": "Solución de glucosa",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "5% (500 ml)",
+    "cantidad": 28,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0521-SUS",
+    "medicamento": "Solución de Manitol",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "20% (500 ml)",
+    "cantidad": 100,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "BID-B0521",
+    "medicamento": "Solución de Manitol",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "20% (500 ml)",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0522-SUS",
+    "medicamento": "Solución Fisiológica",
+    "forma": "Solución",
+    "concentracion": "0,9% (500 ml)",
+    "cantidad": 31,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0523-SUS",
+    "medicamento": "Solución Fisiológica",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "0,9% (1.000 ml)",
+    "cantidad": 463,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0533-SUS",
+    "medicamento": "Sulfato de Magnesio",
+    "forma": "Inyectable",
+    "concentracion": "10%",
+    "cantidad": 8,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "B0308-SUS",
+    "medicamento": "Sulfato ferroso + Ac. Fólico + Vitamina C",
+    "forma": "Comprimido",
+    "concentracion": "200 mg + 0,5 mg + 150 mg",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DSC028-SUS",
+    "medicamento": "Sutura de seda",
+    "forma": "Sobre estéril",
+    "concentracion": "N° 2/0 c/aguja 2.5 cm 1/2 circ",
+    "cantidad": 10,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DAC093-SUS",
+    "medicamento": "Tapón heparinizado",
+    "forma": "Pieza",
+    "concentracion": "Pieza",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DOT055",
+    "medicamento": "Tela adhesiva color piel",
+    "forma": "Rollo",
+    "concentracion": "1\"",
+    "cantidad": 315,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DOT054",
+    "medicamento": "Tela adhesiva color piel",
+    "forma": "Rollo",
+    "concentracion": "2\"",
+    "cantidad": 70,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "N0214-SUS",
+    "medicamento": "Tramadol",
+    "forma": "Inyectable",
+    "concentracion": "100 mg/2 ml",
+    "cantidad": 23,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DAC087a-SR-SUS",
+    "medicamento": "Transductor",
+    "forma": "Pieza",
+    "concentracion": "Pieza.",
+    "cantidad": 1558,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "D0203-SUS",
+    "medicamento": "Ungüento dérmico eucalipto mentol",
+    "forma": "Ungüento o crema",
+    "concentracion": "Según disponibilidad",
+    "cantidad": 2,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "J0155-SUS",
+    "medicamento": "Vancomicina",
+    "forma": "Inyectable",
+    "concentracion": "500 mg",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "renal",
+    "codigo": "DOT071-SUS",
+    "medicamento": "Venda de gasa 4\"",
+    "forma": "Rollo",
+    "concentracion": "4\"",
+    "cantidad": 0,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "NC-B0501",
+    "medicamento": "Agua para inyección",
+    "forma": "inyectable",
+    "concentracion": "5 ml",
+    "cantidad": 120,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "DTO003 -SUS",
+    "medicamento": "Bigotera para oxígeno",
+    "forma": "Pieza",
+    "concentracion": "Adulto siliconado",
+    "cantidad": 20,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0101-LCC-SUS",
+    "medicamento": "Bleomicina",
+    "forma": "Inyectable",
+    "concentracion": "15 UI",
+    "cantidad": 8,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "DB017-SUS",
+    "medicamento": "Bolsa EVA (500 ml)",
+    "forma": "Bolsa estéril",
+    "concentracion": "Con equipo 500 ml",
+    "cantidad": 400,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0103-LCC-SUS",
+    "medicamento": "Capecitabine",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": 1447,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0104-LCC-SUS",
+    "medicamento": "Carboplatino",
+    "forma": "Inyectable",
+    "concentracion": "450 mg",
+    "cantidad": 9,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "DAC066-SUS",
+    "medicamento": "Catéter venoso periférico (N°20)",
+    "forma": "Sobre estéril",
+    "concentracion": "Nº 20Gx1 1/2\" c/aletas de fij.",
+    "cantidad": 200,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "DAC067-SUS",
+    "medicamento": "Catéter venoso periférico (N°22)",
+    "forma": "Sobre estéril",
+    "concentracion": "Nº 22 G x 1\"c/aletas de fij.",
+    "cantidad": 200,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0106-LCC-SUS",
+    "medicamento": "Ciclofosfamida",
+    "forma": "Inyectable",
+    "concentracion": "1 g",
+    "cantidad": 378,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0111-LCC-SUS",
+    "medicamento": "Citarabina",
+    "forma": "inyectable",
+    "concentracion": "500 mg",
+    "cantidad": 37,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "A1107-SUS",
+    "medicamento": "Complejo B (B1 + B6 + B12)",
+    "forma": "Inyectable",
+    "concentracion": "Según concentra",
+    "cantidad": 100,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "H0202-SUS",
+    "medicamento": "Dexametasona",
+    "forma": "Comprimido",
+    "concentracion": "4 mg",
+    "cantidad": 1000,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "H0204-SUS",
+    "medicamento": "Dexametasona",
+    "forma": "Inyectable",
+    "concentracion": "4 mg/ml",
+    "cantidad": 1000,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "M0101-SUS",
+    "medicamento": "Diclofenaco Sódico",
+    "forma": "Pomada o Gel",
+    "concentracion": "1%",
+    "cantidad": 10,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0138-LCC-SUS",
+    "medicamento": "Docetaxel",
+    "forma": "Inyectable",
+    "concentracion": "40 mg/ml (2ml) 80MG",
+    "cantidad": 113,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "A0306-SUS",
+    "medicamento": "Domperidona",
+    "forma": "Comprimido",
+    "concentracion": "10 mg",
+    "cantidad": 500,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0148-LCC-SUS",
+    "medicamento": "Doxorrubicina liposomal pegilada",
+    "forma": "Inyectable",
+    "concentracion": "20 mg/ 10 ml",
+    "cantidad": 115,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0115-LCC-SUS",
+    "medicamento": "Doxorubicina clorhidrato (Adriamicina clorh.)",
+    "forma": "Inyectable",
+    "concentracion": "50 mg",
+    "cantidad": 368,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "DAC074-SUS",
+    "medicamento": "Equipo de venoclisis",
+    "forma": "Sobre estéril",
+    "concentracion": "C/control d goteo, aguja Nº 21",
+    "cantidad": 1000,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0116-LCC-SUS",
+    "medicamento": "Etopósido",
+    "forma": "Inyectable",
+    "concentracion": "100 mg/5 ml",
+    "cantidad": 147,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0301-LCC-SUS",
+    "medicamento": "Filgrastrim",
+    "forma": "Inyectable",
+    "concentracion": "300 mcg/ml",
+    "cantidad": 100,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0117-LCC-SUS",
+    "medicamento": "Fluorouracilo",
+    "forma": "Inyectable",
+    "concentracion": "500 mg/10 ml",
+    "cantidad": 393,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0118-LCC-SUS",
+    "medicamento": "Gemcitabina",
+    "forma": "Inyectable",
+    "concentracion": "1 g",
+    "cantidad": 77,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "DPP008b-SUS",
+    "medicamento": "Guantes de Nitrilo (M)",
+    "forma": "Caja x 100 Unidades",
+    "concentracion": "\" M \"",
+    "cantidad": 201,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "D0704-SUS",
+    "medicamento": "Hidrocortisona acetato",
+    "forma": "Crema o Pomada",
+    "concentracion": "1%",
+    "cantidad": 50,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "H0205-SUS",
+    "medicamento": "Hidrocortisona succinato sódico",
+    "forma": "Inyectable",
+    "concentracion": "100 mg",
+    "cantidad": 50,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "DJ005-SUS",
+    "medicamento": "Jeringa descartable (10ml)",
+    "forma": "Sobre estéril",
+    "concentracion": "10ml c/aguja 21x1 1/2\" c/rosca",
+    "cantidad": 1200,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "DJ006-SUS",
+    "medicamento": "Jeringa descartable (20ml)",
+    "forma": "Sobre estéril",
+    "concentracion": "20ml c/aguja 21x1 1/2\" c/rosca",
+    "cantidad": 200,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "DJ007-SUS",
+    "medicamento": "Jeringa descartable (50ml)",
+    "forma": "Sobre estéril",
+    "concentracion": "50 ml Luer",
+    "cantidad": 252,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "V0307-LCC-SUS",
+    "medicamento": "Leucovorina",
+    "forma": "Inyectable",
+    "concentracion": "50 mg",
+    "cantidad": 69,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "J0166-SUS",
+    "medicamento": "Levofloxacina",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": 200,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "D0401-SUS",
+    "medicamento": "Lidocaína",
+    "forma": "Gel",
+    "concentracion": "2%",
+    "cantidad": 30,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "N0112-SUS",
+    "medicamento": "Lidocaína clorhidrato sin conservante",
+    "forma": "Inyectable",
+    "concentracion": "2%",
+    "cantidad": 50,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "DAC089-SUS",
+    "medicamento": "Llave de 3 vías s/a",
+    "forma": "Sobre estéril",
+    "concentracion": "Sin alargador",
+    "cantidad": 189,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0123-LCC-SUS",
+    "medicamento": "Mercaptopurina",
+    "forma": "Comprimido ranurado",
+    "concentracion": "50 mg",
+    "cantidad": 1223,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "V0308-LCC-SUS",
+    "medicamento": "Mesna (Mercapto etilsulfonato sódico)",
+    "forma": "Inyectable",
+    "concentracion": "400 mg",
+    "cantidad": 20,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "N0205-SUS",
+    "medicamento": "Metamizol (Dipirona)",
+    "forma": "Inyectable",
+    "concentracion": "1 g",
+    "cantidad": 200,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "A0307-SUS",
+    "medicamento": "Metoclopramida",
+    "forma": "Comprimido",
+    "concentracion": "10 mg",
+    "cantidad": 600,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "A0308-SUS",
+    "medicamento": "Metoclopramida",
+    "forma": "Inyectable",
+    "concentracion": "10mg / 2ml",
+    "cantidad": 1100,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0125-LCC-SUS",
+    "medicamento": "Metotrexato",
+    "forma": "Inyectable",
+    "concentracion": "500 mg",
+    "cantidad": 10,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0124-LCC-SUS",
+    "medicamento": "Metotrexato",
+    "forma": "Inyectable",
+    "concentracion": "50 mg",
+    "cantidad": 20,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "DAC091-SUS",
+    "medicamento": "Microgotero",
+    "forma": "Sobre estéril",
+    "concentracion": "c/deposito rigido 100ml-150ml",
+    "cantidad": 100,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "A1110-SUS",
+    "medicamento": "Multivitaminas",
+    "forma": "Jarabe",
+    "concentracion": "Según concentración estándar",
+    "cantidad": 100,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "A0704-SUS",
+    "medicamento": "Nistatina",
+    "forma": "Suspensión",
+    "concentracion": "500.000 UI/5 ml",
+    "cantidad": 5,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "A0202-SUS",
+    "medicamento": "Omeprazol",
+    "forma": "Cápsula",
+    "concentracion": "20 mg",
+    "cantidad": 200,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "A0205-SUS",
+    "medicamento": "Omeprazol",
+    "forma": "Inyectable",
+    "concentracion": "40 mg/ml",
+    "cantidad": 270,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "A0402-SUS",
+    "medicamento": "Ondansetrón",
+    "forma": "Comprimido",
+    "concentracion": "8 mg",
+    "cantidad": 800,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "A0401-LCC-SUS",
+    "medicamento": "Ondansetrón",
+    "forma": "Inyectable",
+    "concentracion": "8 mg",
+    "cantidad": 300,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0135-LCC-SUS",
+    "medicamento": "Oxaliplatino",
+    "forma": "Inyectable",
+    "concentracion": "100 mg",
+    "cantidad": 158,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0160-LCC-SUS",
+    "medicamento": "Paclitaxel",
+    "forma": "Inyectable",
+    "concentracion": "300 mg/50 ml",
+    "cantidad": 688,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0161-LCC-SUS",
+    "medicamento": "Pegaspargasa",
+    "forma": "Plegable Frasco Vial",
+    "concentracion": "750 mg/ml",
+    "cantidad": 13,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "N0319-SUS",
+    "medicamento": "Pregabalina",
+    "forma": "Comprimido o Cápsula",
+    "concentracion": "50 mg",
+    "cantidad": 120,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0141-LCC-SUS",
+    "medicamento": "Rituximab",
+    "forma": "Inyectable",
+    "concentracion": "500 mg/50 ml",
+    "cantidad": 35,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "NC-B0515",
+    "medicamento": "Solución de glucosa",
+    "forma": "Solución paren de gran volu",
+    "concentracion": "5% (500 ml)",
+    "cantidad": 80,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "B0516-SUS",
+    "medicamento": "Solución de glucosa",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "5% (1.000 ml)",
+    "cantidad": 36,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "B0522-SUS",
+    "medicamento": "Solución Fisiológica",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "0,9% (500 ml)",
+    "cantidad": 2350,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "B0523-SUS",
+    "medicamento": "Solución Fisiológica",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "0,9% (1.000 ml)",
+    "cantidad": 240,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "B0530-SUS",
+    "medicamento": "Solución ringer lactato",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "1000 ml",
+    "cantidad": 36,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "B0532-SUS",
+    "medicamento": "Solución ringer normal",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "1000 ml",
+    "cantidad": 36,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "B0531-SUS",
+    "medicamento": "Solución ringer normal",
+    "forma": "Solución parenteral de gran vo",
+    "concentracion": "500 ml",
+    "cantidad": 36,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "DAC093-SUS",
+    "medicamento": "Tapón heparinizado",
+    "forma": "Pieza",
+    "concentracion": "Pieza",
+    "cantidad": 48,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0152-LCC-SUS",
+    "medicamento": "Temozolomida",
+    "forma": "Cápsula",
+    "concentracion": "100 mg",
+    "cantidad": 1047,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0151-LCC-SUS",
+    "medicamento": "Temozolomida",
+    "forma": "Cápsula",
+    "concentracion": "20 mg",
+    "cantidad": 40,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "N0214-SUS",
+    "medicamento": "Tramadol",
+    "forma": "Inyectable",
+    "concentracion": "100 mg/2 ml",
+    "cantidad": 300,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "N0215-SUS",
+    "medicamento": "Tramadol",
+    "forma": "Comprimido",
+    "concentracion": "50 mg",
+    "cantidad": 200,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0142-LCC-SUS",
+    "medicamento": "Trastuzumab",
+    "forma": "Inyectable",
+    "concentracion": "440 mg",
+    "cantidad": 32,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0208-LCC-SUS",
+    "medicamento": "Triptorelina",
+    "forma": "Inyectable",
+    "concentracion": "22,5 mg",
+    "cantidad": 47,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0139-LCC-SUS",
+    "medicamento": "Vinblastina",
+    "forma": "Inyectable",
+    "concentracion": "10 mg",
+    "cantidad": 8,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "L0130-LCC-SUS",
+    "medicamento": "Vincristina",
+    "forma": "Inyectable",
+    "concentracion": "1 mg/ml (1ML)",
+    "cantidad": 179,
+    "observacion": "",
+    "baja_rotacion": true
+  },
+  {
+    "programa": "cancer",
+    "codigo": "V0802-SUS",
+    "medicamento": "Contraste iodado",
+    "forma": "Inyectable",
+    "concentracion": "Según disponibilidad (50 ml)",
+    "cantidad": 350,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "tb",
+    "codigo": "J0405-PR-TB",
+    "medicamento": "Etambutol",
+    "forma": "Comprimido",
+    "concentracion": "400 mg",
+    "cantidad": 77,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "tb",
+    "codigo": "OM10-PR-TB",
+    "medicamento": "Etambutol",
+    "forma": "Tableta",
+    "concentracion": "100 mg",
+    "cantidad": 42,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "tb",
+    "codigo": "J0407-PR-TB",
+    "medicamento": "Isoniazida (INH)",
+    "forma": "Comprimido",
+    "concentracion": "100 mg",
+    "cantidad": 169,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "tb",
+    "codigo": "OM11-PR-TB",
+    "medicamento": "Pirazinamida",
+    "forma": "Tableta",
+    "concentracion": "150 mg",
+    "cantidad": 55,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "tb",
+    "codigo": "J0408-PR-TB",
+    "medicamento": "Pirazinamida",
+    "forma": "Comprimido",
+    "concentracion": "500 mg",
+    "cantidad": 153,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "tb",
+    "codigo": "OM13-PR-TB",
+    "medicamento": "Rifampicina + Isoniazida (INH)",
+    "forma": "Comprimido",
+    "concentracion": "150 mg + 75 mg",
+    "cantidad": 68,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "tb",
+    "codigo": "OM15-PR-TB",
+    "medicamento": "Rifampicina + Isoniazida (INH)",
+    "forma": "Tableta",
+    "concentracion": "75/50 mg",
+    "cantidad": 38,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "tb",
+    "codigo": "OM16-PR-TB",
+    "medicamento": "Rifampicina/Isoniazida/Pirazinamida/Etambutol",
+    "forma": "Comprimido",
+    "concentracion": "150/75/400/275 MG",
+    "cantidad": 79,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "vih",
+    "codigo": "ARV-J0516",
+    "medicamento": "Lamivudina",
+    "forma": "Jarabe o Solucion oral",
+    "concentracion": "10 mg/ml",
+    "cantidad": 2,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "vih",
+    "codigo": "ARV-IL006",
+    "medicamento": "Leche sucedanea en polvo",
+    "forma": "Caja 400gr",
+    "concentracion": "Caja",
+    "cantidad": 3,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "vih",
+    "codigo": "ARV-OM10",
+    "medicamento": "Tenofovir disoproxilo+lamivudina+dolutegravir(T3D)",
+    "forma": "Comprimido",
+    "concentracion": "300mg+300mg+50mg",
+    "cantidad": 90,
+    "observacion": "",
+    "baja_rotacion": false
+  },
+  {
+    "programa": "vih",
+    "codigo": "ARV-J0525",
+    "medicamento": "Zidovudina",
+    "forma": "Suspension oral",
+    "concentracion": "10 mg/ml",
+    "cantidad": 3,
+    "observacion": "",
+    "baja_rotacion": false
+  }
+]

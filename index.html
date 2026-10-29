@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#146c5d" />
+    <title>Receta HEAS</title>
+    <link rel="manifest" href="manifest.webmanifest?v=recetaheas-20261028-01" />
+    <link rel="icon" href="icons/icon-32.png?v=recetaheas-20261028-01" type="image/png" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png?v=recetaheas-20261028-01" />
+    <link rel="stylesheet" href="styles.css?v=recetaheas-20261028-01" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Hospital El Alto Sur</p>
+        <h1>Receta HEAS</h1>
+        <div class="project-credit">
+          <strong>Proyecto: RECETA HEAS</strong>
+          <strong>Desarrollado por: Marcelo Oviedo L.</strong>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="ghost-button icon-button hidden" id="installBtn" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v10m0 0 4-4m-4 4-4-4"/><path d="M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>
+          <span>Instalar app</span>
+        </button>
+        <button class="ghost-button icon-button" id="clearBtn" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m3 21 6-6"/><path d="m7 17 4 4"/><path d="m13 3 8 8-7 7-8-8Z"/><path d="m14 4-7 7"/></svg>
+          <span>Limpiar</span>
+        </button>
+        <button class="ghost-button icon-button" id="halfCartaBtn" type="button" title="Dos copias en media carta con linea de corte">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M20 4 8.5 14.5M14.5 14.5 20 20M8.5 8.5 12 12"/><path d="M8 6h12M8 18h12" stroke-dasharray="2 2"/></svg>
+          <span>Media carta</span>
+        </button>
+        <button class="ghost-button icon-button" id="pdfBtn" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M8 16h8"/><path d="M8 12h8"/></svg>
+          <span>Generar PDF</span>
+        </button>
+        <button class="primary-button icon-button" id="printBtn" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/></svg>
+          <span>Imprimir</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="panel editor-panel" aria-label="Formulario de receta">
+        <div class="template-switcher" role="tablist" aria-label="Tipo de recetario">
+          <button class="template-tab active" type="button" data-template="ambulatorio">Ambulatorio</button>
+          <button class="template-tab" type="button" data-template="internado">Internado</button>
+          <button class="template-tab" type="button" data-template="utiUcin">UTI / UCIN</button>
+        </div>
+
+        <form id="recipeForm" autocomplete="off">
+          <fieldset>
+            <legend>Datos del paciente</legend>
+            <div class="form-grid">
+              <label>
+                Expediente clinico
+                <input name="clinicalRecord" />
+              </label>
+              <label>
+                Apellido paterno
+                <input name="paternalSurname" required />
+              </label>
+              <label>
+                Apellido materno
+                <input name="maternalSurname" />
+              </label>
+              <label class="span-2">
+                Nombres
+                <input name="givenNames" required />
+              </label>
+              <label>
+                Fecha de nacimiento
+                <input name="birthDate" type="date" />
+              </label>
+              <label>
+                Sexo
+                <select name="sex">
+                  <option value=""></option>
+                  <option value="M">Masculino</option>
+                  <option value="F">Femenino</option>
+                </select>
+              </label>
+              <label class="span-2">
+                Domicilio
+                <input name="address" />
+              </label>
+              <label class="non-uti-only">
+                Tipo de paciente
+                <select name="patientType">
+                  <option value=""></option>
+                  <option value="SUS">Seguro Unico de Salud</option>
+                  <option value="PROGRAMAS">Programas</option>
+                  <option value="VENTA">Venta</option>
+                </select>
+              </label>
+              <div class="form-choice-group uti-only hidden">
+                <span>Tipo de paciente</span>
+                <div class="check-grid">
+                  <label class="check-option">
+                    <input type="radio" name="utiPatientType" value="SUS" />
+                    <span>SUS</span>
+                  </label>
+                  <label class="check-option">
+                    <input type="radio" name="utiPatientType" value="VENTA" />
+                    <span>Venta</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Fechas</legend>
+            <div class="form-grid">
+              <label>
+                Fecha de solicitud
+                <input name="requestDate" type="date" />
+              </label>
+              <label class="stay-only hidden">
+                Fecha de ingreso
+                <input name="admissionDate" type="date" />
+              </label>
+              <label class="internado-only hidden">
+                Servicio de ingreso
+                <select name="admissionService" id="admissionServiceSelect"></select>
+              </label>
+              <label class="stay-only hidden">
+                Fecha de egreso
+                <input name="dischargeDate" type="date" />
+              </label>
+              <label class="internado-only hidden">
+                Servicio de egreso
+                <select name="dischargeService" id="dischargeServiceSelect"></select>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Datos clinicos</legend>
+            <div class="form-grid">
+              <label class="ambulatorio-only">
+                Tipo de atencion
+                <select name="attentionType">
+                  <option value=""></option>
+                  <option>EN CONSULTORIO</option>
+                  <option>DOMICILIARIA</option>
+                  <option>EMERGENCIAS</option>
+                  <option>REFERENCIA</option>
+                </select>
+              </label>
+              <label class="ambulatorio-only">
+                Servicio
+                <select name="service" id="serviceSelect"></select>
+              </label>
+              <label class="internado-only hidden">
+                Tipo de ingreso
+                <select name="admissionType">
+                  <option value=""></option>
+                  <option>Por referencia</option>
+                  <option>Por servicio de emergencia</option>
+                  <option>Por trabajo de parto</option>
+                  <option>Por consultorio externo</option>
+                </select>
+              </label>
+              <label class="uti-only hidden">
+                Servicio de ingreso
+                <select name="utiAdmissionService" id="utiAdmissionServiceSelect"></select>
+              </label>
+              <div class="form-choice-group span-2 uti-only hidden">
+                <span>Paciente de UTI o UCIN</span>
+                <div class="check-grid uti-program-grid">
+                  <label class="check-option">
+                    <input type="checkbox" name="utiPc81" />
+                    <span>Medicamentos e insumos utilizados en la Unidad de Terapia Intensiva - PC 81</span>
+                  </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="ucinPc82" />
+                    <span>Medicamentos e insumos utilizados en la Unidad de Cuidados Intensivos Neonatales - PC 82</span>
+                  </label>
+                </div>
+              </div>
+              <label class="span-2">
+                Diagnostico principal
+                <input name="diagnosis" list="diagnosisOptions" />
+              </label>
+              <label>
+                Codigo CIE-10
+                <input name="cie10" />
+              </label>
+            </div>
+            <datalist id="diagnosisOptions"></datalist>
+          </fieldset>
+
+          <fieldset>
+            <legend>Diagnosticos secundarios</legend>
+            <div class="secondary-diagnosis-grid">
+              <label>
+                1
+                <input name="secondaryDiagnosis1" list="diagnosisOptions" />
+              </label>
+              <label>
+                CIE-10
+                <input name="secondaryCode1" />
+              </label>
+              <label>
+                2
+                <input name="secondaryDiagnosis2" list="diagnosisOptions" />
+              </label>
+              <label>
+                CIE-10
+                <input name="secondaryCode2" />
+              </label>
+              <label>
+                3
+                <input name="secondaryDiagnosis3" list="diagnosisOptions" />
+              </label>
+              <label>
+                CIE-10
+                <input name="secondaryCode3" />
+              </label>
+              <label class="secondary-extra">
+                4
+                <input name="secondaryDiagnosis4" list="diagnosisOptions" />
+              </label>
+              <label class="secondary-extra">
+                CIE-10
+                <input name="secondaryCode4" />
+              </label>
+              <label class="secondary-extra">
+                5
+                <input name="secondaryDiagnosis5" list="diagnosisOptions" />
+              </label>
+              <label class="secondary-extra">
+                CIE-10
+                <input name="secondaryCode5" />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="ambulatorio-only">
+            <legend>Otras prestaciones</legend>
+            <div class="check-grid" id="ambulatorioServicesOptions"></div>
+          </fieldset>
+
+          <fieldset class="internado-only hidden">
+            <legend>Procedimientos</legend>
+            <div class="check-grid" id="internadoProcedureOptions"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Medicamentos</legend>
+            <div class="medicine-search">
+              <label>
+                Medicamento
+                <input id="medicineInput" list="medicineOptions" placeholder="Elige de la lista o escribe libremente" />
+              </label>
+              <datalist id="medicineOptions"></datalist>
+              <label>
+                Cantidad
+                <input id="quantityInput" type="number" min="1" value="1" />
+              </label>
+              <label>
+                Indicacion
+                <input id="instructionInput" placeholder="Ej. cada 8 horas por 5 dias" />
+              </label>
+              <button class="secondary-button" id="addMedicineBtn" type="button">Agregar</button>
+            </div>
+            <div class="medicine-list" id="medicineList"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Observaciones</legend>
+            <label>
+              Observaciones para imprimir en el recetario
+              <textarea name="observations" rows="3"></textarea>
+            </label>
+          </fieldset>
+
+        </form>
+      </section>
+
+      <section class="preview-shell" aria-label="Vista previa imprimible">
+        <div class="preview-toolbar">
+          <strong>Vista previa</strong>
+          <span>Plantilla manual calibrable sobre hoja carta</span>
+        </div>
+        <article class="recipe-page" id="recipePreview"></article>
+      </section>
+    </main>
+
+    <script src="app.js?v=recetaheas-20261028-01" type="module"></script>
+  </body>
+</html>
