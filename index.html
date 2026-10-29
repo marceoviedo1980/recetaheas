@@ -3,12 +3,124 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#146c5d" />
+    <meta name="theme-color" content="#17356b" />
     <title>Receta HEAS</title>
-    <link rel="manifest" href="manifest.webmanifest?v=recetaheas-20261028-01" />
-    <link rel="icon" href="icons/icon-32.png?v=recetaheas-20261028-01" type="image/png" />
-    <link rel="apple-touch-icon" href="icons/icon-192.png?v=recetaheas-20261028-01" />
-    <link rel="stylesheet" href="styles.css?v=recetaheas-20261028-01" />
+    <link rel="manifest" href="manifest.webmanifest?v=recetaheas-20261029-02" />
+    <link rel="icon" href="icons/icon-32.png?v=recetaheas-20261029-02" type="image/png" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png?v=recetaheas-20261029-02" />
+    <link rel="stylesheet" href="styles.css?v=recetaheas-20261029-02" />
+    <link rel="stylesheet" href="heas-sheets.css?v=recetaheas-20261029-02" />
+    <style id="critical-cache-fix">
+      .template-switcher {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .template-tab {
+        --tab-color: #14715f;
+        --tab-soft: #e6f3ef;
+        display: grid;
+        grid-template-columns: 32px minmax(0, 1fr);
+        align-items: center;
+        justify-content: start;
+        gap: 9px;
+        min-height: 54px;
+        padding: 9px 11px;
+        color: #243431;
+        border-color: #b9cbc6;
+        background: #ffffff;
+        font-weight: 800;
+        line-height: 1.1;
+        text-align: left;
+      }
+
+      .template-tab[data-template="ambulatorio"] {
+        --tab-color: #14715f;
+        --tab-soft: #dff1ec;
+      }
+
+      .template-tab[data-template="internado"] {
+        --tab-color: #2f5f9e;
+        --tab-soft: #e2ecfa;
+      }
+
+      .template-tab[data-template="utiUcin"] {
+        --tab-color: #9a5b12;
+        --tab-soft: #f7ead7;
+      }
+
+      .template-tab.active {
+        color: #ffffff;
+        border-color: var(--tab-color);
+        background: var(--tab-color);
+      }
+
+      .template-tab .tab-icon {
+        display: inline-grid;
+        place-items: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 7px;
+        color: var(--tab-color);
+        background: var(--tab-soft);
+      }
+
+      .template-tab.active .tab-icon {
+        color: var(--tab-color);
+        background: #ffffff;
+      }
+
+      .template-tab .tab-icon svg {
+        display: block;
+        width: 18px;
+        height: 18px;
+        min-width: 18px;
+        min-height: 18px;
+        max-width: 18px;
+        max-height: 18px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      #clearBtn {
+        color: #b42318;
+        border-color: #efb5ae;
+        background: #fff7f6;
+      }
+
+      #clearBtn:hover {
+        color: #ffffff;
+        border-color: #b42318;
+        background: #b42318;
+      }
+
+      @media screen and (max-width: 700px) {
+        .template-switcher {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .template-tab {
+          grid-template-columns: 30px minmax(0, 1fr);
+          min-height: 52px;
+          padding: 10px 14px;
+          text-align: center;
+        }
+
+        .template-tab span:last-child {
+          overflow-wrap: normal;
+          word-break: normal;
+        }
+
+        .preview-shell {
+          display: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="app-header">
@@ -19,19 +131,35 @@
           <strong>Proyecto: RECETA HEAS</strong>
           <strong>Desarrollado por: Marcelo Oviedo L.</strong>
         </div>
+        <p class="license-notice">
+          Esta aplicacion es propiedad intelectual de Marcelo Oviedo. Se autoriza su uso interno en el Hospital El Alto Sur. La continuidad, soporte, redistribucion o modificacion requiere autorizacion del autor.
+        </p>
       </div>
       <div class="header-actions">
         <button class="ghost-button icon-button hidden" id="installBtn" type="button">
           <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v10m0 0 4-4m-4 4-4-4"/><path d="M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg>
           <span>Instalar app</span>
         </button>
-        <button class="ghost-button icon-button" id="clearBtn" type="button">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m3 21 6-6"/><path d="m7 17 4 4"/><path d="m13 3 8 8-7 7-8-8Z"/><path d="m14 4-7 7"/></svg>
-          <span>Limpiar</span>
+        <button class="ghost-button icon-button" id="saveRecipeBtn" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8"/><path d="M7 3v5h8"/></svg>
+          <span>Guardar</span>
         </button>
-        <button class="ghost-button icon-button" id="halfCartaBtn" type="button" title="Dos copias en media carta con linea de corte">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M20 4 8.5 14.5M14.5 14.5 20 20M8.5 8.5 12 12"/><path d="M8 6h12M8 18h12" stroke-dasharray="2 2"/></svg>
-          <span>Media carta</span>
+        <button class="ghost-button icon-button" id="openSavedBtn" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M5 4h14v13H5z"/><path d="M8 8h8"/><path d="M8 12h5"/></svg>
+          <span>Guardadas</span>
+        </button>
+        <button class="ghost-button icon-button" id="exportSavedBtn" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          <span>Respaldo</span>
+        </button>
+        <button class="ghost-button icon-button" id="importSavedBtn" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21V9"/><path d="m7 14 5-5 5 5"/><path d="M5 3h14"/></svg>
+          <span>Importar</span>
+        </button>
+        <input id="importSavedInput" type="file" accept="application/json,.json" hidden />
+        <button class="ghost-button icon-button" id="clearBtn" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>
+          <span>Limpiar</span>
         </button>
         <button class="ghost-button icon-button" id="pdfBtn" type="button">
           <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M8 16h8"/><path d="M8 12h8"/></svg>
@@ -47,12 +175,41 @@
     <main class="workspace">
       <section class="panel editor-panel" aria-label="Formulario de receta">
         <div class="template-switcher" role="tablist" aria-label="Tipo de recetario">
-          <button class="template-tab active" type="button" data-template="ambulatorio">Ambulatorio</button>
-          <button class="template-tab" type="button" data-template="internado">Internado</button>
-          <button class="template-tab" type="button" data-template="utiUcin">UTI / UCIN</button>
+          <button class="template-tab active" type="button" data-template="ambulatorio" aria-label="Receta ambulatoria">
+            <span class="tab-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 21v-2a4 4 0 0 1 4-4h1.5"/><path d="M15 5.5a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/><path d="M18 15v6"/><path d="M15 18h6"/></svg>
+            </span>
+            <span>Ambulatorio</span>
+          </button>
+          <button class="template-tab" type="button" data-template="internado" aria-label="Receta de internado">
+            <span class="tab-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/><path d="M10 10h4"/><path d="M12 8v4"/></svg>
+            </span>
+            <span>Internado</span>
+          </button>
+          <button class="template-tab" type="button" data-template="utiUcin" aria-label="Receta UTI UCIN">
+            <span class="tab-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 13h4l2-6 4 12 2-6h4"/><path d="M20 5v4"/><path d="M18 7h4"/></svg>
+            </span>
+            <span>UTI / UCIN</span>
+          </button>
         </div>
 
         <form id="recipeForm" autocomplete="off">
+          <fieldset>
+            <legend>Formato de impresion</legend>
+            <div class="print-layout-grid">
+              <label class="check-option">
+                <input type="radio" name="printLayout" value="full" checked />
+                <span>Una receta en hoja carta completa</span>
+              </label>
+              <label class="check-option">
+                <input type="radio" name="printLayout" value="halfCopies" />
+                <span>Dos copias verticales en hoja carta horizontal</span>
+              </label>
+            </div>
+          </fieldset>
+
           <fieldset>
             <legend>Datos del paciente</legend>
             <div class="form-grid">
@@ -92,24 +249,34 @@
                 Tipo de paciente
                 <select name="patientType">
                   <option value=""></option>
-                  <option value="SUS">Seguro Unico de Salud</option>
-                  <option value="PROGRAMAS">Programas</option>
+                  <option value="SUS">Seguro Unico de Salud - S.U.S</option>
+                  <option value="VIH">Programa - VIH</option>
+                  <option value="TUBERCULOSIS">Programa - Tuberculosis</option>
+                  <option value="SALUD RENAL">Programa - Salud Renal</option>
+                  <option value="LUCHA CONTRA EL CANCER">Programa - Lucha contra el Cancer</option>
+                  <option value="SOAT">Venta - SOAT</option>
+                  <option value="RGL">Venta - RGL</option>
                   <option value="VENTA">Venta</option>
                 </select>
               </label>
-              <div class="form-choice-group uti-only hidden">
-                <span>Tipo de paciente</span>
-                <div class="check-grid">
-                  <label class="check-option">
-                    <input type="radio" name="utiPatientType" value="SUS" />
-                    <span>SUS</span>
-                  </label>
-                  <label class="check-option">
-                    <input type="radio" name="utiPatientType" value="VENTA" />
-                    <span>Venta</span>
-                  </label>
-                </div>
-              </div>
+              <label class="uti-only hidden">
+                Cedula de identidad
+                <input name="identityCard" />
+              </label>
+              <label class="uti-only hidden">
+                Tipo de paciente
+                <select name="utiPatientType">
+                  <option value=""></option>
+                  <option value="SUS">Seguro Unico de Salud - S.U.S</option>
+                  <option value="VIH">Programa - VIH</option>
+                  <option value="TUBERCULOSIS">Programa - Tuberculosis</option>
+                  <option value="SALUD RENAL">Programa - Salud Renal</option>
+                  <option value="LUCHA CONTRA EL CANCER">Programa - Lucha contra el Cancer</option>
+                  <option value="SOAT">Venta - SOAT</option>
+                  <option value="RGL">Venta - RGL</option>
+                  <option value="VENTA">Venta</option>
+              </select>
+              </label>
             </div>
           </fieldset>
 
@@ -126,7 +293,7 @@
               </label>
               <label class="internado-only hidden">
                 Servicio de ingreso
-                <select name="admissionService" id="admissionServiceSelect"></select>
+                <input name="admissionService" id="admissionServiceSelect" list="serviceOptionsList" />
               </label>
               <label class="stay-only hidden">
                 Fecha de egreso
@@ -134,7 +301,7 @@
               </label>
               <label class="internado-only hidden">
                 Servicio de egreso
-                <select name="dischargeService" id="dischargeServiceSelect"></select>
+                <input name="dischargeService" id="dischargeServiceSelect" list="serviceOptionsList" />
               </label>
             </div>
           </fieldset>
@@ -152,9 +319,9 @@
                   <option>REFERENCIA</option>
                 </select>
               </label>
-              <label class="ambulatorio-only">
+              <label class="hidden">
                 Servicio
-                <select name="service" id="serviceSelect"></select>
+                <input name="service" id="serviceSelect" list="serviceOptionsList" />
               </label>
               <label class="internado-only hidden">
                 Tipo de ingreso
@@ -163,12 +330,12 @@
                   <option>Por referencia</option>
                   <option>Por servicio de emergencia</option>
                   <option>Por trabajo de parto</option>
-                  <option>Por consultorio externo</option>
+                  <option>Por consulta externa</option>
                 </select>
               </label>
               <label class="uti-only hidden">
                 Servicio de ingreso
-                <select name="utiAdmissionService" id="utiAdmissionServiceSelect"></select>
+                <input name="utiAdmissionService" id="utiAdmissionServiceSelect" list="serviceOptionsList" />
               </label>
               <div class="form-choice-group span-2 uti-only hidden">
                 <span>Paciente de UTI o UCIN</span>
@@ -181,8 +348,20 @@
                     <input type="checkbox" name="ucinPc82" />
                     <span>Medicamentos e insumos utilizados en la Unidad de Cuidados Intensivos Neonatales - PC 82</span>
                   </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="utiPc101" />
+                    <span>Insumos adicionales en casos especiales no internados en UTI o UCIN - PC 101</span>
+                  </label>
                 </div>
               </div>
+              <label class="span-2 internado-only hidden">
+                Diagnostico de ingreso
+                <input name="admissionDiagnosis" list="diagnosisOptions" />
+              </label>
+              <label class="internado-only hidden">
+                Codigo CIE-10 (ingreso)
+                <input name="admissionDiagnosisCode" />
+              </label>
               <label class="span-2">
                 Diagnostico principal
                 <input name="diagnosis" list="diagnosisOptions" />
@@ -193,6 +372,7 @@
               </label>
             </div>
             <datalist id="diagnosisOptions"></datalist>
+            <datalist id="serviceOptionsList"></datalist>
           </fieldset>
 
           <fieldset>
@@ -286,12 +466,57 @@
       <section class="preview-shell" aria-label="Vista previa imprimible">
         <div class="preview-toolbar">
           <strong>Vista previa</strong>
-          <span>Plantilla manual calibrable sobre hoja carta</span>
+          <span>Modelos oficiales D-1, D-2 y D-4 del Hospital El Alto Sur</span>
         </div>
-        <article class="recipe-page" id="recipePreview"></article>
+        <article class="recipe-page heas" id="recipePreview"></article>
       </section>
     </main>
 
-    <script src="app.js?v=recetaheas-20261028-01" type="module"></script>
+    <dialog class="saved-dialog" id="savedRecipesDialog">
+      <div class="saved-dialog-header">
+        <div>
+          <strong>Recetas guardadas</strong>
+          <span>Carga una receta para editarla e imprimirla nuevamente.</span>
+        </div>
+        <button class="ghost-button icon-button compact-button" id="closeSavedDialogBtn" type="button" aria-label="Cerrar">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <div class="saved-list" id="savedRecipesList"></div>
+    </dialog>
+
+    <div class="license-blocker hidden" id="licenseBlocker" role="alertdialog" aria-modal="true" aria-labelledby="licenseBlockerTitle">
+      <div class="license-blocker-card">
+        <p class="eyebrow">Licencia de uso</p>
+        <h2 id="licenseBlockerTitle">Version no autorizada</h2>
+        <p id="licenseBlockerMessage">
+          Esta version ya no esta autorizada para uso institucional. Contacte al desarrollador para soporte o
+          renovacion.
+        </p>
+        <p class="license-blocker-credit">
+          Esta aplicacion es propiedad intelectual de Marcelo Oviedo. Se autoriza su uso interno en el Hospital El Alto Sur. La continuidad, soporte, redistribucion o modificacion requiere autorizacion del autor.
+        </p>
+      </div>
+    </div>
+
+    <script src="app.js?v=recetaheas-20261029-02" type="module"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

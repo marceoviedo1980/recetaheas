@@ -1,0 +1,321 @@
+.hs{position:relative;background:#fff;color:#000;}
+.hs table.xl{border-collapse:collapse;table-layout:fixed;}
+.hs td{padding:0;overflow:visible;line-height:1.15;}
+.hs .cc{display:flex;overflow:hidden;white-space:nowrap;}
+.hs .cc>span{display:block;max-width:100%;}
+.hs .cc.ov>span{max-width:none;}
+.hs .h-l{justify-content:flex-start;}.hs .h-c{justify-content:center;text-align:center;}.hs .h-r{justify-content:flex-end;text-align:right;}
+.hs .v-t{align-items:flex-start;}.hs .v-m{align-items:center;}.hs .v-b{align-items:flex-end;}
+.hs .cc.ov{overflow:visible;}
+.hs .cc.w{white-space:pre-wrap;overflow:hidden;word-break:break-word;}
+.hs .cc.w>span{width:100%;}
+.hs .xi{position:absolute;pointer-events:none;}
+.hs .xs{position:absolute;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.3;}
+.hs .xmark{font-family:Arial,sans-serif;font-weight:700;font-size:13px;display:block;text-align:center;}
+.hs .ptxt{font-family:Arial,sans-serif;font-weight:700;font-size:8px;display:block;text-align:center;line-height:1;}
+.hs .sel{display:inline-block;border:1.5px solid #000;border-radius:50%;padding:0 3px;font-weight:700;}
+.a1{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;}
+.a2{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:14pt;font-weight:700;font-style:italic;text-align:center;vertical-align:middle;}
+.a3{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;font-weight:700;font-style:italic;vertical-align:bottom;}
+.a4{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:middle;}
+.a5{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:11pt;text-align:right;vertical-align:bottom;}
+.a6{font-family:"Arial Narrow",Arial,sans-serif;font-size:10pt;vertical-align:bottom;}
+.a7{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:middle;}
+.a8{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:bottom;}
+.a9{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;text-align:right;vertical-align:bottom;}
+.a10{font-family:"Arial Narrow",Arial,sans-serif;font-size:9pt;text-align:right;vertical-align:bottom;}
+.a11{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a12{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;vertical-align:bottom;}
+.a13{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;vertical-align:middle;}
+.a14{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:right;vertical-align:middle;}
+.a15{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a16{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:middle;}
+.a17{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:bottom;}
+.a18{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:right;vertical-align:bottom;border-right:1px solid #555555;}
+.a19{font-family:"Arial Narrow",Arial,sans-serif;font-size:10pt;vertical-align:middle;}
+.a20{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:5pt;text-align:center;vertical-align:bottom;border-bottom:1px solid #555555;}
+.a21{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:5pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-bottom:1px solid #555555;}
+.a22{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a23{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:right;vertical-align:middle;}
+.a24{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a25{font-family:"Arial Narrow",Arial,sans-serif;font-size:11pt;vertical-align:middle;}
+.a26{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:center;vertical-align:middle;}
+.a27{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a28{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a29{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;}
+.a30{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:top;border-left:1px solid #555555;}
+.a31{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;font-style:italic;vertical-align:middle;}
+.a32{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:middle;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a33{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:middle;border-top:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a34{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.a35{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;border-bottom:1px solid #555555;}
+.a36{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:middle;border-bottom:1px solid #555555;}
+.a37{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;font-style:italic;vertical-align:middle;border-bottom:1px solid #555555;}
+.a38{font-family:"Arial Narrow",Arial,sans-serif;font-size:10pt;font-weight:700;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;}
+.a39{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:bottom;border-left:1px solid #555555;}
+.a40{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:center;vertical-align:bottom;}
+.a41{font-family:Calibri,Carlito,Arial,sans-serif;font-size:8pt;vertical-align:bottom;}
+.a42{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;font-weight:700;text-align:center;vertical-align:middle;border-left:1px solid #555555;}
+.a43{font-family:"Arial Narrow",Arial,sans-serif;font-size:5pt;text-align:right;vertical-align:middle;}
+.a44{font-family:"Arial Narrow",Arial,sans-serif;font-size:5pt;text-align:right;vertical-align:bottom;}
+.a45{font-family:"Arial Narrow",Arial,sans-serif;font-size:6pt;text-align:right;vertical-align:bottom;}
+.a46{font-family:"Arial Narrow",Arial,sans-serif;font-size:7pt;text-align:right;vertical-align:bottom;}
+.a47{font-family:"Arial Narrow",Arial,sans-serif;font-size:5pt;text-align:right;vertical-align:bottom;border-right:1px solid #555555;}
+.a48{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;border-right:1px solid #555555;}
+.a49{font-family:"Arial Narrow",Arial,sans-serif;font-size:7pt;text-align:right;vertical-align:bottom;border-right:1px solid #555555;}
+.a50{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;vertical-align:bottom;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.a51{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a52{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;}
+.a53{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a54{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:center;vertical-align:middle;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.a55{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:center;vertical-align:middle;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a56{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a57{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a58{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:top;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a59{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a60{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a61{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a62{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.a63{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-bottom:1px solid #555555;}
+.a64{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a65{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-bottom:1px solid #555555;}
+.a66{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a67{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.a68{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-bottom:1px solid #555555;}
+.a69{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a70{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-bottom:1px solid #555555;}
+.a71{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a72{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;vertical-align:middle;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a73{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;vertical-align:top;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a74{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;vertical-align:bottom;}
+.a75{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;text-align:center;vertical-align:bottom;}
+.a76{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:5pt;text-align:center;vertical-align:bottom;}
+.a77{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:5pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #000000;border-bottom:1px solid #555555;}
+.a78{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;vertical-align:bottom;}
+.a79{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;font-weight:700;vertical-align:bottom;}
+.a80{font-family:"Arial Narrow",Arial,sans-serif;font-size:5pt;vertical-align:bottom;}
+.a81{font-family:"Rage Italic",Arial,sans-serif;font-size:5pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.a82{font-family:"Rage Italic",Arial,sans-serif;font-size:16pt;text-align:right;vertical-align:middle;}
+.a83{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;text-align:center;vertical-align:bottom;border-bottom:1px solid #555555;}
+.a84{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;}
+.a85{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:center;vertical-align:bottom;}
+.a86{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;}
+.a87{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;font-style:italic;text-align:center;vertical-align:bottom;}
+.a88{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;font-style:italic;vertical-align:bottom;}
+.a89{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;font-style:italic;vertical-align:middle;}
+.a90{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:center;vertical-align:middle;}
+.a91{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;vertical-align:bottom;border-bottom:1px solid #555555;}
+.a92{font-family:"Rage Italic",Arial,sans-serif;font-size:16pt;text-align:center;vertical-align:bottom;border-bottom:1px solid #555555;}
+.a93{font-family:"Rage Italic",Arial,sans-serif;font-size:16pt;text-align:center;vertical-align:bottom;}
+.a94{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;font-style:italic;vertical-align:top;}
+.a95{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;vertical-align:top;}
+.a96{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:top;}
+.a97{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;vertical-align:bottom;}
+.i1{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;}
+.i2{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:14pt;font-weight:700;text-align:center;vertical-align:middle;}
+.i3{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;font-weight:700;font-style:italic;vertical-align:bottom;}
+.i4{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:middle;}
+.i5{font-family:"Arial Narrow",Arial,sans-serif;font-size:9pt;text-align:right;vertical-align:bottom;}
+.i6{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i7{font-family:"Arial Narrow",Arial,sans-serif;font-size:10pt;vertical-align:bottom;}
+.i8{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:middle;}
+.i9{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:middle;}
+.i10{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:bottom;}
+.i11{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;text-align:right;vertical-align:bottom;}
+.i12{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;vertical-align:bottom;}
+.i13{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;text-align:center;vertical-align:middle;}
+.i14{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i15{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:bottom;}
+.i16{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:right;vertical-align:bottom;}
+.i17{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #000000;border-bottom:1px solid #555555;}
+.i18{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;vertical-align:middle;}
+.i19{font-family:"Arial Narrow",Arial,sans-serif;font-size:10pt;vertical-align:middle;}
+.i20{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:5pt;text-align:center;vertical-align:bottom;border-bottom:1px solid #555555;}
+.i21{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:right;vertical-align:middle;}
+.i22{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i23{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;text-align:center;vertical-align:middle;}
+.i24{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:right;vertical-align:middle;border-right:1px solid #555555;}
+.i25{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:top;}
+.i26{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:center;vertical-align:middle;}
+.i27{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:bottom;}
+.i28{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;font-weight:700;vertical-align:middle;}
+.i29{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;font-weight:700;vertical-align:bottom;}
+.i30{font-family:"Arial Narrow",Arial,sans-serif;font-size:6pt;font-weight:700;text-align:right;vertical-align:middle;}
+.i31{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i32{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;vertical-align:middle;}
+.i33{font-family:"Arial Narrow",Arial,sans-serif;font-size:6pt;font-weight:700;vertical-align:middle;}
+.i34{font-family:"Arial Narrow",Arial,sans-serif;font-size:6pt;font-weight:700;vertical-align:bottom;}
+.i35{font-family:Calibri,Carlito,Arial,sans-serif;font-size:6pt;vertical-align:bottom;}
+.i36{font-family:"Arial Narrow",Arial,sans-serif;font-size:6pt;font-weight:700;text-align:center;vertical-align:middle;}
+.i37{font-family:"Arial Narrow",Arial,sans-serif;font-size:5pt;font-weight:700;text-align:right;vertical-align:middle;}
+.i38{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:5pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i39{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:5pt;font-weight:700;vertical-align:bottom;}
+.i40{font-family:"Arial Narrow",Arial,sans-serif;font-size:5pt;font-weight:700;text-align:right;vertical-align:bottom;}
+.i41{font-family:"Arial Narrow",Arial,sans-serif;font-size:5pt;font-weight:700;text-align:center;vertical-align:middle;}
+.i42{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:5pt;vertical-align:middle;}
+.i43{font-family:"Arial Narrow",Arial,sans-serif;font-size:5pt;font-weight:700;text-align:right;vertical-align:bottom;border-right:1px solid #555555;}
+.i44{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;font-weight:700;vertical-align:bottom;}
+.i45{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:right;vertical-align:bottom;}
+.i46{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:center;vertical-align:bottom;}
+.i47{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;font-weight:700;vertical-align:middle;}
+.i48{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:middle;}
+.i49{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:right;vertical-align:middle;}
+.i50{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:center;vertical-align:middle;}
+.i51{font-family:"Arial Narrow",Arial,sans-serif;font-size:11pt;vertical-align:middle;}
+.i52{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:5pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;}
+.i53{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i54{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:middle;border-top:1px solid #555555;border-bottom:1px solid #555555;}
+.i55{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:top;border-top:1px solid #555555;border-left:1px solid #555555;}
+.i56{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;font-style:italic;vertical-align:middle;border-top:1px solid #555555;}
+.i57{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;font-style:italic;vertical-align:middle;}
+.i58{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.i59{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;border-bottom:1px solid #555555;}
+.i60{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:middle;border-bottom:1px solid #555555;}
+.i61{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;font-style:italic;vertical-align:middle;border-bottom:1px solid #555555;}
+.i62{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:bottom;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;}
+.i63{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:bottom;border-left:1px solid #555555;}
+.i64{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;text-align:right;vertical-align:bottom;}
+.i65{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i66{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:5pt;text-align:right;vertical-align:bottom;}
+.i67{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;font-weight:700;text-align:center;vertical-align:middle;}
+.i68{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;border-right:1px solid #555555;}
+.i69{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;text-align:right;vertical-align:middle;}
+.i70{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;text-align:right;vertical-align:bottom;border-left:1px solid #000000;}
+.i71{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:bottom;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.i72{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:center;vertical-align:bottom;border-bottom:1px solid #555555;}
+.i73{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:bottom;border-bottom:1px solid #555555;}
+.i74{font-family:"Arial Narrow",Arial,sans-serif;font-size:7pt;text-align:right;vertical-align:bottom;border-bottom:1px solid #555555;}
+.i75{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;font-weight:700;text-align:center;vertical-align:middle;border-bottom:1px solid #555555;}
+.i76{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i77{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i78{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i79{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:top;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i80{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.i81{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i82{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i83{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i84{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-bottom:1px solid #555555;}
+.i85{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i86{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-bottom:1px solid #555555;}
+.i87{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i88{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;}
+.i89{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;}
+.i90{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-right:1px solid #555555;}
+.i91{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;}
+.i92{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;vertical-align:bottom;}
+.i93{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;text-align:center;vertical-align:bottom;}
+.i94{font-family:"Arial Narrow",Arial,sans-serif;font-size:5pt;text-align:right;vertical-align:middle;}
+.i95{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;text-align:center;vertical-align:bottom;border-left:1px solid #555555;border-right:1px solid #000000;border-bottom:1px solid #555555;}
+.i96{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;vertical-align:bottom;}
+.i97{font-family:"Rage Italic",Arial,sans-serif;font-size:16pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.i98{font-family:"Rage Italic",Arial,sans-serif;font-size:16pt;text-align:right;vertical-align:middle;}
+.i99{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;text-align:center;vertical-align:bottom;border-bottom:1px solid #555555;}
+.i100{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;}
+.i101{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:center;vertical-align:bottom;}
+.i102{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;text-align:center;vertical-align:bottom;}
+.i103{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;font-style:italic;vertical-align:bottom;}
+.i104{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;text-align:center;vertical-align:bottom;}
+.i105{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;vertical-align:bottom;border-bottom:1px solid #555555;}
+.i106{font-family:"Rage Italic",Arial,sans-serif;font-size:16pt;text-align:center;vertical-align:bottom;border-bottom:1px solid #555555;}
+.u1{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:14pt;font-weight:700;text-align:center;vertical-align:middle;}
+.u2{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;}
+.u3{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:middle;}
+.u4{font-family:"Arial Narrow",Arial,sans-serif;font-size:9pt;text-align:right;vertical-align:bottom;}
+.u5{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u6{font-family:"Arial Narrow",Arial,sans-serif;font-size:10pt;vertical-align:bottom;}
+.u7{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:middle;}
+.u8{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:middle;}
+.u9{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:bottom;}
+.u10{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;text-align:right;vertical-align:bottom;}
+.u11{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;vertical-align:bottom;}
+.u12{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;text-align:center;vertical-align:middle;}
+.u13{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u14{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;font-weight:700;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.u15{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:middle;border-top:1px solid #555555;border-bottom:1px solid #555555;}
+.u16{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;font-weight:700;text-align:right;vertical-align:middle;border-top:1px solid #555555;border-bottom:1px solid #555555;}
+.u17{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u18{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;font-weight:700;vertical-align:middle;border-top:1px solid #555555;border-bottom:1px solid #555555;}
+.u19{font-family:Calibri,Carlito,Arial,sans-serif;font-size:6pt;vertical-align:bottom;}
+.u20{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;font-weight:700;vertical-align:middle;}
+.u21{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;vertical-align:bottom;}
+.u22{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;text-align:center;vertical-align:bottom;}
+.u23{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;vertical-align:middle;}
+.u24{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;vertical-align:middle;}
+.u25{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;text-align:center;vertical-align:middle;}
+.u26{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:top;}
+.u27{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;font-weight:700;vertical-align:top;}
+.u28{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:center;vertical-align:middle;}
+.u29{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;text-align:center;vertical-align:middle;}
+.u30{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:bottom;}
+.u31{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;font-weight:700;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u32{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:right;vertical-align:bottom;}
+.u33{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #000000;border-bottom:1px solid #555555;}
+.u34{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;font-weight:700;text-align:right;vertical-align:bottom;}
+.u35{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;font-weight:700;vertical-align:bottom;}
+.u36{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:bottom;}
+.u37{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:right;vertical-align:bottom;}
+.u38{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:center;vertical-align:bottom;}
+.u39{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:5pt;text-align:center;vertical-align:bottom;}
+.u40{font-family:"Arial Narrow",Arial,sans-serif;font-size:11pt;vertical-align:middle;}
+.u41{font-family:"Arial Narrow",Arial,sans-serif;font-size:10pt;vertical-align:middle;}
+.u42{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:middle;}
+.u43{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:right;vertical-align:middle;}
+.u44{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:center;vertical-align:middle;}
+.u45{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:5pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u46{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u47{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:top;border-left:1px solid #000000;}
+.u48{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;font-style:italic;vertical-align:middle;}
+.u49{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;border-left:1px solid #000000;}
+.u50{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;vertical-align:bottom;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;}
+.u51{font-family:"Arial Narrow",Arial,sans-serif;font-size:6.5pt;text-align:right;vertical-align:bottom;border-left:1px solid #555555;border-right:1px solid #555555;}
+.u52{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #000000;border-bottom:1px solid #555555;}
+.u53{font-family:Calibri,Carlito,Arial,sans-serif;font-size:6.5pt;font-weight:700;vertical-align:bottom;}
+.u54{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6.5pt;text-align:right;vertical-align:bottom;}
+.u55{font-family:"Arial Narrow",Arial,sans-serif;font-size:6.5pt;text-align:right;vertical-align:bottom;}
+.u56{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:11pt;text-align:center;vertical-align:middle;}
+.u57{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;vertical-align:bottom;}
+.u58{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;vertical-align:middle;}
+.u59{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;border-right:1px solid #555555;}
+.u60{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:11pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u61{font-family:Calibri,Carlito,Arial,sans-serif;font-size:8pt;font-weight:700;vertical-align:bottom;}
+.u62{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:bottom;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.u63{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;text-align:center;vertical-align:bottom;border-bottom:1px solid #555555;}
+.u64{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;vertical-align:bottom;border-bottom:1px solid #555555;}
+.u65{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;border-bottom:1px solid #555555;}
+.u66{font-family:"Arial Narrow",Arial,sans-serif;font-size:7pt;text-align:right;vertical-align:bottom;border-bottom:1px solid #555555;}
+.u67{font-family:"Arial Narrow",Arial,sans-serif;font-size:8pt;font-weight:700;text-align:center;vertical-align:middle;border-bottom:1px solid #555555;}
+.u68{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;vertical-align:bottom;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u69{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u70{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u71{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:6pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u72{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.u73{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u74{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u75{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u76{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-bottom:1px solid #555555;}
+.u77{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u78{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-bottom:1px solid #555555;}
+.u79{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u80{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.u81{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;vertical-align:middle;border-top:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u82{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-bottom:1px solid #555555;}
+.u83{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.u84{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-bottom:1px solid #555555;}
+.u85{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u86{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;border-left:1px solid #555555;border-bottom:1px solid #555555;}
+.u87{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;vertical-align:bottom;}
+.u88{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;text-align:center;vertical-align:bottom;}
+.u89{font-family:"Arial Narrow",Arial,sans-serif;font-size:5pt;text-align:right;vertical-align:middle;}
+.u90{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:9pt;text-align:center;vertical-align:bottom;border-left:1px solid #555555;border-right:1px solid #000000;border-bottom:1px solid #555555;}
+.u91{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:10pt;font-weight:700;vertical-align:bottom;}
+.u92{font-family:"Rage Italic",Arial,sans-serif;font-size:16pt;text-align:center;vertical-align:middle;border-top:1px solid #555555;border-left:1px solid #555555;border-right:1px solid #555555;border-bottom:1px solid #555555;}
+.u93{font-family:"Rage Italic",Arial,sans-serif;font-size:16pt;text-align:right;vertical-align:middle;}
+.u94{font-family:Calibri,Carlito,Arial,sans-serif;font-size:11pt;text-align:center;vertical-align:bottom;border-bottom:1px solid #555555;}
+.u95{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:center;vertical-align:bottom;border-top:1px solid #555555;}
+.u96{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;text-align:center;vertical-align:bottom;}
+.u97{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;text-align:center;vertical-align:bottom;}
+.u98{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:7pt;font-style:italic;vertical-align:bottom;}
+.u99{font-family:Arial,Helvetica,"Liberation Sans",sans-serif;font-size:8pt;vertical-align:bottom;border-bottom:1px solid #555555;}
+.u100{font-family:"Rage Italic",Arial,sans-serif;font-size:16pt;text-align:center;vertical-align:bottom;border-bottom:1px solid #555555;}
+.u101{font-family:"Rage Italic",Arial,sans-serif;font-size:16pt;text-align:center;vertical-align:bottom;}
+.u102{font-family:"Rage Italic",Arial,sans-serif;font-size:6pt;text-align:center;vertical-align:bottom;}

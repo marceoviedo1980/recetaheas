@@ -4,8 +4,8 @@
   --line: #c9d5d1;
   --soft: #edf3f1;
   --panel: #ffffff;
-  --accent: #146c5d;
-  --accent-dark: #0d4d43;
+  --accent: #17356b;
+  --accent-dark: #0f2549;
   --danger: #9d2c2c;
 }
 
@@ -57,9 +57,66 @@ h1 {
   line-height: 1.25;
 }
 
+.license-notice {
+  max-width: 720px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.license-blocker {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(11, 27, 24, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.license-blocker.hidden {
+  display: none;
+}
+
+.license-blocker-card {
+  width: min(560px, 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 24px;
+  background: #ffffff;
+  color: var(--ink);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+}
+
+.license-blocker-card h2 {
+  margin: 2px 0 12px;
+  font-size: 26px;
+}
+
+.license-blocker-card p {
+  margin: 8px 0 0;
+  line-height: 1.55;
+}
+
+.license-blocker-credit {
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+body.license-locked {
+  overflow: hidden;
+}
+
 .header-actions {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 10px;
+  max-width: 760px;
 }
 
 button {
@@ -106,6 +163,28 @@ button {
   color: var(--accent-dark);
 }
 
+#clearBtn {
+  color: #b42318;
+  border-color: #efb5ae;
+  background: #fff7f6;
+}
+
+#clearBtn:hover {
+  color: #ffffff;
+  border-color: #b42318;
+  background: #b42318;
+}
+
+.compact-button {
+  min-height: 32px;
+  padding: 6px 10px;
+}
+
+.saved-flash {
+  border-color: var(--accent);
+  background: #dff0eb;
+}
+
 .workspace {
   display: grid;
   grid-template-columns: minmax(360px, 0.9fr) minmax(560px, 1.1fr);
@@ -127,20 +206,90 @@ button {
 
 .template-switcher {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
   margin-bottom: 16px;
 }
 
 .template-tab {
-  color: var(--muted);
-  background: var(--soft);
+  --tab-color: var(--accent);
+  --tab-soft: #e6f3ef;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  align-items: center;
+  justify-content: start;
+  gap: 9px;
+  min-height: 54px;
+  padding: 9px 11px;
+  color: #243431;
+  border-color: #b9cbc6;
+  background: #ffffff;
+  box-shadow: 0 1px 0 rgba(17, 33, 31, 0.04);
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.template-tab[data-template="ambulatorio"] {
+  --tab-color: #14715f;
+  --tab-soft: #dff1ec;
+}
+
+.template-tab[data-template="internado"] {
+  --tab-color: #2f5f9e;
+  --tab-soft: #e2ecfa;
+}
+
+.template-tab[data-template="utiUcin"] {
+  --tab-color: #9a5b12;
+  --tab-soft: #f7ead7;
+}
+
+.template-tab:hover {
+  border-color: var(--tab-color);
+  background: var(--tab-soft);
 }
 
 .template-tab.active {
   color: #ffffff;
-  border-color: var(--accent);
-  background: var(--accent);
+  border-color: var(--tab-color);
+  background: var(--tab-color);
+  box-shadow: 0 8px 18px rgba(18, 85, 74, 0.18);
+}
+
+.template-tab .tab-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  color: var(--tab-color);
+  background: var(--tab-soft);
+}
+
+.template-tab.active .tab-icon {
+  color: var(--tab-color);
+  background: #ffffff;
+}
+
+.template-tab .tab-icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.template-tab span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 fieldset {
@@ -171,6 +320,11 @@ legend {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
+}
+
+.print-layout-grid {
+  display: grid;
+  gap: 10px;
 }
 
 .uti-program-grid {
@@ -271,6 +425,81 @@ textarea {
   border-color: #e7baba;
 }
 
+.saved-dialog {
+  width: min(760px, calc(100vw - 28px));
+  max-height: min(720px, calc(100vh - 36px));
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+}
+
+.saved-dialog::backdrop {
+  background: rgba(17, 25, 23, 0.42);
+}
+
+.saved-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.saved-dialog-header div {
+  display: grid;
+  gap: 4px;
+}
+
+.saved-dialog-header strong {
+  font-size: 18px;
+}
+
+.saved-dialog-header span,
+.saved-recipe-card span,
+.saved-empty {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.saved-list {
+  display: grid;
+  gap: 10px;
+  max-height: calc(100vh - 150px);
+  overflow: auto;
+  padding: 14px 16px 16px;
+}
+
+.saved-recipe-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfc;
+}
+
+.saved-recipe-card > div:first-child {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.saved-recipe-card strong {
+  overflow-wrap: anywhere;
+}
+
+.saved-recipe-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
 .preview-shell {
   overflow: auto;
 }
@@ -289,7 +518,7 @@ textarea {
   width: 216mm;
   min-height: 279mm;
   margin: 18px auto;
-  padding: 6mm 7mm 5mm;
+  padding: 6mm;
   background: #ffffff;
   border: 1px solid #aeb9b6;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
@@ -298,11 +527,490 @@ textarea {
 }
 
 .recipe-page.is-ambulatorio {
-  padding-top: 11mm;
+  padding: 6mm;
 }
 
 .recipe-page.is-uti-ucin {
-  padding: 4.5mm 5mm 3.5mm;
+  padding: 6mm 6mm 12mm;
+}
+
+.recipe-page.is-half-copies {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  width: 279mm;
+  min-height: 216mm;
+  padding: 0;
+  overflow: hidden;
+}
+
+.half-sheet-copy {
+  position: relative;
+  width: 139.5mm;
+  height: 216mm;
+  padding: 6mm;
+  overflow: hidden;
+}
+
+.half-copy-content {
+  width: 204mm;
+  transform: scale(0.625, 0.89);
+  transform-origin: top left;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .half-sheet-copy,
+.recipe-page.is-half-copies.is-internado .half-sheet-copy {
+  padding: 5mm;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .half-copy-content {
+  width: 198mm;
+  transform: scale(0.654, 1.06);
+  transform-origin: top left;
+  zoom: 1;
+}
+
+.recipe-page.is-half-copies.is-internado .half-copy-content {
+  width: 198mm;
+  transform: scale(0.654, 1);
+  transform-origin: top left;
+  zoom: 1;
+}
+
+.recipe-page.is-half-copies.is-uti-ucin .half-copy-content {
+  transform: scale(0.625, 1.08);
+}
+
+.recipe-page.is-half-copies .legal-template {
+  font-size: 6.45pt;
+  line-height: 1;
+}
+
+.recipe-page.is-half-copies .official-header-ambulatorio {
+  grid-template-columns: 36mm 1fr 42mm;
+  min-height: 27mm;
+  column-gap: 3mm;
+}
+
+.recipe-page.is-half-copies .official-header-ambulatorio .official-brand-left {
+  padding-top: 0;
+  font-size: 5.6pt;
+}
+
+.recipe-page.is-half-copies .official-header-ambulatorio .official-brand-left::before {
+  content: none;
+}
+
+.recipe-page.is-half-copies .official-title-ambulatorio {
+  align-self: center;
+  padding-top: 0;
+}
+
+.recipe-page.is-half-copies .official-title-ambulatorio {
+  font-size: 7.8pt;
+  line-height: 1;
+}
+
+.recipe-page.is-half-copies .official-ambulatorio-side {
+  padding-top: 5mm;
+}
+
+.recipe-page.is-half-copies .official-ambulatorio-side .official-patient-panel {
+  width: 42mm;
+}
+
+.recipe-page.is-half-copies .official-ambulatorio-side .official-patient-panel div {
+  grid-template-columns: 23mm 19mm;
+  min-height: 3.25mm;
+}
+
+.recipe-page.is-half-copies .official-ambulatorio-side .official-patient-panel span {
+  min-height: 3.25mm;
+}
+
+.recipe-page.is-half-copies .official-ambulatorio-side .official-panel-extra .official-date {
+  grid-template-columns: 14mm repeat(3, 9.3mm);
+  width: 42mm;
+}
+
+.recipe-page.is-half-copies .official-ambulatorio-side .official-panel-request-row {
+  width: 52mm;
+  margin-left: -10mm;
+  gap: 0.7mm;
+  grid-template-columns: 10mm 42mm !important;
+}
+
+.recipe-page.is-half-copies .official-ambulatorio-side .official-panel-request-row .official-date {
+  grid-template-columns: 14mm repeat(3, 9.3mm);
+  width: 42mm;
+}
+
+.recipe-page.is-half-copies .official-ambulatorio-side .official-panel-extra .official-date span {
+  min-height: 3mm;
+}
+
+.recipe-page.is-half-copies .official-panel-extra {
+  gap: 0.7mm;
+  margin-top: 2.4mm;
+}
+
+.recipe-page.is-half-copies .official-panel-extra .official-date strong {
+  font-size: 4.6pt;
+}
+
+.recipe-page.is-half-copies .official-panel-extra .official-date em {
+  font-size: 4.4pt;
+}
+
+.recipe-page.is-half-copies .official-panel-sex {
+  min-height: 3.2mm !important;
+}
+
+.recipe-page.is-half-copies .official-panel-sex strong {
+  font-size: 4.8pt;
+}
+
+.recipe-page.is-half-copies .official-panel-sex .official-box {
+  width: 3mm;
+  height: 3mm;
+}
+
+.recipe-page.is-half-copies .legal-ambulatorio .official-meta-lines {
+  margin: 0 0 0.6mm;
+  font-size: 5.6pt;
+}
+
+.recipe-page.is-half-copies .legal-ambulatorio .official-form {
+  gap: 0.55mm;
+}
+
+.recipe-page.is-half-copies .legal-ambulatorio .official-field {
+  min-height: 2.9mm;
+}
+
+.recipe-page.is-half-copies .legal-ambulatorio .official-fill {
+  min-height: 2.55mm;
+}
+
+.recipe-page.is-half-copies .legal-ambulatorio .official-diagnosis {
+  gap: 0.45mm;
+}
+
+.recipe-page.is-half-copies .legal-ambulatorio .official-diagnosis-row {
+  grid-template-columns: 23mm 5.5mm 1fr 16mm;
+}
+
+.recipe-page.is-half-copies .legal-ambulatorio .official-meta-lines {
+  margin: -0.5mm 0 1mm;
+}
+
+.recipe-page.is-half-copies .legal-ambulatorio .official-form {
+  gap: 0.75mm;
+}
+
+.recipe-page.is-half-copies .legal-ambulatorio .official-field {
+  min-height: 3.6mm;
+}
+
+.recipe-page.is-half-copies .legal-ambulatorio .official-fill {
+  min-height: 3mm;
+}
+
+.recipe-page.is-half-copies .legal-ambulatorio .official-diagnosis {
+  margin-top: 0.15mm;
+}
+
+.recipe-page.is-half-copies .legal-title {
+  height: 8.6mm;
+  font-size: 9.8pt;
+}
+
+.recipe-page.is-half-copies .manual-meta-header {
+  grid-template-columns: 1fr 50mm;
+  min-height: 12mm;
+  margin-bottom: 0.3mm;
+  font-size: 6.3pt;
+}
+
+.recipe-page.is-half-copies .manual-meta-left {
+  row-gap: 0.45mm;
+  padding-top: 0.4mm;
+}
+
+.recipe-page.is-half-copies .manual-meta-right {
+  grid-template-rows: repeat(4, 3mm);
+}
+
+.recipe-page.is-half-copies .manual-meta-row {
+  grid-template-columns: 34mm 1fr;
+  min-height: 3mm;
+}
+
+.recipe-page.is-half-copies .manual-meta-row strong {
+  font-size: 5.6pt;
+}
+
+.recipe-page.is-half-copies .manual-meta-row span {
+  padding: 0.2mm 0.6mm;
+  font-size: 5.9pt;
+}
+
+.recipe-page.is-half-copies .legal-table td,
+.recipe-page.is-half-copies .legal-table th {
+  min-height: 2.6mm;
+  padding: 0.28mm 0.5mm;
+}
+
+.recipe-page.is-half-copies .legal-table th {
+  font-size: 5.7pt;
+}
+
+.recipe-page.is-half-copies .legal-table small {
+  font-size: 4.85pt;
+}
+
+.recipe-page.is-half-copies .legal-compact td {
+  height: 3.65mm;
+}
+
+.recipe-page.is-half-copies .diagnosis-manual td {
+  height: 3.25mm;
+}
+
+.recipe-page.is-half-copies .manual-section-title {
+  min-height: 3mm;
+  padding: 0.3mm 0.55mm;
+  font-size: 6.6pt;
+}
+
+.recipe-page.is-half-copies .manual-services {
+  padding: 0.25mm 0.55mm;
+  column-gap: 0.8mm;
+}
+
+.recipe-page.is-half-copies .manual-services div {
+  min-height: 2.75mm;
+  gap: 0.45mm;
+  font-size: 4.9pt;
+}
+
+.recipe-page.is-half-copies .legal-box {
+  width: 2.45mm;
+  height: 2.45mm;
+  font-size: 4.9pt;
+}
+
+.recipe-page.is-half-copies .date-trio span {
+  min-height: 3.15mm;
+}
+
+.recipe-page.is-half-copies .date-trio b {
+  font-size: 4.45pt;
+}
+
+.recipe-page.is-half-copies .medicine-manual th,
+.recipe-page.is-half-copies .medicine-manual td {
+  height: 3.75mm;
+}
+
+.recipe-page.is-half-copies .medicine-manual td {
+  font-size: 6.45pt;
+  line-height: 1.08;
+}
+
+.recipe-page.is-half-copies .medicine-manual td.center {
+  font-size: 6.75pt;
+}
+
+.recipe-page.is-half-copies .observations-manual td {
+  height: 4.4mm;
+}
+
+.recipe-page.is-half-copies .observations-cell strong {
+  margin-bottom: 0.7mm;
+}
+
+.recipe-page.is-half-copies .observations-cell div {
+  font-size: 6.35pt;
+  line-height: 1.1;
+}
+
+.recipe-page.is-half-copies .signature-manual {
+  min-height: 22.2mm;
+  padding: 0.8mm 1.2mm 0;
+  column-gap: 2mm;
+}
+
+.recipe-page.is-half-copies .signature-area {
+  min-height: 15mm;
+  font-size: 5.95pt;
+}
+
+.recipe-page.is-half-copies .signature-line,
+.recipe-page.is-half-copies .patient-signature .signature-line {
+  height: 8.5mm;
+}
+
+.recipe-page.is-half-copies .signature-area span {
+  min-height: 1.4mm;
+}
+
+.recipe-page.is-half-copies .ci-row {
+  grid-template-columns: 3.6mm 1fr;
+}
+
+.recipe-page.is-half-copies .ci-line {
+  height: 2.1mm;
+}
+
+.recipe-page.is-half-copies .signature-manual p {
+  min-height: 2.6mm;
+  padding: 0.3mm 0;
+  font-size: 5.4pt;
+}
+
+.recipe-page.is-half-copies .establishment-stamp {
+  width: 14mm;
+  height: 14mm;
+  font-size: 5pt;
+}
+
+.recipe-page.is-half-copies .uti-template {
+  font-size: 5.7pt;
+}
+
+.recipe-page.is-half-copies .uti-official-header {
+  grid-template-columns: 30mm 1fr 38mm;
+  column-gap: 2mm;
+  min-height: 14mm;
+  margin-bottom: 0.35mm;
+}
+
+.recipe-page.is-half-copies .uti-official-side {
+  gap: 0.25mm;
+  font-size: 5pt;
+}
+
+.recipe-page.is-half-copies .uti-official-side .official-patient-panel {
+  width: 28mm;
+  font-size: 3.95pt;
+}
+
+.recipe-page.is-half-copies .uti-official-side .official-patient-panel div {
+  grid-template-columns: 13mm 15mm;
+  min-height: 3.1mm;
+}
+
+.recipe-page.is-half-copies .uti-official-side .official-patient-panel span {
+  min-height: 3.1mm;
+  font-size: 4.6pt;
+}
+
+.recipe-page.is-half-copies .uti-official-side .official-date {
+  grid-template-columns: auto repeat(3, 5.4mm);
+}
+
+.recipe-page.is-half-copies .uti-side-row {
+  gap: 1.4mm;
+  font-size: 5.2pt;
+}
+
+.recipe-page.is-half-copies .uti-open-meta {
+  gap: 0.35mm 2mm;
+  margin: 0.3mm 0;
+  font-size: 5.2pt;
+}
+
+.recipe-page.is-half-copies .uti-open-meta div {
+  grid-template-columns: 22mm 1fr;
+}
+
+.recipe-page.is-half-copies .uti-open-meta span {
+  min-height: 2.4mm;
+}
+
+.recipe-page.is-half-copies .uti-open-form {
+  gap: 0.35mm;
+  font-size: 5.3pt;
+}
+
+.recipe-page.is-half-copies .uti-open-diagnosis,
+.recipe-page.is-half-copies .uti-diagnosis-list {
+  gap: 0.25mm;
+}
+
+.recipe-page.is-half-copies .uti-diagnosis-list div {
+  grid-template-columns: 5mm 1fr;
+}
+
+.recipe-page.is-half-copies .uti-open-programs {
+  gap: 0.2mm;
+  margin: 0.4mm 0;
+  font-size: 4.8pt;
+}
+
+.recipe-page.is-half-copies .uti-open-programs div {
+  grid-template-columns: 1fr 3mm 6mm;
+  gap: 0.45mm;
+  min-height: 2.4mm;
+}
+
+.recipe-page.is-half-copies .uti-medicine-table th {
+  height: 3.45mm;
+  font-size: 5.6pt;
+}
+
+.recipe-page.is-half-copies .uti-medicine-table td {
+  height: 3.7mm;
+  font-size: 5.55pt;
+}
+
+.recipe-page.is-half-copies .uti-observations td {
+  height: 3.8mm;
+  font-size: 5.5pt;
+}
+
+.recipe-page.is-half-copies .uti-footer {
+  column-gap: 1.8mm;
+  padding: 2mm 1.4mm 0 3mm;
+  font-size: 5.2pt;
+}
+
+.recipe-page.is-half-copies .uti-footer-sign::before,
+.recipe-page.is-half-copies .uti-authorization::before {
+  height: 7mm;
+  margin-bottom: 0.45mm;
+}
+
+.recipe-page.is-half-copies .uti-authorization {
+  padding-top: 1mm;
+}
+
+.recipe-page.is-half-copies .uti-authorization span {
+  margin-top: 1.2mm;
+}
+
+.recipe-page.is-half-copies .uti-costs {
+  font-size: 4.7pt;
+}
+
+.recipe-page.is-half-copies .uti-costs div,
+.recipe-page.is-half-copies .uti-costs span {
+  min-height: 3.5mm;
+}
+
+.recipe-page.is-half-copies .uti-footer p {
+  font-size: 4.75pt;
+}
+
+.sheet-cut-line {
+  position: absolute;
+  z-index: 2;
+  top: 4mm;
+  bottom: 4mm;
+  left: 50%;
+  border-left: 0.35mm dashed #777777;
 }
 
 .recipe-page.pdf-exporting {
@@ -327,6 +1035,619 @@ textarea {
   font-size: 12.4pt;
   font-weight: 800;
   line-height: 1.08;
+}
+
+.official-header {
+  display: grid;
+  grid-template-columns: 42mm 1fr 42mm;
+  align-items: start;
+  column-gap: 5mm;
+  min-height: 20mm;
+  position: relative;
+}
+
+.official-header-internado {
+  grid-template-columns: 48mm 1fr 42mm;
+  min-height: 21mm;
+}
+
+.official-brand-left,
+.official-address {
+  font-size: 7pt;
+  line-height: 1.18;
+}
+
+.official-brand-left small {
+  display: block;
+  margin-top: 0;
+  font-size: 6.5pt;
+}
+
+.official-header-ambulatorio {
+  grid-template-columns: 48mm 1fr 56mm;
+  min-height: 29mm;
+  column-gap: 4mm;
+}
+
+.official-header-ambulatorio .official-brand-left {
+  padding-top: 2.5mm;
+  font-size: 7pt;
+  font-weight: 700;
+}
+
+.official-header-ambulatorio .official-brand-left::before {
+  content: none;
+}
+
+.official-title {
+  align-self: center;
+  text-align: center;
+  font-size: 10.8pt;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.official-title-ambulatorio {
+  align-self: start;
+  padding-top: 12mm;
+  font-size: 10.8pt;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.official-ambulatorio-side {
+  grid-column: 3;
+  display: grid;
+  justify-items: end;
+  gap: 0.75mm;
+  padding-top: 5mm;
+}
+
+.official-title-strong {
+  font-size: 11pt;
+  letter-spacing: 0;
+}
+
+.official-header-internado .official-title-strong {
+  font-size: 9.4pt;
+  line-height: 1;
+}
+
+.official-patient-panel {
+  grid-column: 3;
+  justify-self: end;
+  width: 42mm;
+  margin-top: 12mm;
+  font-size: 5.8pt;
+}
+
+.official-ambulatorio-side .official-patient-panel {
+  grid-column: auto;
+  width: 54mm;
+  margin-top: 0;
+}
+
+.official-ambulatorio-side .official-patient-panel div {
+  grid-template-columns: 32mm 22mm;
+  min-height: 4.4mm;
+}
+
+.official-ambulatorio-side .official-patient-panel span {
+  min-height: 4.4mm;
+  border-radius: 1.5mm;
+}
+
+.official-ambulatorio-side .official-panel-extra .official-date {
+  grid-template-columns: 22mm repeat(3, 10.6mm);
+  width: 54mm;
+}
+
+.official-ambulatorio-side .official-panel-request-row {
+  width: 68mm;
+  margin-left: -14mm;
+  grid-template-columns: 13mm 54mm !important;
+}
+
+.official-ambulatorio-side .official-panel-request-row .official-date {
+  grid-template-columns: 22mm repeat(3, 10.6mm);
+  width: 54mm;
+}
+
+.official-ambulatorio-side .official-panel-extra .official-date span {
+  min-height: 4.1mm;
+  border-radius: 0;
+}
+
+.official-ambulatorio-side .official-panel-sex {
+  justify-content: flex-end;
+}
+
+.official-header-internado .official-patient-panel {
+  margin-top: 14mm;
+  width: 48mm;
+  font-size: 5.25pt;
+}
+
+.official-header-internado .official-patient-panel div {
+  grid-template-columns: 27mm 21mm;
+}
+
+.official-header-internado .official-patient-panel strong {
+  white-space: nowrap;
+}
+
+.official-patient-panel div {
+  display: grid;
+  grid-template-columns: 20mm 22mm;
+  align-items: center;
+  min-height: 5mm;
+}
+
+.official-patient-panel strong {
+  justify-self: end;
+  padding-right: 1.2mm;
+  line-height: 1;
+  text-align: right;
+}
+
+.official-patient-panel span {
+  display: grid;
+  place-items: center;
+  min-height: 5mm;
+  border: 0.08mm solid #000000;
+  border-bottom: 0;
+  font-size: 7.3pt;
+  font-weight: 800;
+}
+
+.official-patient-panel div:last-child span {
+  border-bottom: 0.08mm solid #000000;
+}
+
+.official-panel-extra {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 1.05mm;
+  margin-top: 4.2mm;
+  min-height: 0 !important;
+}
+
+.official-panel-extra .official-date {
+  display: grid;
+  grid-template-columns: 16mm repeat(3, 8.65mm);
+  width: 42mm;
+}
+
+.official-panel-extra .official-date strong {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.8mm;
+  font-size: 5.6pt;
+  line-height: 1;
+  text-align: right;
+  white-space: normal;
+}
+
+.official-panel-extra .official-date span {
+  min-height: 4.4mm;
+}
+
+.official-panel-extra .official-date em {
+  font-size: 5.2pt;
+}
+
+.official-panel-sex {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end;
+  gap: 1mm;
+  min-height: 4.4mm !important;
+  white-space: nowrap;
+}
+
+.official-panel-sex strong {
+  padding-right: 0 !important;
+  font-size: 6.2pt;
+}
+
+.official-panel-sex .official-box {
+  width: 4mm;
+  height: 4mm;
+}
+
+.official-panel-request-row {
+  display: grid !important;
+  grid-template-columns: auto 1fr !important;
+  align-items: center;
+  gap: 1mm;
+  min-height: 0 !important;
+}
+
+.official-panel-request-row .official-date {
+  width: auto;
+}
+
+.official-panel-request-row .official-panel-sex {
+  justify-content: flex-start;
+}
+
+.official-meta-lines {
+  display: grid;
+  grid-template-columns: 28mm 35mm 1fr;
+  gap: 2mm 7mm;
+  margin: -2mm 0 2mm;
+  font-size: 7pt;
+}
+
+.legal-ambulatorio .official-meta-lines {
+  grid-template-columns: 24mm 42mm 1fr;
+  gap: 1mm 6mm;
+  margin: -1.5mm 0 1mm;
+  font-size: 8.2pt;
+}
+
+.legal-ambulatorio .official-form {
+  gap: 1mm;
+  font-size: 8.1pt;
+}
+
+.legal-ambulatorio .official-field {
+  min-height: 4mm;
+}
+
+.legal-ambulatorio .official-fill {
+  min-height: 3.3mm;
+}
+
+.legal-ambulatorio .official-diagnosis {
+  gap: 0.75mm;
+  margin-top: 0.4mm;
+}
+
+.legal-ambulatorio .official-diagnosis-row {
+  grid-template-columns: 30mm 7mm 1fr 20mm;
+}
+
+.official-meta-lines div:nth-child(3),
+.official-meta-lines div:nth-child(4) {
+  grid-column: 1 / -1;
+}
+
+.internado-meta {
+  grid-template-columns: 32mm 42mm 1fr;
+  margin-top: -1mm;
+  font-size: 8pt;
+}
+
+.official-form {
+  display: grid;
+  gap: 1.2mm;
+  font-size: 7.2pt;
+}
+
+.official-row,
+.official-two-col {
+  display: grid;
+  align-items: end;
+  gap: 2mm;
+}
+
+.official-two-col {
+  grid-template-columns: 1fr 1fr;
+}
+
+.official-field {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: end;
+  gap: 1mm;
+  min-height: 4.6mm;
+}
+
+.official-label {
+  white-space: nowrap;
+  font-weight: 800;
+}
+
+.official-fill {
+  min-height: 3.8mm;
+  border-bottom: 0.18mm dotted #000000;
+  font-size: 8.4pt;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.official-attention-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2.2mm;
+}
+
+.official-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8mm;
+  white-space: nowrap;
+}
+
+.official-box {
+  display: inline-grid;
+  place-items: center;
+  width: 4mm;
+  height: 4mm;
+  border: 0.16mm solid #000000;
+  font-size: 7pt;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.with-side-date {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.official-sex-date {
+  display: flex;
+  align-items: end;
+  gap: 1.2mm;
+  white-space: nowrap;
+}
+
+.official-sex-request-row {
+  justify-content: end;
+}
+
+.official-date {
+  display: inline-grid;
+  grid-template-columns: auto repeat(3, 9mm);
+  align-items: end;
+  gap: 0;
+  font-size: 6.2pt;
+  white-space: nowrap;
+}
+
+.official-date strong {
+  padding-right: 1.5mm;
+}
+
+.official-date span {
+  display: grid;
+  grid-template-rows: auto 4.2mm;
+  place-items: center;
+  border: 0.08mm solid #000000;
+  border-right: 0;
+  font-weight: 800;
+}
+
+.official-date span:last-child {
+  border-right: 0.08mm solid #000000;
+}
+
+.official-date em {
+  width: 100%;
+  border-bottom: 0.08mm solid #000000;
+  font-size: 5.2pt;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+}
+
+.uti-official-header {
+  grid-template-columns: 48mm 1fr 58mm;
+  min-height: 23mm;
+  margin-bottom: 1mm;
+}
+
+.uti-official-side {
+  display: grid;
+  justify-items: end;
+  gap: 1mm;
+  font-size: 6.4pt;
+}
+
+.uti-official-side .official-patient-panel {
+  grid-column: auto;
+  width: 50mm;
+  margin-top: 0;
+}
+
+.uti-official-side .official-patient-panel div {
+  grid-template-columns: 29mm 21mm;
+}
+
+.uti-official-side .official-patient-panel strong {
+  white-space: nowrap;
+}
+
+.uti-official-side .official-date {
+  grid-template-columns: auto repeat(3, 8.5mm);
+}
+
+.uti-side-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3mm;
+  font-size: 7pt;
+}
+
+.uti-open-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1mm 5mm;
+  margin: 1mm 0 1.5mm;
+  font-size: 7.2pt;
+}
+
+.uti-open-meta div {
+  display: grid;
+  grid-template-columns: 34mm 1fr;
+  align-items: end;
+}
+
+.uti-open-meta span {
+  min-height: 3.8mm;
+  border-bottom: 0.18mm dotted #000000;
+  font-weight: 800;
+}
+
+.uti-open-form {
+  display: grid;
+  gap: 1mm;
+  font-size: 7.2pt;
+}
+
+.uti-open-meta strong,
+.uti-open-form strong,
+.official-form strong,
+.official-check,
+.official-date strong,
+.official-meta-lines strong,
+.manual-meta-header strong,
+.legal-template th,
+.legal-template td strong,
+.signature-manual strong,
+.signature-area strong,
+.patient-signature strong {
+  font-weight: 800;
+}
+
+.uti-open-diagnosis {
+  display: grid;
+  gap: 1mm;
+  margin-top: 0.6mm;
+}
+
+.uti-diagnosis-list {
+  display: grid;
+  gap: 0.8mm;
+}
+
+.uti-diagnosis-list div {
+  display: grid;
+  grid-template-columns: 8mm 1fr;
+  align-items: end;
+}
+
+.uti-open-programs {
+  display: grid;
+  gap: 0.8mm;
+  width: 148mm;
+  max-width: 100%;
+  margin: 1mm auto;
+  font-size: 6.2pt;
+  text-align: center;
+}
+
+.uti-open-programs div {
+  display: grid;
+  grid-template-columns: 1fr 4mm 9mm;
+  align-items: center;
+  justify-content: stretch;
+  gap: 1mm;
+}
+
+.uti-open-programs div > span {
+  justify-self: end;
+  white-space: nowrap;
+}
+
+.uti-open-programs .official-box {
+  margin-left: 0;
+}
+
+.uti-open-programs strong {
+  justify-self: start;
+  white-space: nowrap;
+}
+
+.official-diagnosis {
+  display: grid;
+  gap: 0.9mm;
+  margin-top: 0.5mm;
+}
+
+.official-diagnosis-title,
+.official-diagnosis-row {
+  display: grid;
+  grid-template-columns: 31mm 7mm 1fr 22mm;
+  align-items: end;
+  gap: 1mm;
+}
+
+.official-diagnosis-title {
+  grid-template-columns: 39mm 1fr 22mm;
+  min-height: 5mm;
+  border: 0.08mm solid #000000;
+  border-bottom: 0;
+  padding: 0.8mm 1mm;
+}
+
+.official-diagnosis-title strong:first-child {
+  grid-column: 1 / 3;
+}
+
+.official-diagnosis-title strong:last-child {
+  justify-self: stretch;
+  text-align: center;
+}
+
+.official-code,
+.official-code-label,
+.official-code-stack {
+  text-align: center;
+}
+
+.official-code-stack {
+  align-self: stretch;
+  display: grid;
+  border: 0.08mm solid #000000;
+  border-bottom: 0;
+}
+
+.official-code-stack strong {
+  display: grid;
+  place-items: center;
+  min-height: 3.2mm;
+  border-bottom: 0.08mm solid #000000;
+  font-weight: 800;
+}
+
+.official-code-stack .official-fill {
+  display: grid;
+  place-items: center;
+  min-height: 3.8mm;
+  border-bottom: 0;
+}
+
+.diagnosis-label {
+  font-weight: 800;
+}
+
+.diagnosis-label.main {
+  grid-column: 1 / 3;
+}
+
+.diagnosis-number {
+  font-weight: 800;
+  text-align: right;
+}
+
+.official-diagnosis.internado {
+  gap: 0;
+  margin-top: 1mm;
+}
+
+.official-diagnosis.internado .official-diagnosis-row {
+  min-height: 5.4mm;
+  border-left: 0.08mm solid #000000;
+  border-right: 0.08mm solid #000000;
+  padding: 0 1mm;
+}
+
+.official-diagnosis.internado .official-diagnosis-row:last-child {
+  border-bottom: 0.08mm solid #000000;
 }
 
 .manual-meta-header {
@@ -355,7 +1676,7 @@ textarea {
 .manual-meta-right {
   display: grid;
   grid-template-rows: repeat(4, 4.15mm);
-  border: 0.24mm solid #000000;
+  border: 0.08mm solid #000000;
   border-bottom: 0;
 }
 
@@ -364,7 +1685,7 @@ textarea {
   grid-template-columns: 40mm 1fr;
   align-items: center;
   min-height: 4.15mm;
-  border-bottom: 0.24mm solid #000000;
+  border-bottom: 0.08mm solid #000000;
 }
 
 .manual-meta-row strong {
@@ -380,12 +1701,18 @@ textarea {
   align-items: center;
   min-height: 100%;
   padding: 0.45mm 1mm;
-  border-left: 0.24mm solid #000000;
+  border-left: 0.08mm solid #000000;
   font-size: 7pt;
   line-height: 1.1;
 }
 
 .manual-meta-record {
+  justify-content: center;
+  font-weight: 800;
+  text-align: center;
+}
+
+.manual-meta-value {
   justify-content: center;
   font-weight: 800;
   text-align: center;
@@ -411,7 +1738,7 @@ textarea {
 .legal-table th {
   min-height: 3.25mm;
   padding: 0.55mm 0.85mm;
-  border: 0.24mm solid #000000;
+  border: 0.08mm solid #000000;
   vertical-align: middle;
   overflow: hidden;
 }
@@ -424,6 +1751,15 @@ textarea {
 
 .legal-table small {
   font-size: 5.55pt;
+  font-weight: 700;
+}
+
+.legal-table td:not(:has(strong)),
+.manual-meta-row span,
+.medicine-manual td,
+.observations-cell div,
+.uti-observations td:not(.uti-observation-label) {
+  font-size: 8.1pt;
   font-weight: 700;
 }
 
@@ -501,7 +1837,7 @@ textarea {
 .manual-section-title {
   min-height: 4mm;
   padding: 0.62mm 0.8mm;
-  border: 0.24mm solid #000000;
+  border: 0.08mm solid #000000;
   border-top: 0;
   font-size: 8pt;
   font-weight: 800;
@@ -510,9 +1846,9 @@ textarea {
 .manual-services {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-left: 0.24mm solid #000000;
-  border-right: 0.24mm solid #000000;
-  border-bottom: 0.24mm solid #000000;
+  border-left: 0.08mm solid #000000;
+  border-right: 0.08mm solid #000000;
+  border-bottom: 0.08mm solid #000000;
   padding: 0.55mm 0.9mm;
   column-gap: 1.5mm;
 }
@@ -532,13 +1868,42 @@ textarea {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.legal-internado .manual-section-title {
+  font-size: 7.6pt;
+  font-weight: 800;
+}
+
+.legal-internado .manual-services.procedures div {
+  font-size: 6.25pt;
+  font-weight: 600;
+  line-height: 1.08;
+  white-space: nowrap;
+}
+
+.recipe-page.is-internado .medicine-manual th:first-child,
+.recipe-page.is-internado .medicine-manual th:first-child small,
+.recipe-page.is-uti-ucin .uti-medicine-table th:nth-child(2),
+.recipe-page.is-uti-ucin .uti-medicine-table th:nth-child(2) small {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.recipe-page.is-internado .medicine-manual th:first-child {
+  font-size: 7.8pt;
+}
+
+.recipe-page.is-internado .medicine-manual th:first-child small {
+  font-size: 6.6pt;
+}
+
 .legal-box {
   display: inline-grid;
   place-items: center;
   width: 3.35mm;
   height: 3.35mm;
   margin-left: 0.5mm;
-  border: 0.24mm solid #000000;
+  border: 0.08mm solid #000000;
   font-size: 6pt;
   font-weight: 800;
   line-height: 1;
@@ -562,7 +1927,7 @@ textarea {
   grid-template-rows: auto 1fr;
   place-items: center;
   min-height: 4.45mm;
-  border-left: 0.24mm solid #000000;
+  border-left: 0.08mm solid #000000;
 }
 
 .date-trio span:first-child {
@@ -643,9 +2008,9 @@ textarea {
   grid-template-columns: 1.15fr 1.15fr 0.75fr 1fr;
   align-items: end;
   min-height: 33.4mm;
-  border-left: 0.24mm solid #000000;
-  border-right: 0.24mm solid #000000;
-  border-bottom: 0.24mm solid #000000;
+  border-left: 0.08mm solid #000000;
+  border-right: 0.08mm solid #000000;
+  border-bottom: 0.08mm solid #000000;
   padding: 1.8mm 2mm 0;
   column-gap: 4mm;
 }
@@ -658,7 +2023,7 @@ textarea {
 
 .signature-line {
   height: 13.5mm;
-  border-bottom: 0.24mm dotted #000000;
+  border-bottom: 0.08mm dotted #000000;
   margin-bottom: 0.7mm;
 }
 
@@ -700,7 +2065,7 @@ textarea {
 
 .ci-line {
   height: 2.8mm;
-  border-bottom: 0.24mm dotted #000000;
+  border-bottom: 0.08mm dotted #000000;
 }
 
 .signature-manual p {
@@ -708,7 +2073,7 @@ textarea {
   margin: 0;
   min-height: 3.4mm;
   padding: 0.45mm 0;
-  border-top: 0.24mm solid #000000;
+  border-top: 0.08mm solid #000000;
   font-size: 6.1pt;
   line-height: 1.1;
 }
@@ -723,10 +2088,154 @@ textarea {
   place-items: center;
   width: 19mm;
   height: 19mm;
-  border: 0.25mm dashed #000000;
+  border: 0.08mm dashed #000000;
   font-size: 5.7pt;
   line-height: 1.1;
   text-align: center;
+}
+
+.recipe-page.is-ambulatorio.is-full-page {
+  padding: 6mm;
+}
+
+.recipe-page.is-ambulatorio.is-full-page .medicine-manual th,
+.recipe-page.is-ambulatorio.is-full-page .medicine-manual td {
+  height: 4.95mm;
+}
+
+.recipe-page.is-ambulatorio.is-full-page .manual-services div {
+  min-height: 3.35mm;
+  font-size: 5.45pt;
+}
+
+.recipe-page.is-ambulatorio.is-full-page .manual-section-title {
+  min-height: 3.3mm;
+  padding: 0.45mm 0.8mm;
+}
+
+.recipe-page.is-ambulatorio.is-full-page .observations-manual td {
+  height: 6.2mm;
+}
+
+.recipe-page.is-ambulatorio.is-full-page .signature-manual {
+  align-items: start;
+  min-height: 27mm;
+  padding-top: 1.2mm;
+}
+
+.recipe-page.is-ambulatorio.is-full-page .signature-area {
+  min-height: 19mm;
+}
+
+.recipe-page.is-ambulatorio.is-full-page .signature-line,
+.recipe-page.is-ambulatorio.is-full-page .patient-signature .signature-line {
+  height: 10.5mm;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .medicine-manual th,
+.recipe-page.is-half-copies.is-ambulatorio .medicine-manual td {
+  height: 3.75mm;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .official-header-ambulatorio {
+  min-height: 21mm;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .official-ambulatorio-side {
+  padding-top: 1.2mm;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .official-panel-extra {
+  gap: 0.4mm;
+  margin-top: 0.8mm;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .legal-ambulatorio .official-meta-lines {
+  margin: -0.3mm 0 0.45mm;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .legal-ambulatorio .official-form {
+  gap: 0.35mm;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .legal-ambulatorio .official-field {
+  min-height: 2.65mm;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .legal-ambulatorio .official-fill {
+  min-height: 2.2mm;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .legal-ambulatorio .official-diagnosis {
+  gap: 0.2mm;
+  margin-top: 0;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .official-diagnosis-row {
+  min-height: 2.45mm;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .manual-services div {
+  min-height: 2.35mm;
+  font-size: 4.65pt;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .signature-manual {
+  min-height: 22mm;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .signature-area {
+  min-height: 15mm;
+}
+
+.recipe-page.is-half-copies.is-ambulatorio .signature-line,
+.recipe-page.is-half-copies.is-ambulatorio .patient-signature .signature-line {
+  height: 8.6mm;
+}
+
+.recipe-page.is-half-copies.is-internado .official-header-internado {
+  min-height: 14.5mm;
+}
+
+.recipe-page.is-half-copies.is-internado .official-header-internado .official-patient-panel {
+  margin-top: 6mm;
+}
+
+.recipe-page.is-half-copies.is-internado .internado-meta {
+  margin: -0.2mm 0 0.35mm;
+}
+
+.recipe-page.is-half-copies.is-internado .official-form-internado {
+  gap: 0.35mm;
+}
+
+.recipe-page.is-half-copies.is-internado .official-form-internado .official-field {
+  min-height: 2.6mm;
+}
+
+.recipe-page.is-half-copies.is-internado .official-form-internado .official-fill {
+  min-height: 2.15mm;
+}
+
+.recipe-page.is-half-copies.is-internado .official-form-internado .official-date span {
+  grid-template-rows: auto 2.6mm;
+}
+
+.recipe-page.is-half-copies.is-internado .official-attention-row {
+  gap: 0.5mm 1.1mm;
+}
+
+.recipe-page.is-half-copies.is-internado .official-diagnosis.internado {
+  gap: 0.2mm;
+}
+
+.recipe-page.is-half-copies.is-internado .official-diagnosis.internado .official-diagnosis-row {
+  min-height: 2.55mm;
+}
+
+.recipe-page.is-half-copies.is-internado .manual-services.procedures div {
+  min-height: 2.25mm;
+  font-size: 4.95pt;
 }
 
 .uti-template {
@@ -870,7 +2379,7 @@ textarea {
 .uti-medicine-table {
   border-collapse: separate;
   border-spacing: 0;
-  border: 0.24mm solid #000000;
+  border: 0.08mm solid #000000;
   border-radius: 5mm 5mm 0 0;
   overflow: hidden;
 }
@@ -891,12 +2400,12 @@ textarea {
 }
 
 .uti-medicine-table th {
-  height: 5.15mm;
+  height: 4.9mm;
   font-size: 7pt;
 }
 
 .uti-medicine-table td {
-  height: 5.65mm;
+  height: 5.28mm;
   font-size: 6.95pt;
 }
 
@@ -909,8 +2418,16 @@ textarea {
   width: 63%;
 }
 
+.recipe-page.is-uti-ucin .uti-medicine-table th:nth-child(2) {
+  font-size: 7.8pt;
+}
+
+.recipe-page.is-uti-ucin .uti-medicine-table th:nth-child(2) small {
+  font-size: 6.5pt;
+}
+
 .uti-observations td {
-  height: 6mm;
+  height: 5.5mm;
   padding: 0.65mm 0.9mm;
   font-size: 6.8pt;
   line-height: 1.1;
@@ -926,7 +2443,7 @@ textarea {
   grid-template-columns: 1.05fr 1.05fr 0.8fr 1.45fr 0.95fr;
   align-items: end;
   column-gap: 3.2mm;
-  padding: 6.5mm 3mm 0 8mm;
+  padding: 4.2mm 3mm 0 8mm;
   font-size: 6.6pt;
 }
 
@@ -938,8 +2455,8 @@ textarea {
 .uti-footer-sign::before {
   content: "";
   display: block;
-  height: 13mm;
-  border-bottom: 0.24mm dotted #000;
+  height: 10.5mm;
+  border-bottom: 0.08mm dotted #000;
   margin-bottom: 0.8mm;
 }
 
@@ -953,21 +2470,21 @@ textarea {
 .uti-authorization {
   text-align: center;
   align-self: end;
-  padding-top: 4mm;
+  padding-top: 2mm;
 }
 
 .uti-authorization::before {
   content: "";
   display: block;
-  height: 13mm;
-  border-bottom: 0.24mm dotted #000;
+  height: 10.5mm;
+  border-bottom: 0.08mm dotted #000;
   margin-bottom: 0.8mm;
 }
 
 .uti-authorization span {
   display: block;
-  margin-top: 3mm;
-  border-bottom: 0.24mm dotted #000;
+  margin-top: 2mm;
+  border-bottom: 0.08mm dotted #000;
   text-align: left;
 }
 
@@ -992,13 +2509,13 @@ textarea {
 }
 
 .uti-costs span {
-  border: 0.24mm solid #000000;
+  border: 0.08mm solid #000000;
 }
 
 .uti-footer p {
   grid-column: 1 / 5;
   margin: 0;
-  font-size: 6.1pt;
+  font-size: 5.8pt;
   font-style: italic;
   line-height: 1.08;
 }
@@ -1343,7 +2860,7 @@ textarea {
   }
 }
 
-@media (max-width: 700px) {
+@media screen and (max-width: 700px) {
   .app-header {
     align-items: flex-start;
     flex-direction: column;
@@ -1354,10 +2871,48 @@ textarea {
     padding: 10px;
   }
 
+  .preview-shell {
+    display: none;
+  }
+
   .template-switcher,
   .form-grid,
-  .medicine-search {
+  .medicine-search,
+  .saved-recipe-card {
     grid-template-columns: 1fr;
+  }
+
+  .template-switcher {
+    gap: 10px;
+  }
+
+  .template-tab {
+    grid-template-columns: 30px minmax(0, 1fr);
+    min-height: 52px;
+    padding: 10px 14px;
+    text-align: center;
+  }
+
+  .template-tab span:last-child {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .header-actions button {
+    flex: 1 1 132px;
+  }
+
+  .saved-recipe-actions {
+    justify-content: stretch;
+  }
+
+  .saved-recipe-actions button {
+    flex: 1 1 110px;
   }
 
   .span-2 {
@@ -1371,8 +2926,6 @@ textarea {
   }
 }
 
-
-/* ── IMPRESION GENERAL ── */
 @media print {
   body {
     background: #ffffff;
@@ -1394,129 +2947,116 @@ textarea {
     overflow: visible;
   }
 
-  /* Plana completa */
-  .recipe-page:not(.half-carta-copy) {
+  .recipe-page {
     width: 216mm;
     min-height: 279mm;
     margin: 0;
-    padding: 6mm 7mm 5mm;
+    padding: 6mm;
     border: 0;
     box-shadow: none;
   }
 
-  .recipe-page.is-ambulatorio:not(.half-carta-copy) {
-    padding-top: 11mm;
+  .recipe-page.is-half-copies {
+    width: 279mm;
+    min-height: 216mm;
+    height: 216mm;
+    max-height: 216mm;
+    padding: 0;
+    overflow: hidden;
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
-  .recipe-page.is-uti-ucin:not(.half-carta-copy) {
-    padding: 4.5mm 5mm 3.5mm;
+  .recipe-page.is-half-copies .half-sheet-copy {
+    height: 216mm;
+    max-height: 216mm;
+    overflow: hidden;
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
-  @page {
-    size: letter;
-    margin: 0;
+  .recipe-page.is-half-copies.is-ambulatorio .half-copy-content,
+  .recipe-page.is-half-copies.is-internado .half-copy-content {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
+
+  .recipe-page.is-half-copies.is-ambulatorio .half-copy-content {
+    transform: scale(0.654, 1.06);
+    zoom: 1;
+  }
+
+  .recipe-page.is-half-copies.is-internado .half-copy-content {
+    transform: scale(0.654, 1);
+    zoom: 1;
+  }
+
 }
 
-/* ═══════════════════════════════════════════════
-   MODO MEDIA CARTA — Dos copias lado a lado
-   La hoja se corta verticalmente en el centro
-   ═══════════════════════════════════════════════ */
 
-/* Contenedor externo reemplaza al recipe-page */
-.half-carta-outer {
-  width: 216mm;
-  height: 279mm;
-  margin: 18px auto;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  background: #ffffff;
-  border: 1px solid #aeb9b6;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+/* ===== Recetarios oficiales HEAS (generados desde los Excel D-1, D-2 y D-4) ===== */
+.recipe-page.heas {
+  box-sizing: border-box;
+  padding: 0.2in 0.315in !important;
   overflow: hidden;
 }
 
-/* Cada copia = recipe-page a zoom 0.5 → 216mm → 108mm de layout */
-.half-carta-outer .recipe-page.half-carta-copy {
-  width: 216mm;
-  min-height: 279mm;
-  zoom: 0.5;
-  flex-shrink: 0;
-  margin: 0;
-  border: none;
-  box-shadow: none;
-  padding: 6mm 7mm 5mm;
+.hs-wrap {
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.half-carta-outer .recipe-page.half-carta-copy.is-ambulatorio {
-  padding-top: 11mm;
+.hs-scale {
+  transform-origin: 0 0;
 }
 
-.half-carta-outer .recipe-page.half-carta-copy.is-uti-ucin {
-  padding: 4.5mm 5mm 3.5mm;
+.recipe-page.heas.is-half-copies {
+  width: 279mm;
+  min-height: 216mm;
+  padding: 0 !important;
 }
 
-/* Linea de corte vertical en el centro */
-.cut-line-col {
-  flex-shrink: 0;
-  width: 0;
-  align-self: stretch;
-  border-left: 2px dashed #888;
-  position: relative;
+.recipe-page.heas.is-half-copies .half-sheet-copy {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4mm !important;
 }
 
-/* Texto "CORTAR" vertical en la linea */
-.cut-line-col::before {
-  content: "✂  CORTAR  ✂";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(90deg);
-  white-space: nowrap;
-  font-size: 9px;
-  color: #999;
-  letter-spacing: 2px;
-  background: #ffffff;
-  padding: 0 4px;
+.recipe-page.heas.is-half-copies .half-copy-content {
+  width: auto !important;
+  transform: none !important;
+  zoom: 1 !important;
 }
 
-/* Indicador visual en el boton cuando esta activo */
-#halfCartaBtn.active {
-  background: var(--accent);
-  color: #ffffff;
-  border-color: var(--accent);
-}
-
-/* ── MEDIA CARTA — IMPRESION ── */
 @media print {
-  .half-carta-outer {
+  .recipe-page.heas:not(.is-half-copies) {
     width: 216mm;
     height: 279mm;
-    margin: 0;
-    border: 0;
-    box-shadow: none;
-    display: flex;
-    flex-direction: row;
+    min-height: 0;
+    padding: 0.2in 0.315in !important;
+    overflow: hidden;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .recipe-page.heas.is-half-copies {
+    width: 279mm;
+    height: 215mm !important;
+    min-height: 0 !important;
+    max-height: 215mm !important;
+    padding: 0 !important;
     overflow: hidden;
   }
 
-  .half-carta-outer .recipe-page.half-carta-copy {
-    border: 0 !important;
-    box-shadow: none !important;
+  .recipe-page.heas.is-half-copies .half-sheet-copy {
+    height: 215mm !important;
+    max-height: 215mm !important;
   }
 
-  .cut-line-col {
-    border-left: 1.5px dashed #444;
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
-  }
-
-  .cut-line-col::before {
-    background: transparent;
-    color: #444;
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
+  .recipe-page.heas.is-half-copies .half-copy-content {
+    width: auto !important;
+    transform: none !important;
+    zoom: 1 !important;
   }
 }
-
