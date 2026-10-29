@@ -343,15 +343,49 @@ function restoreForm(formData = {}) {
 }
 
 function openSavedRecipes() {
+  if (savedSearchInput) savedSearchInput.value = "";
   renderSavedRecipesList();
   if (typeof savedDialog.showModal === "function") savedDialog.showModal();
   else savedDialog.setAttribute("open", "");
 }
 
+const savedSearchInput = document.querySelector("#savedSearchInput");
+const savedSearchCount = document.querySelector("#savedSearchCount");
+
+function normalizeSearch(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function recipeMatchesSearch(recipe, terms) {
+  const data = recipe.formData || {};
+  const haystack = normalizeSearch(
+    [recipe.title, data.clinicalRecord, data.paternalSurname, data.maternalSurname, data.givenNames, data.identityCard].join(" "),
+  );
+  return terms.every((term) => haystack.includes(term));
+}
+
+if (savedSearchInput) savedSearchInput.addEventListener("input", () => renderSavedRecipesList());
+
 function renderSavedRecipesList() {
-  const recipes = readSavedRecipes();
-  if (!recipes.length) {
+  const allRecipes = readSavedRecipes();
+  const terms = normalizeSearch(savedSearchInput?.value).split(" ").filter(Boolean);
+  const recipes = terms.length ? allRecipes.filter((recipe) => recipeMatchesSearch(recipe, terms)) : allRecipes;
+  if (savedSearchCount) {
+    savedSearchCount.textContent = terms.length
+      ? `${recipes.length} de ${allRecipes.length} recetas`
+      : `${allRecipes.length} ${allRecipes.length === 1 ? "receta guardada" : "recetas guardadas"}`;
+  }
+  if (!allRecipes.length) {
     savedRecipesList.innerHTML = '<p class="empty saved-empty">No hay recetas guardadas todavia.</p>';
+    return;
+  }
+  if (!recipes.length) {
+    savedRecipesList.innerHTML = '<p class="empty saved-empty">No se encontraron recetas con esa busqueda.</p>';
     return;
   }
 
