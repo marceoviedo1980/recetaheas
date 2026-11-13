@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "recetaheas-";
-const CACHE_NAME = `${CACHE_PREFIX}v3-20261029-02`;
+const CACHE_NAME = `${CACHE_PREFIX}v3-20261113-03`;
 const V = "recetaheas-20261029-02";
 const APP_SHELL = [
   "./",
