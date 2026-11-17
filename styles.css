@@ -3115,7 +3115,7 @@ textarea {
   left: 0;
   right: 0;
   z-index: 40;
-  min-width: min(420px, 90vw);
+  min-width: min(420px, calc(100vw - 52px));
   max-height: 300px;
   margin-top: 2px;
   overflow-y: auto;
@@ -3289,6 +3289,74 @@ textarea {
   .buscador-lista,
   .medicine-hint,
   .app-toast {
+    display: none !important;
+  }
+}
+
+/* Ambitos de cada diagnostico (como en diagnosticos-heas). Solo pantalla. */
+.dx-opcion {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 0 6px;
+  align-items: baseline;
+}
+
+.dx-texto {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 3px 8px;
+}
+
+.dx-ambitos {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.ambito {
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #eceff3;
+  color: #7a8494;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.55;
+  white-space: nowrap;
+}
+
+.ambito.ambito-activo {
+  background: #dcefe8;
+  color: #0f6b52;
+}
+
+.secondary-diagnosis-grid,
+.form-grid {
+  align-items: start;
+}
+
+.dx-detalle {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.dx-detalle strong {
+  color: var(--ink);
+}
+
+@media screen and (max-width: 700px) {
+  .dx-ambitos {
+    flex-basis: 100%;
+  }
+}
+
+@media print {
+  .dx-detalle {
     display: none !important;
   }
 }
