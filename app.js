@@ -676,12 +676,50 @@ function prepararMedicamentos(lista) {
     }));
 }
 
+// Ambitos de diagnosticos-heas, en el orden en que se muestran.
+const AMBITOS = [
+  { k: "ce", corto: "CE", largo: "Consulta externa" },
+  { k: "emerg", corto: "Emerg.", largo: "Emergencias" },
+  { k: "hosp", corto: "Hosp.", largo: "Hospitalización" },
+  { k: "uti", corto: "UTI", largo: "Terapia intensiva" },
+  { k: "apoyo", corto: "Apoyo", largo: "Servicios de apoyo" },
+];
+// Ambitos que corresponden a cada recetario (se resaltan; los demas se ven en gris).
+const AMBITOS_DE_RECETA = { ambulatorio: ["ce", "emerg"], internado: ["hosp"], utiUcin: ["uti"] };
+
 function prepararDiagnosticos(json) {
+  const servicios = Array.isArray(json.servicios) ? json.servicios : [];
   const vistos = new Set();
   return json.items
-    .map(([codigo, nombre]) => ({ code: String(codigo).trim().toUpperCase(), name: String(nombre).trim() }))
+    .map(([codigo, nombre, grupos]) => {
+      // especialidades habilitadas, agrupadas por ambito
+      const porAmbito = {};
+      (Array.isArray(grupos) ? grupos : []).forEach((indice) => {
+        const servicio = servicios[indice];
+        if (!servicio?.a) return;
+        (porAmbito[servicio.a] ||= new Set()).add(servicio.e);
+      });
+      return { code: String(codigo).trim().toUpperCase(), name: String(nombre).trim(), porAmbito };
+    })
     .filter((item) => esCodigoDiagnostico(item.code) && !vistos.has(item.code) && vistos.add(item.code))
     .map((item) => ({ ...item, search: normalizar(`${item.code} ${item.name}`) }));
+}
+
+function diagnosisScopes(item) {
+  const destacados = AMBITOS_DE_RECETA[state.template] || [];
+  return AMBITOS.filter((ambito) => item.porAmbito?.[ambito.k])
+    .map(
+      (ambito) =>
+        `<span class="ambito${destacados.includes(ambito.k) ? " ambito-activo" : ""}" title="${ambito.largo}">${ambito.corto}</span>`,
+    )
+    .join("");
+}
+
+function diagnosisDetail(item) {
+  const partes = AMBITOS.filter((ambito) => item.porAmbito?.[ambito.k]).map(
+    (ambito) => `<strong>${ambito.corto}:</strong> ${escapeHtml([...item.porAmbito[ambito.k]].join(", "))}`,
+  );
+  return partes.length ? `Habilitado en ${partes.join(" · ")}` : "";
 }
 
 async function loadLocalData() {
@@ -927,19 +965,38 @@ function findDiagnosisByCode(code) {
   return diagnoses.find((diagnosis) => diagnosis.code === normalizedCode);
 }
 
+const diagnosisFieldPairs = [];
+
+function renderDiagnosisDetails() {
+  diagnosisFieldPairs.forEach(({ nameInput, codeInput, detalle }) => {
+    const found = codeInput.value.trim() ? findDiagnosisByCode(codeInput.value) : null;
+    const html = found && nameInput.value.trim() ? diagnosisDetail(found) : "";
+    detalle.innerHTML = html;
+    detalle.hidden = !html;
+  });
+}
+
 function connectDiagnosisFields(nameInput, codeInput) {
   if (!nameInput || !codeInput) return;
   crearBuscador(nameInput, {
     minimo: 2,
     buscar: searchDiagnoses,
     pintar: (item) =>
-      `<span class="buscador-codigo">${escapeHtml(item.code)}</span> <span class="buscador-principal">${escapeHtml(item.name)}</span>`,
+      `<div class="dx-opcion"><span class="buscador-codigo">${escapeHtml(item.code)}</span>` +
+      `<span class="dx-texto"><span class="buscador-principal">${escapeHtml(item.name)}</span>` +
+      `<span class="dx-ambitos">${diagnosisScopes(item)}</span></span></div>`,
     elegir: (item) => {
       nameInput.value = item.name;
       codeInput.value = item.code;
       render();
     },
   });
+  // especialidades del diagnostico elegido (solo pantalla)
+  const detalle = document.createElement("small");
+  detalle.className = "dx-detalle";
+  detalle.hidden = true;
+  nameInput.parentElement.appendChild(detalle);
+  diagnosisFieldPairs.push({ nameInput, codeInput, detalle });
   // escribir solo el codigo completa el nombre si esta vacio
   codeInput.addEventListener("change", () => {
     const found = findDiagnosisByCode(codeInput.value);
@@ -1231,6 +1288,7 @@ function render() {
   renderMedicineList();
   renderPreview();
   renderMedicineHint();
+  renderDiagnosisDetails();
   scheduleDraftSave();
 }
 
