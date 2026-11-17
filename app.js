@@ -1,26 +1,52 @@
-import { HEAS_TEMPLATES } from "./heas-templates.js?v=recetaheas-20261029-02";
+import { HEAS_TEMPLATES } from "./heas-templates.js";
+import {
+  escapeHtml,
+  normalizar,
+  numeroALetras,
+  mostrarAviso,
+  cargarFuente,
+  textoOrigen,
+  crearBuscador,
+} from "./utilidades.js";
 
 // ===== DATOS DEL ESTABLECIMIENTO: lo propio del hospital se cambia aqui =====
 const APP_NAME = "Receta HEAS";
 const STORAGE_PREFIX = "recetaheas";
-// =============================================================================
+const DATA_CACHE = "recetaheas-datos"; // debe coincidir con DATA_CACHE en sw.js
 
-const templates = {
-  ambulatorio: {
-    title: "RECETARIO / RECIBO\nATENCION AMBULATORIA",
-    showInternado: false,
-  },
-  internado: {
-    title: "RECETARIO / RECIBO\nATENCION DEL PACIENTE INTERNADO",
-    showInternado: true,
-  },
-  utiUcin: {
-    title: "RECETARIO / RECIBO",
-    showInternado: true,
-  },
+// De donde se leen los datos. "enLinea" es el archivo publicado por la otra PWA;
+// "local" es la copia de respaldo dentro de esta app (carpeta data/).
+const FUENTE_MEDICAMENTOS = {
+  enLinea: "https://raw.githubusercontent.com/marceoviedo1980/STOCKSUR/main/medicamentos.json",
+  local: "./data/medicamentos.json",
+};
+const FUENTE_DIAGNOSTICOS = {
+  enLinea: "https://raw.githubusercontent.com/marceoviedo1980/diagnosticos-heas/main/datos_heas.json",
+  local: "./data/datos_heas.json",
 };
 
+// Tipo de paciente de la receta -> programa de STOCKSUR. Los demas tipos (SOAT, RGL, VENTA o vacio)
+// muestran todos los programas.
+const PROGRAMA_POR_TIPO = {
+  SUS: "sus",
+  VIH: "vih",
+  TUBERCULOSIS: "tb",
+  "SALUD RENAL": "renal",
+  "LUCHA CONTRA EL CANCER": "cancer",
+};
+const NOMBRE_PROGRAMA = { sus: "SUS", vih: "VIH", tb: "TB", renal: "Renal", cancer: "Cáncer" };
+
+// Psicotropicos y estupefacientes: cantidad en literal dentro del parentesis, con la forma
+// farmaceutica tal como figura en el LINAME. Ej.: "Fentanilo con conservante 0,05 mg/ml (tres inyectables)".
+const UNIDAD_CONTROLADO = [
+  { patron: /iny|ampoll|vial/i, singular: "inyectable", plural: "inyectables", femenino: false },
+  { patron: /comprim|c[aá]psul|tableta|gragea/i, singular: "comprimido", plural: "comprimidos", femenino: false },
+];
+// =============================================================================
+
 const SAVED_RECIPES_KEY = `${STORAGE_PREFIX}-recetas-guardadas-v1`;
+const DRAFT_KEY = `${STORAGE_PREFIX}-borrador-v1`;
+const DRAFT_MAX_AGE_MS = 4 * 60 * 60 * 1000;
 const LICENSE_STATUS_URL = "./licencia-heas-recetas.json";
 const LICENSE_CHECK_INTERVAL_MS = 24 * 60 * 60 * 1000;
 const LICENSE_STATUS_KEY = `${STORAGE_PREFIX}-licencia-v1`;
@@ -28,40 +54,9 @@ const LICENSE_LAST_CHECK_KEY = `${STORAGE_PREFIX}-licencia-ultima-revision-v1`;
 const DEFAULT_LICENSE_MESSAGE =
   "Esta version ya no esta autorizada para uso institucional. Contacte al desarrollador para soporte o renovacion.";
 
-let medicines = [
-  {
-    name: "Paracetamol",
-    concentration: "500 mg",
-    form: "Comprimido",
-    route: "VO",
-  },
-  {
-    name: "Ibuprofeno",
-    concentration: "400 mg",
-    form: "Comprimido",
-    route: "VO",
-  },
-  {
-    name: "Ceftriaxona",
-    concentration: "1 g",
-    form: "Vial",
-    route: "IV",
-  },
-  {
-    name: "Metformina",
-    concentration: "850 mg",
-    form: "Comprimido",
-    route: "VO",
-  },
-  {
-    name: "Omeprazol",
-    concentration: "20 mg",
-    form: "Capsula",
-    route: "VO",
-  },
-];
-
+let medicines = [];
 let diagnoses = [];
+const dataStatus = { medicamentos: null, diagnosticos: null };
 
 const clinicalServices = [
   "CIRUGIA",
@@ -78,13 +73,13 @@ const clinicalServices = [
 ];
 
 const ambulatorioServices = HEAS_TEMPLATES.ambulatorio.lists.services;
-
 const internadoProcedures = HEAS_TEMPLATES.internado.lists.procedures;
 
 const state = {
   template: "ambulatorio",
   medicines: [],
   currentSavedId: null,
+  pendingMedicine: null,
 };
 
 const form = document.querySelector("#recipeForm");
@@ -93,12 +88,8 @@ const medicineList = document.querySelector("#medicineList");
 const medicineInput = document.querySelector("#medicineInput");
 const quantityInput = document.querySelector("#quantityInput");
 const instructionInput = document.querySelector("#instructionInput");
-const medicineOptions = document.querySelector("#medicineOptions");
-const diagnosisOptions = document.querySelector("#diagnosisOptions");
-const serviceSelect = document.querySelector("#serviceSelect");
-const admissionServiceSelect = document.querySelector("#admissionServiceSelect");
-const dischargeServiceSelect = document.querySelector("#dischargeServiceSelect");
-const utiAdmissionServiceSelect = document.querySelector("#utiAdmissionServiceSelect");
+const medicineHint = document.querySelector("#medicineHint");
+const dataStatusLine = document.querySelector("#dataStatus");
 const installButton = document.querySelector("#installBtn");
 const pdfButton = document.querySelector("#pdfBtn");
 const pdfButtonLabel = pdfButton?.querySelector("span");
@@ -109,6 +100,8 @@ const importSavedButton = document.querySelector("#importSavedBtn");
 const importSavedInput = document.querySelector("#importSavedInput");
 const savedDialog = document.querySelector("#savedRecipesDialog");
 const savedRecipesList = document.querySelector("#savedRecipesList");
+const savedSearchInput = document.querySelector("#savedSearchInput");
+const savedSearchCount = document.querySelector("#savedSearchCount");
 const closeSavedDialogButton = document.querySelector("#closeSavedDialogBtn");
 const licenseBlocker = document.querySelector("#licenseBlocker");
 const licenseBlockerMessage = document.querySelector("#licenseBlockerMessage");
@@ -117,13 +110,16 @@ const ambulatorioServicesOptions = document.querySelector("#ambulatorioServicesO
 const internadoProcedureOptions = document.querySelector("#internadoProcedureOptions");
 let installPrompt = null;
 
-populateMedicineOptions();
 populateServiceOptions();
 
 ambulatorioServicesOptions.innerHTML = renderCheckOptions("service", ambulatorioServices);
 internadoProcedureOptions.innerHTML = renderCheckOptions("procedure", internadoProcedures);
 
-form.addEventListener("input", render);
+form.addEventListener("input", (event) => {
+  // los campos de cada medicamento agregado actualizan solo la hoja (para no perder el cursor)
+  if (event.target.closest("#medicineList")) return;
+  render();
+});
 updatePdfButtonLabel();
 window.addEventListener("resize", updatePdfButtonLabel);
 window.addEventListener("orientationchange", updatePdfButtonLabel);
@@ -140,6 +136,7 @@ exportSavedButton.addEventListener("click", exportSavedRecipes);
 importSavedButton.addEventListener("click", () => importSavedInput.click());
 importSavedInput.addEventListener("change", importSavedRecipes);
 closeSavedDialogButton.addEventListener("click", () => savedDialog.close());
+savedSearchInput?.addEventListener("input", () => renderSavedRecipesList());
 document.querySelector("#clearBtn").addEventListener("click", () => {
   const shouldClear = window.confirm(
     "Seguro que quieres limpiar el formulario actual y borrar los medicamentos agregados? Las recetas guardadas no se borraran."
@@ -151,6 +148,8 @@ document.querySelector("#clearBtn").addEventListener("click", () => {
   form.reset();
   state.medicines = [];
   state.currentSavedId = null;
+  clearPendingMedicine();
+  clearDraft();
   render();
 });
 
@@ -173,6 +172,7 @@ window.addEventListener("appinstalled", () => {
   installButton.classList.add("hidden");
 });
 
+// ===== Licencia =====
 function readStoredLicenseStatus() {
   try {
     return JSON.parse(localStorage.getItem(LICENSE_STATUS_KEY) || "null");
@@ -226,6 +226,7 @@ async function checkRemoteLicense({ force = false } = {}) {
   }
 }
 
+// ===== Tipo de recetario =====
 function activateTemplate(template) {
   state.template = template || "ambulatorio";
   tabs.forEach((item) => item.classList.toggle("active", item.dataset.template === state.template));
@@ -246,6 +247,7 @@ function activateTemplate(template) {
   render();
 }
 
+// ===== Recetas guardadas =====
 function readSavedRecipes() {
   try {
     const parsed = JSON.parse(localStorage.getItem(SAVED_RECIPES_KEY) || "[]");
@@ -261,6 +263,15 @@ function writeSavedRecipes(recipes) {
 }
 
 function saveCurrentRecipe() {
+  const formData = serializeForm();
+  const missing = [
+    !formData.paternalSurname?.trim() && "apellido paterno",
+    !formData.givenNames?.trim() && "nombres",
+  ].filter(Boolean);
+  if (missing.length && !window.confirm(`Falta: ${missing.join(" y ")} del paciente.\n¿Guardar la receta de todos modos?`)) {
+    return;
+  }
+
   const recipes = readSavedRecipes();
   const snapshot = buildRecipeSnapshot();
   const existingIndex = recipes.findIndex((recipe) => recipe.id === state.currentSavedId);
@@ -278,9 +289,17 @@ function saveCurrentRecipe() {
     state.currentSavedId = snapshot.id;
   }
 
-  writeSavedRecipes(recipes);
+  try {
+    writeSavedRecipes(recipes);
+  } catch (error) {
+    console.error("No se pudo guardar la receta.", error);
+    mostrarAviso("No se pudo guardar: la memoria del navegador está llena. Exporte un respaldo y borre recetas antiguas.", "error");
+    return;
+  }
+  saveDraft();
   saveRecipeButton.classList.add("saved-flash");
   window.setTimeout(() => saveRecipeButton.classList.remove("saved-flash"), 700);
+  mostrarAviso(existingIndex >= 0 ? "Receta actualizada" : "Receta guardada");
 }
 
 function buildRecipeSnapshot() {
@@ -349,31 +368,17 @@ function openSavedRecipes() {
   else savedDialog.setAttribute("open", "");
 }
 
-const savedSearchInput = document.querySelector("#savedSearchInput");
-const savedSearchCount = document.querySelector("#savedSearchCount");
-
-function normalizeSearch(value) {
-  return String(value || "")
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .toLowerCase()
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
 function recipeMatchesSearch(recipe, terms) {
   const data = recipe.formData || {};
-  const haystack = normalizeSearch(
+  const haystack = normalizar(
     [recipe.title, data.clinicalRecord, data.paternalSurname, data.maternalSurname, data.givenNames, data.identityCard].join(" "),
   );
   return terms.every((term) => haystack.includes(term));
 }
 
-if (savedSearchInput) savedSearchInput.addEventListener("input", () => renderSavedRecipesList());
-
 function renderSavedRecipesList() {
   const allRecipes = readSavedRecipes();
-  const terms = normalizeSearch(savedSearchInput?.value).split(" ").filter(Boolean);
+  const terms = normalizar(savedSearchInput?.value).split(" ").filter(Boolean);
   const recipes = terms.length ? allRecipes.filter((recipe) => recipeMatchesSearch(recipe, terms)) : allRecipes;
   if (savedSearchCount) {
     savedSearchCount.textContent = terms.length
@@ -426,12 +431,16 @@ function loadSavedRecipe(id) {
   state.currentSavedId = recipe.id;
   state.medicines = Array.isArray(recipe.medicines) ? recipe.medicines : [];
   restoreForm(recipe.formData);
+  clearPendingMedicine();
   activateTemplate(recipe.template);
   savedDialog.close();
 }
 
 function deleteSavedRecipe(id) {
-  const recipes = readSavedRecipes().filter((recipe) => recipe.id !== id);
+  const recipe = readSavedRecipes().find((item) => item.id === id);
+  if (!recipe) return;
+  if (!window.confirm(`¿Borrar esta receta guardada?\n\n${recipe.title}\n\nNo se podrá recuperar.`)) return;
+  const recipes = readSavedRecipes().filter((item) => item.id !== id);
   if (state.currentSavedId === id) state.currentSavedId = null;
   writeSavedRecipes(recipes);
   renderSavedRecipesList();
@@ -484,6 +493,63 @@ function formatSavedDate(value) {
   return date.toLocaleString("es-BO", { dateStyle: "short", timeStyle: "short" });
 }
 
+// ===== Borrador automatico (se recupera si la app se recarga, p. ej. al actualizarse) =====
+let draftTimer = null;
+
+function saveDraft() {
+  try {
+    localStorage.setItem(
+      DRAFT_KEY,
+      JSON.stringify({
+        template: state.template,
+        formData: serializeForm(),
+        medicines: state.medicines,
+        currentSavedId: state.currentSavedId,
+        savedAt: Date.now(),
+      }),
+    );
+  } catch (error) {
+    console.warn("No se pudo guardar el borrador.", error);
+  }
+}
+
+function scheduleDraftSave() {
+  clearTimeout(draftTimer);
+  draftTimer = setTimeout(saveDraft, 400);
+}
+
+function clearDraft() {
+  clearTimeout(draftTimer);
+  localStorage.removeItem(DRAFT_KEY);
+}
+
+function draftHasContent(draft) {
+  if (draft.medicines?.length) return true;
+  return Object.entries(draft.formData || {}).some(
+    ([key, value]) => key !== "printLayout" && value !== "" && value !== false,
+  );
+}
+
+function restoreDraft() {
+  let draft = null;
+  try {
+    draft = JSON.parse(localStorage.getItem(DRAFT_KEY) || "null");
+  } catch (error) {
+    draft = null;
+  }
+  if (!draft || Date.now() - (draft.savedAt || 0) > DRAFT_MAX_AGE_MS || !draftHasContent(draft)) {
+    clearDraft();
+    return false;
+  }
+  restoreForm(draft.formData);
+  state.medicines = Array.isArray(draft.medicines) ? draft.medicines : [];
+  state.currentSavedId = draft.currentSavedId || null;
+  activateTemplate(draft.template);
+  mostrarAviso("Se recuperó la receta que estaba llenando");
+  return true;
+}
+
+// ===== PDF =====
 async function generatePdf() {
   if (isMobilePdfFlow()) {
     window.print();
@@ -532,7 +598,7 @@ async function generatePdf() {
     pdf.save(pdfFileName());
   } catch (error) {
     console.error("No se pudo generar el PDF.", error);
-    alert("No se pudo generar el PDF. Verifica tu conexion a internet e intentalo nuevamente.");
+    alert("No se pudo generar el PDF. Usa el boton Imprimir y elige \"Guardar como PDF\".");
   } finally {
     preview.classList.remove("pdf-exporting");
     button.disabled = false;
@@ -552,13 +618,11 @@ function isMobilePdfFlow() {
   return isAndroidOrIos || isIpadDesktopMode;
 }
 
+// Librerias incluidas en la app (carpeta vendor/): el PDF se genera sin internet.
 function loadPdfLibraries() {
   if (window.html2canvas && window.jspdf?.jsPDF) return Promise.resolve();
 
-  return Promise.all([
-    loadScript("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"),
-    loadScript("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"),
-  ]);
+  return Promise.all([loadScript("./vendor/html2canvas.min.js"), loadScript("./vendor/jspdf.umd.min.js")]);
 }
 
 function loadScript(src) {
@@ -594,47 +658,147 @@ function pdfFileName() {
   return `recetario-${templateName}-${new Date().toISOString().slice(0, 10)}.pdf`;
 }
 
-document.querySelector("#addMedicineBtn").addEventListener("click", () => {
-  const rawMedicine = medicineInput.value.trim();
-  const selected = findMedicine(rawMedicine);
-  const quantity = Number(quantityInput.value || 1);
-  const instruction = instructionInput.value.trim();
+// ===== Datos: medicamentos (STOCKSUR) y diagnosticos (diagnosticos-heas) =====
+const esCodigoDiagnostico = (codigo) => /^[A-Z]\d{2}(\.[\dA-Z]+)?$/.test(codigo);
 
-  if (!rawMedicine) {
-    medicineInput.focus();
-    return;
+function prepararMedicamentos(lista) {
+  return lista
+    .filter((item) => item && item.medicamento)
+    .map((item) => ({
+      code: item.codigo || "",
+      name: String(item.medicamento || "").trim(),
+      concentration: String(item.concentracion || "").trim(),
+      form: String(item.forma || "").trim(),
+      observation: String(item.observacion || "").trim(),
+      program: item.programa || "",
+      controlado: item.controlado || "",
+      route: "",
+    }));
+}
+
+function prepararDiagnosticos(json) {
+  const vistos = new Set();
+  return json.items
+    .map(([codigo, nombre]) => ({ code: String(codigo).trim().toUpperCase(), name: String(nombre).trim() }))
+    .filter((item) => esCodigoDiagnostico(item.code) && !vistos.has(item.code) && vistos.add(item.code))
+    .map((item) => ({ ...item, search: normalizar(`${item.code} ${item.name}`) }));
+}
+
+async function loadLocalData() {
+  const [medicineResult, diagnosisResult] = await Promise.allSettled([
+    cargarFuente({
+      ...FUENTE_MEDICAMENTOS,
+      cache: DATA_CACHE,
+      clave: `${STORAGE_PREFIX}-medicamentos`,
+      validar: (data) => Array.isArray(data) && data.length > 0 && data.some((item) => item?.medicamento),
+    }),
+    cargarFuente({
+      ...FUENTE_DIAGNOSTICOS,
+      cache: DATA_CACHE,
+      clave: `${STORAGE_PREFIX}-diagnosticos`,
+      validar: (data) => Array.isArray(data?.items) && data.items.length > 0,
+    }),
+  ]);
+
+  if (medicineResult.status === "fulfilled") {
+    medicines = prepararMedicamentos(medicineResult.value.data);
+    medicines.forEach((medicine) => (medicine.search = normalizar(medicineLabel(medicine))));
+    dataStatus.medicamentos = medicineResult.value;
+  } else {
+    console.warn("No se pudieron cargar los medicamentos.", medicineResult.reason);
   }
 
-  state.medicines.push({
-    ...(selected || freeTextMedicine(rawMedicine)),
-    quantity,
-    instruction,
-  });
+  if (diagnosisResult.status === "fulfilled") {
+    diagnoses = prepararDiagnosticos(diagnosisResult.value.data);
+    dataStatus.diagnosticos = { ...diagnosisResult.value, version: diagnosisResult.value.data.version };
+  } else {
+    console.warn("No se pudieron cargar los diagnosticos.", diagnosisResult.reason);
+  }
 
-  medicineInput.value = "";
-  quantityInput.value = "1";
-  instructionInput.value = "";
+  renderDataStatus();
   render();
-});
+}
 
-form.elements.diagnosis.addEventListener("change", () => fillDiagnosisCode(form.elements.diagnosis, form.elements.cie10));
-form.elements.admissionDiagnosis.addEventListener("change", () =>
-  fillDiagnosisCode(form.elements.admissionDiagnosis, form.elements.admissionDiagnosisCode),
-);
+function renderDataStatus() {
+  if (!dataStatusLine) return;
+  const med = dataStatus.medicamentos;
+  const dx = dataStatus.diagnosticos;
+  const dxText = dx
+    ? `${dx.origen === "en-linea" ? "versión" : textoOrigen(dx) + ", versión"} ${dx.version || ""}`.trim()
+    : "no disponible";
+  dataStatusLine.innerHTML =
+    `<span><strong>Medicamentos (STOCKSUR):</strong> ${escapeHtml(textoOrigen(med))}</span>` +
+    `<span><strong>Diagnósticos HEAS:</strong> ${escapeHtml(dxText)}</span>`;
+  dataStatusLine.classList.toggle("is-offline", Boolean((med && med.origen !== "en-linea") || (dx && dx.origen !== "en-linea")));
+}
 
-Array.from({ length: 5 }, (_, index) => index + 1).forEach((number) => {
-  const diagnosisInput = form.elements[`secondaryDiagnosis${number}`];
-  const codeInput = form.elements[`secondaryCode${number}`];
-  diagnosisInput.addEventListener("change", () => fillDiagnosisCode(diagnosisInput, codeInput));
-});
+// ===== Medicamentos: buscador, restricciones y cantidad en literal =====
+function currentPatientType() {
+  const data = getData();
+  return state.template === "utiUcin" ? data.utiPatientType || "" : data.patientType || "";
+}
 
-function findMedicine(value) {
-  const normalizedValue = normalize(value);
-  return medicines.find((medicine) => normalize(medicineLabel(medicine)) === normalizedValue);
+function currentProgram() {
+  return PROGRAMA_POR_TIPO[currentPatientType()] || "";
+}
+
+function medicinesForCurrentPatient() {
+  const program = currentProgram();
+  return program ? medicines.filter((medicine) => medicine.program === program) : medicines;
 }
 
 function medicineLabel(medicine) {
   return [medicine.name, medicine.concentration, medicine.form].filter(Boolean).join(" ");
+}
+
+function isControlled(medicine) {
+  return Boolean(medicine?.controlado);
+}
+
+function controlledUnit(medicine) {
+  return UNIDAD_CONTROLADO.find((unit) => unit.patron.test(medicine.form || "")) || UNIDAD_CONTROLADO[0];
+}
+
+function quantityInWords(medicine, quantity) {
+  const amount = Number(quantity);
+  const unit = controlledUnit(medicine);
+  const words = numeroALetras(amount, { femenino: unit.femenino });
+  if (!words) return "";
+  return `${words} ${amount === 1 ? unit.singular : unit.plural}`;
+}
+
+// Texto que se imprime en la columna de medicamentos.
+// Controlados: nombre + concentracion + (cantidad en literal + forma). Nada despues del parentesis.
+function printedLabel(medicine) {
+  if (!isControlled(medicine)) return medicineLabel(medicine);
+  const literal = quantityInWords(medicine, medicine.quantity);
+  const base = [medicine.name, medicine.concentration].filter(Boolean).join(" ");
+  return literal ? `${base} (${literal})` : base;
+}
+
+function hasRestriction(medicine) {
+  const text = normalizar(medicine?.observation);
+  return Boolean(text) && text !== "sin restriccion";
+}
+
+function medicineNotes(medicine) {
+  const notes = [];
+  if (hasRestriction(medicine)) {
+    notes.push(`<span class="med-note med-note-restriccion">⚠ ${escapeHtml(medicine.observation)}</span>`);
+  }
+  if (isControlled(medicine)) {
+    const tipo = medicine.controlado === "estupefaciente" ? "Estupefaciente" : "Psicotrópico";
+    notes.push(`<span class="med-note med-note-controlado">${tipo} · cantidad en literal</span>`);
+  }
+  return notes.join("");
+}
+
+function findMedicine(value) {
+  const normalizedValue = normalizar(value);
+  return (
+    medicinesForCurrentPatient().find((medicine) => medicine.search === normalizedValue) ||
+    medicines.find((medicine) => medicine.search === normalizedValue)
+  );
 }
 
 function freeTextMedicine(value) {
@@ -647,68 +811,155 @@ function freeTextMedicine(value) {
   };
 }
 
-function normalize(value) {
-  return value.trim().toLowerCase();
+function searchMedicines(text) {
+  const terms = normalizar(text).split(" ").filter(Boolean);
+  const showProgram = !currentProgram();
+  return medicinesForCurrentPatient()
+    .filter((medicine) => terms.every((term) => medicine.search.includes(term)))
+    .sort((a, b) => Number(!a.search.startsWith(terms[0])) - Number(!b.search.startsWith(terms[0])))
+    .slice(0, 30)
+    .map((medicine) => ({ medicine, showProgram }));
 }
 
-async function loadLocalData() {
-  const [medicineResult, diagnosisResult] = await Promise.allSettled([
-    fetch("./data/medicamentos.json").then((response) => response.json()),
-    fetch("./data/cartera_servicios.json").then((response) => response.json()),
-  ]);
+crearBuscador(medicineInput, {
+  buscar: searchMedicines,
+  pintar: ({ medicine, showProgram }) =>
+    `<span class="buscador-principal">${escapeHtml(medicineLabel(medicine))}` +
+    `${showProgram && medicine.program ? ` <em class="buscador-etiqueta">${escapeHtml(NOMBRE_PROGRAMA[medicine.program] || medicine.program)}</em>` : ""}</span>` +
+    `${hasRestriction(medicine) ? `<small class="buscador-nota">⚠ ${escapeHtml(medicine.observation)}</small>` : ""}`,
+  elegir: ({ medicine }) => {
+    medicineInput.value = medicineLabel(medicine);
+    state.pendingMedicine = medicine;
+    renderMedicineHint();
+    quantityInput.focus();
+    quantityInput.select();
+  },
+});
 
-  if (medicineResult.status === "fulfilled" && Array.isArray(medicineResult.value)) {
-    medicines = medicineResult.value.map((item) => ({
-      code: item.codigo || "",
-      name: item.medicamento || "",
-      concentration: item.concentracion || "",
-      form: item.forma || "",
-      observation: item.observacion || "",
-      route: "",
-    }));
-    populateMedicineOptions();
+medicineInput.addEventListener("input", () => {
+  if (state.pendingMedicine && normalizar(medicineInput.value) !== state.pendingMedicine.search) {
+    state.pendingMedicine = null;
   }
+  renderMedicineHint();
+});
+quantityInput.addEventListener("input", renderMedicineHint);
 
-  if (diagnosisResult.status === "fulfilled" && Array.isArray(diagnosisResult.value)) {
-    diagnoses = diagnosisResult.value.map((item) => ({
-      code: item.CODIGO || "",
-      name: item.SERVICIO || "",
-      patientType: item["TIPO DE PACIENTE"] || "",
-    }));
-    populateDiagnosisOptions();
+function pendingMedicine() {
+  return state.pendingMedicine || (medicineInput.value.trim() ? findMedicine(medicineInput.value) : null);
+}
+
+function renderMedicineHint() {
+  if (!medicineHint) return;
+  const medicine = pendingMedicine();
+  if (!medicine) {
+    medicineHint.innerHTML = "";
+    medicineHint.hidden = true;
+    return;
   }
+  const parts = [];
+  if (hasRestriction(medicine)) {
+    parts.push(`<div class="hint-restriccion">⚠ <strong>Restricción:</strong> ${escapeHtml(medicine.observation)}</div>`);
+  }
+  if (isControlled(medicine)) {
+    const quantity = sanitizeQuantity(quantityInput.value);
+    parts.push(
+      `<div class="hint-controlado"><strong>Se imprimirá:</strong> ${escapeHtml(printedLabel({ ...medicine, quantity }))}</div>`,
+    );
+  }
+  medicineHint.innerHTML = parts.join("");
+  medicineHint.hidden = !parts.length;
+}
 
+function clearPendingMedicine() {
+  state.pendingMedicine = null;
+  renderMedicineHint();
+}
+
+function sanitizeQuantity(value) {
+  const number = Math.round(Number(value));
+  return Number.isFinite(number) && number >= 1 ? number : 1;
+}
+
+document.querySelector("#addMedicineBtn").addEventListener("click", () => {
+  const rawMedicine = medicineInput.value.trim();
+  if (!rawMedicine) {
+    medicineInput.focus();
+    return;
+  }
+  const selected = pendingMedicine();
+  const quantity = sanitizeQuantity(quantityInput.value);
+  const instruction = instructionInput.value.trim();
+
+  const base = selected ? { ...selected } : freeTextMedicine(rawMedicine);
+  delete base.search;
+  state.medicines.push({ ...base, quantity, instruction });
+
+  medicineInput.value = "";
+  quantityInput.value = "1";
+  instructionInput.value = "";
+  clearPendingMedicine();
   render();
+  medicineInput.focus();
+});
+
+// ===== Diagnosticos: buscador por nombre o codigo =====
+// sin signos de puntuacion, para que "neumonia no esp" encuentre "Neumonía, no especificada"
+const sinSignos = (texto) => texto.replace(/[^a-z0-9. ]/g, " ").replace(/\s+/g, " ").trim();
+
+function searchDiagnoses(text) {
+  const query = sinSignos(normalizar(text));
+  const terms = query.split(" ").filter(Boolean);
+  const matches = [];
+  for (const item of diagnoses) {
+    if (!terms.every((term) => item.search.includes(term))) continue;
+    const name = sinSignos(normalizar(item.name));
+    const rank = item.code.toLowerCase().startsWith(query) ? 0 : name.startsWith(query) ? 1 : name.includes(query) ? 2 : 3;
+    matches.push({ item, rank, length: name.length });
+  }
+  return matches
+    .sort((a, b) => a.rank - b.rank || a.length - b.length || a.item.code.localeCompare(b.item.code))
+    .slice(0, 20)
+    .map((match) => match.item);
 }
 
-function populateMedicineOptions() {
-  medicineOptions.innerHTML = medicines
-    .map((medicine) => `<option value="${safe(medicineLabel(medicine))}"></option>`)
-    .join("");
+function findDiagnosisByCode(code) {
+  const normalizedCode = String(code || "").trim().toUpperCase().replace(/\s+/g, "");
+  return diagnoses.find((diagnosis) => diagnosis.code === normalizedCode);
 }
 
-function populateDiagnosisOptions() {
-  diagnosisOptions.innerHTML = diagnoses
-    .map((diagnosis) => `<option value="${safe(diagnosis.name)}" label="${safe(diagnosis.code)}"></option>`)
-    .join("");
+function connectDiagnosisFields(nameInput, codeInput) {
+  if (!nameInput || !codeInput) return;
+  crearBuscador(nameInput, {
+    minimo: 2,
+    buscar: searchDiagnoses,
+    pintar: (item) =>
+      `<span class="buscador-codigo">${escapeHtml(item.code)}</span> <span class="buscador-principal">${escapeHtml(item.name)}</span>`,
+    elegir: (item) => {
+      nameInput.value = item.name;
+      codeInput.value = item.code;
+      render();
+    },
+  });
+  // escribir solo el codigo completa el nombre si esta vacio
+  codeInput.addEventListener("change", () => {
+    const found = findDiagnosisByCode(codeInput.value);
+    if (!found) return;
+    codeInput.value = found.code;
+    if (!nameInput.value.trim()) nameInput.value = found.name;
+    render();
+  });
 }
+
+connectDiagnosisFields(form.elements.diagnosis, form.elements.cie10);
+connectDiagnosisFields(form.elements.admissionDiagnosis, form.elements.admissionDiagnosisCode);
+Array.from({ length: 5 }, (_, index) => index + 1).forEach((number) => {
+  connectDiagnosisFields(form.elements[`secondaryDiagnosis${number}`], form.elements[`secondaryCode${number}`]);
+});
 
 function populateServiceOptions() {
   const list = document.querySelector("#serviceOptionsList");
   if (!list) return;
   list.innerHTML = clinicalServices.map((service) => `<option value="${safe(service)}"></option>`).join("");
-}
-
-function findDiagnosis(value) {
-  const normalizedValue = normalize(value);
-  return diagnoses.find((diagnosis) => normalize(diagnosis.name) === normalizedValue);
-}
-
-function fillDiagnosisCode(diagnosisInput, codeInput) {
-  const selected = findDiagnosis(diagnosisInput.value);
-  if (!selected) return;
-  codeInput.value = selected.code;
-  render();
 }
 
 function renderCheckOptions(prefix, options) {
@@ -734,6 +985,7 @@ function splitDate(value) {
   return { day, month, year };
 }
 
+// ===== Lista de medicamentos agregados (editable) =====
 function renderMedicineList() {
   if (!state.medicines.length) {
     medicineList.innerHTML = '<p class="empty">Sin medicamentos agregados.</p>';
@@ -743,13 +995,20 @@ function renderMedicineList() {
   medicineList.innerHTML = state.medicines
     .map(
       (medicine, index) => `
-        <div class="medicine-row">
-          <div>
-            <strong>${medicineLabel(medicine)}</strong>
-            <small>${medicineMeta(medicine)}</small>
+        <div class="medicine-row" data-index="${index}">
+          <div class="medicine-row-name">
+            <strong data-label>${escapeHtml(printedLabel(medicine))}</strong>
+            ${medicineNotes(medicine)}
           </div>
-          <span>Cant. ${medicine.quantity}</span>
-          <button class="remove-button" type="button" data-index="${index}">Quitar</button>
+          <label class="medicine-row-field medicine-row-qty">
+            <span>Cant.</span>
+            <input type="number" min="1" step="1" inputmode="numeric" value="${escapeHtml(medicine.quantity)}" data-edit="quantity" aria-label="Cantidad" />
+          </label>
+          <label class="medicine-row-field medicine-row-instr">
+            <span>Indicación</span>
+            <input value="${escapeHtml(medicine.instruction || "")}" data-edit="instruction" aria-label="Indicacion" />
+          </label>
+          <button class="remove-button" type="button" data-remove="${index}">Quitar</button>
         </div>
       `,
     )
@@ -759,21 +1018,41 @@ function renderMedicineList() {
   if (state.medicines.length > capacity) {
     medicineList.insertAdjacentHTML(
       "beforeend",
-      `<p class="empty">Aviso: este recetario tiene espacio para ${capacity} medicamentos. Los ${state.medicines.length - capacity} restantes no se imprimiran.</p>`,
+      `<p class="empty capacity-warning">Aviso: este recetario tiene espacio para ${capacity} medicamentos. Los ${state.medicines.length - capacity} restantes no se imprimiran.</p>`,
     );
   }
-
-  medicineList.querySelectorAll(".remove-button").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.medicines.splice(Number(button.dataset.index), 1);
-      render();
-    });
-  });
 }
 
-function medicineMeta(medicine) {
-  return [medicine.route, medicine.instruction || "Sin indicacion"].filter(Boolean).join(" · ");
-}
+medicineList.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-remove]");
+  if (!button) return;
+  state.medicines.splice(Number(button.dataset.remove), 1);
+  render();
+});
+
+medicineList.addEventListener("input", (event) => {
+  const field = event.target.closest("[data-edit]");
+  if (!field) return;
+  const row = field.closest(".medicine-row");
+  const medicine = state.medicines[Number(row.dataset.index)];
+  if (!medicine) return;
+  if (field.dataset.edit === "quantity") {
+    if (field.value === "") return;
+    medicine.quantity = sanitizeQuantity(field.value);
+    row.querySelector("[data-label]").textContent = printedLabel(medicine);
+  } else {
+    medicine.instruction = field.value;
+  }
+  renderPreview();
+  scheduleDraftSave();
+});
+
+medicineList.addEventListener("change", (event) => {
+  const field = event.target.closest('[data-edit="quantity"]');
+  if (!field) return;
+  const medicine = state.medicines[Number(field.closest(".medicine-row").dataset.index)];
+  if (medicine) field.value = medicine.quantity;
+});
 
 function renderPreview() {
   const data = getData();
@@ -847,12 +1126,7 @@ function getPatientParts(data) {
 
 function safe(value) {
   if (value === undefined || value === null || value === "") return "&nbsp;";
-  return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+  return escapeHtml(value);
 }
 
 // ===== Recetarios oficiales HEAS (D-1, D-2 y D-4), generados desde los Excel oficiales =====
@@ -877,10 +1151,14 @@ function heasMedicine(index, field) {
   const medicine = state.medicines[index];
   if (!medicine) return "";
   if (field === "qty") return safe(medicine.quantity);
-  const label = medicineLabel(medicine);
+  const label = printedLabel(medicine);
   if (field === "name") return safe(label);
   if (field === "instr") return safe(medicine.instruction || "");
-  if (field === "nameinstr") return safe(medicine.instruction ? `${label} - ${medicine.instruction}` : label);
+  if (field === "nameinstr") {
+    // en controlados no se escribe nada despues del parentesis
+    if (isControlled(medicine)) return safe(label);
+    return safe(medicine.instruction ? `${label} - ${medicine.instruction}` : label);
+  }
   return "";
 }
 
@@ -952,12 +1230,15 @@ function renderUtiUcinRecipe(data) {
 function render() {
   renderMedicineList();
   renderPreview();
+  renderMedicineHint();
+  scheduleDraftSave();
 }
 
-render();
+if (!restoreDraft()) render();
+renderDataStatus();
 checkRemoteLicense();
 loadLocalData().catch((error) => {
-  console.warn("No se pudieron cargar las bases locales.", error);
+  console.warn("No se pudieron cargar las bases de datos.", error);
 });
 
 if ("serviceWorker" in navigator) {
@@ -966,11 +1247,12 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.addEventListener("controllerchange", () => {
       if (refreshing) return;
       refreshing = true;
+      saveDraft();
       window.location.reload();
     });
 
     navigator.serviceWorker
-      .register(`./sw.js?v=recetaheas-20261029-02`, { updateViaCache: "none" })
+      .register("./sw.js", { updateViaCache: "none" })
       .then((registration) => registration.update())
       .catch((error) => {
         console.warn("No se pudo activar la PWA.", error);

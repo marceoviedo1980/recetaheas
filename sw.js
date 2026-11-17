@@ -1,38 +1,54 @@
+// ===== VERSION DE LA APP: es el UNICO numero que se cambia al publicar cambios en los archivos de la app =====
+// (no hace falta cambiarlo cuando solo cambian los datos de STOCKSUR o de diagnosticos-heas)
+const VERSION = "2026-11-17-01";
+// ===========================================================================================================
+
 const CACHE_PREFIX = "recetaheas-";
-const CACHE_NAME = `${CACHE_PREFIX}v3-20261113-03`;
-const V = "recetaheas-20261029-02";
+const CACHE_NAME = `${CACHE_PREFIX}app-${VERSION}`;
+// copia de los datos descargados de STOCKSUR y diagnosticos-heas (la maneja app.js; nunca se borra al actualizar)
+const DATA_CACHE = "recetaheas-datos";
+
 const APP_SHELL = [
   "./",
   "./index.html",
   "./index.html?app=pwa",
-  `./styles.css?v=${V}`,
-  `./app.js?v=${V}`,
-  `./heas-templates.js?v=${V}`,
-  `./heas-sheets.css?v=${V}`,
-  `./manifest.webmanifest?v=${V}`,
+  "./styles.css",
+  "./heas-sheets.css",
+  "./app.js",
+  "./utilidades.js",
+  "./heas-templates.js",
+  "./manifest.webmanifest",
+  "./licencia-heas-recetas.json",
+  "./vendor/html2canvas.min.js",
+  "./vendor/jspdf.umd.min.js",
   "./icons/icon-32.png",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
-  "./icons/icon-1024.png",
   "./img/heas-a2.png", "./img/heas-a3.jpg", "./img/heas-a4.jpg",
   "./img/heas-i2.png", "./img/heas-i3.jpg", "./img/heas-i4.jpg",
   "./img/heas-u2.png", "./img/heas-u3.jpg", "./img/heas-u4.jpg",
-  "./data/medicamentos.json",
-  "./data/cartera_servicios.json",
 ];
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
-  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)));
+  event.waitUntil(
+    caches
+      .open(CACHE_NAME)
+      .then((cache) => cache.addAll(APP_SHELL.map((url) => new Request(url, { cache: "reload" })))),
+  );
 });
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches
       .keys()
-      // solo borra las cachés de esta app: otras apps del mismo dominio (p. ej. La Portada) no se tocan
+      // solo borra las cachés viejas de esta app: otras apps del mismo dominio (p. ej. La Portada) no se tocan
       .then((keys) =>
-        Promise.all(keys.filter((key) => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME).map((key) => caches.delete(key))),
+        Promise.all(
+          keys
+            .filter((key) => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME && key !== DATA_CACHE)
+            .map((key) => caches.delete(key)),
+        ),
       )
       .then(() => self.clients.claim())
       .then(() => self.clients.matchAll({ type: "window", includeUncontrolled: true }))
@@ -46,49 +62,37 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+  const requestUrl = new URL(event.request.url);
+  // los datos de otras apps (raw.githubusercontent.com) y servicios externos los maneja el navegador/app.js
+  if (requestUrl.origin !== self.location.origin) return;
 
-  if (new URL(event.request.url).pathname.endsWith("/licencia-heas-recetas.json")) {
+  if (requestUrl.pathname.endsWith("/licencia-heas-recetas.json")) {
     event.respondWith(
       fetch(event.request, { cache: "no-store" }).catch(() => caches.match(event.request, { ignoreSearch: true })),
     );
     return;
   }
 
-  if (event.request.mode === "navigate") {
+  // pagina, estilos, codigo y datos de respaldo: primero la red (siempre lo ultimo publicado), si no hay red la copia
+  const isNetworkFirst =
+    event.request.mode === "navigate" || /\.(?:html|css|js|json|webmanifest)$/i.test(requestUrl.pathname);
+
+  if (isNetworkFirst) {
+    const cacheKey = event.request.mode === "navigate" ? "./index.html" : event.request;
     event.respondWith(
       fetch(event.request, { cache: "reload" })
         .then((response) => {
           if (!response || response.status !== 200) return response;
           const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put("./index.html", copy));
+          caches.open(CACHE_NAME).then((cache) => cache.put(cacheKey, copy));
           return response;
         })
-        .catch(() => caches.match("./index.html", { ignoreSearch: true })),
+        .catch(() => caches.match(cacheKey, { ignoreSearch: true })),
     );
     return;
   }
 
-  const requestUrl = new URL(event.request.url);
-  const isVersionedAsset = requestUrl.searchParams.has("v") || /\.(?:css|js|webmanifest)$/i.test(requestUrl.pathname);
-
-  if (isVersionedAsset) {
-    event.respondWith(
-      fetch(event.request, { cache: "reload" })
-        .then((response) => {
-          if (!response || response.status !== 200) return response;
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
-          return response;
-        })
-        .catch(() =>
-          caches
-            .match(event.request, { ignoreSearch: false })
-            .then((cached) => cached || caches.match(event.request, { ignoreSearch: true })),
-        ),
-    );
-    return;
-  }
-
+  // imagenes e iconos: primero la copia
   event.respondWith(
     caches.match(event.request, { ignoreSearch: true }).then((cached) => {
       return (

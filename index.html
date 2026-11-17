@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#17356b" />
     <title>Receta HEAS</title>
-    <link rel="manifest" href="manifest.webmanifest?v=recetaheas-20261029-02" />
-    <link rel="icon" href="icons/icon-32.png?v=recetaheas-20261029-02" type="image/png" />
-    <link rel="apple-touch-icon" href="icons/icon-192.png?v=recetaheas-20261029-02" />
-    <link rel="stylesheet" href="styles.css?v=recetaheas-20261029-02" />
-    <link rel="stylesheet" href="heas-sheets.css?v=recetaheas-20261029-02" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/icon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="heas-sheets.css" />
     <style id="critical-cache-fix">
       .template-switcher {
         display: grid;
@@ -204,6 +204,8 @@
           </button>
         </div>
 
+        <p class="data-status" id="dataStatus" aria-live="polite">Cargando medicamentos y diagnósticos…</p>
+
         <form id="recipeForm" autocomplete="off">
           <fieldset>
             <legend>Formato de impresion</legend>
@@ -365,7 +367,7 @@
               </div>
               <label class="span-2 internado-only hidden">
                 Diagnostico de ingreso
-                <input name="admissionDiagnosis" list="diagnosisOptions" />
+                <input name="admissionDiagnosis" />
               </label>
               <label class="internado-only hidden">
                 Codigo CIE-10 (ingreso)
@@ -373,14 +375,13 @@
               </label>
               <label class="span-2">
                 Diagnostico principal
-                <input name="diagnosis" list="diagnosisOptions" />
+                <input name="diagnosis" />
               </label>
               <label>
                 Codigo CIE-10
                 <input name="cie10" />
               </label>
             </div>
-            <datalist id="diagnosisOptions"></datalist>
             <datalist id="serviceOptionsList"></datalist>
           </fieldset>
 
@@ -389,7 +390,7 @@
             <div class="secondary-diagnosis-grid">
               <label>
                 1
-                <input name="secondaryDiagnosis1" list="diagnosisOptions" />
+                <input name="secondaryDiagnosis1" />
               </label>
               <label>
                 CIE-10
@@ -397,7 +398,7 @@
               </label>
               <label>
                 2
-                <input name="secondaryDiagnosis2" list="diagnosisOptions" />
+                <input name="secondaryDiagnosis2" />
               </label>
               <label>
                 CIE-10
@@ -405,7 +406,7 @@
               </label>
               <label>
                 3
-                <input name="secondaryDiagnosis3" list="diagnosisOptions" />
+                <input name="secondaryDiagnosis3" />
               </label>
               <label>
                 CIE-10
@@ -413,7 +414,7 @@
               </label>
               <label class="secondary-extra">
                 4
-                <input name="secondaryDiagnosis4" list="diagnosisOptions" />
+                <input name="secondaryDiagnosis4" />
               </label>
               <label class="secondary-extra">
                 CIE-10
@@ -421,7 +422,7 @@
               </label>
               <label class="secondary-extra">
                 5
-                <input name="secondaryDiagnosis5" list="diagnosisOptions" />
+                <input name="secondaryDiagnosis5" />
               </label>
               <label class="secondary-extra">
                 CIE-10
@@ -445,12 +446,11 @@
             <div class="medicine-search">
               <label>
                 Medicamento
-                <input id="medicineInput" list="medicineOptions" placeholder="Elige de la lista o escribe libremente" />
+                <input id="medicineInput" placeholder="Escribe para buscar o escribe libremente" />
               </label>
-              <datalist id="medicineOptions"></datalist>
               <label>
                 Cantidad
-                <input id="quantityInput" type="number" min="1" value="1" />
+                <input id="quantityInput" type="number" min="1" step="1" inputmode="numeric" value="1" />
               </label>
               <label>
                 Indicacion
@@ -458,6 +458,7 @@
               </label>
               <button class="secondary-button" id="addMedicineBtn" type="button">Agregar</button>
             </div>
+            <div class="medicine-hint" id="medicineHint" hidden></div>
             <div class="medicine-list" id="medicineList"></div>
           </fieldset>
 
@@ -512,24 +513,6 @@
       </div>
     </div>
 
-    <script src="app.js?v=recetaheas-20261029-02" type="module"></script>
+    <script src="app.js" type="module"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
