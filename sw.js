@@ -1,6 +1,6 @@
 // ===== VERSION DE LA APP: es el UNICO numero que se cambia al publicar cambios en los archivos de la app =====
 // (no hace falta cambiarlo cuando solo cambian los datos de STOCKSUR o de diagnosticos-heas)
-const VERSION = "2026-11-23-03";
+const VERSION = "2026-11-23-04";
 // ===========================================================================================================
 
 const CACHE_PREFIX = "recetaheas-";
