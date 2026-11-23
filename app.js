@@ -660,6 +660,8 @@ function pdfFileName() {
 
 // ===== Datos: medicamentos (STOCKSUR) y diagnosticos (diagnosticos-heas) =====
 const esCodigoDiagnostico = (codigo) => /^[A-Z]\d{2}(\.[\dA-Z]+)?$/.test(codigo);
+// procedimientos de diagnosticos-heas: una letra y ocho digitos (ej. D09641006 Electrocardiograma)
+const esCodigoProcedimiento = (codigo) => /^[A-Z]\d{8}$/.test(codigo);
 
 function prepararMedicamentos(lista) {
   return lista
@@ -701,7 +703,8 @@ function prepararDiagnosticos(json) {
       });
       return { code: String(codigo).trim().toUpperCase(), name: String(nombre).trim(), porAmbito };
     })
-    .filter((item) => esCodigoDiagnostico(item.code) && !vistos.has(item.code) && vistos.add(item.code))
+    .map((item) => ({ ...item, tipo: esCodigoDiagnostico(item.code) ? "dx" : esCodigoProcedimiento(item.code) ? "pr" : "" }))
+    .filter((item) => item.tipo && !vistos.has(item.code) && vistos.add(item.code))
     .map((item) => ({ ...item, search: normalizar(`${item.code} ${item.name}`) }));
 }
 
@@ -944,20 +947,33 @@ document.querySelector("#addMedicineBtn").addEventListener("click", () => {
 // sin signos de puntuacion, para que "neumonia no esp" encuentre "Neumonía, no especificada"
 const sinSignos = (texto) => texto.replace(/[^a-z0-9. ]/g, " ").replace(/\s+/g, " ").trim();
 
+const MAX_DIAGNOSTICOS = 20;
+const MAX_PROCEDIMIENTOS = 10;
+
+// Devuelve primero los diagnosticos y despues, aparte, los procedimientos (cada grupo con su cabecera).
 function searchDiagnoses(text) {
   const query = sinSignos(normalizar(text));
   const terms = query.split(" ").filter(Boolean);
-  const matches = [];
+  const matches = { dx: [], pr: [] };
   for (const item of diagnoses) {
     if (!terms.every((term) => item.search.includes(term))) continue;
     const name = sinSignos(normalizar(item.name));
     const rank = item.code.toLowerCase().startsWith(query) ? 0 : name.startsWith(query) ? 1 : name.includes(query) ? 2 : 3;
-    matches.push({ item, rank, length: name.length });
+    matches[item.tipo].push({ item, rank, length: name.length });
   }
-  return matches
-    .sort((a, b) => a.rank - b.rank || a.length - b.length || a.item.code.localeCompare(b.item.code))
-    .slice(0, 20)
-    .map((match) => match.item);
+  const ordenar = (lista, maximo) =>
+    lista
+      .sort((a, b) => a.rank - b.rank || a.length - b.length || a.item.code.localeCompare(b.item.code))
+      .slice(0, maximo)
+      .map((match) => match.item);
+  const dx = ordenar(matches.dx, MAX_DIAGNOSTICOS);
+  const pr = ordenar(matches.pr, MAX_PROCEDIMIENTOS);
+  // la cabecera de grupo se pone en el primer elemento de cada grupo; "Diagnosticos" solo si tambien hay procedimientos
+  const resultado = [
+    ...dx.map((item, i) => ({ ...item, cabecera: i === 0 && pr.length ? "Diagnósticos" : "" })),
+    ...pr.map((item, i) => ({ ...item, cabecera: i === 0 ? "Procedimientos" : "" })),
+  ];
+  return resultado;
 }
 
 function findDiagnosisByCode(code) {
@@ -982,7 +998,8 @@ function connectDiagnosisFields(nameInput, codeInput) {
     minimo: 2,
     buscar: searchDiagnoses,
     pintar: (item) =>
-      `<div class="dx-opcion"><span class="buscador-codigo">${escapeHtml(item.code)}</span>` +
+      (item.cabecera ? `<div class="dx-grupo">${escapeHtml(item.cabecera)}</div>` : "") +
+      `<div class="dx-opcion${item.tipo === "pr" ? " dx-opcion-pr" : ""}"><span class="buscador-codigo">${escapeHtml(item.code)}</span>` +
       `<span class="dx-texto"><span class="buscador-principal">${escapeHtml(item.name)}</span>` +
       `<span class="dx-ambitos">${diagnosisScopes(item)}</span></span></div>`,
     elegir: (item) => {
@@ -1224,6 +1241,10 @@ function heasToken(expr, ctx) {
   const arg = rest.join(":");
   if (kind === "f") {
     const raw = ctx[arg] ?? "";
+    // un codigo de procedimiento (9 caracteres) no cabe en el casillero a tamano normal
+    if (/^(cie10|admissionDiagnosisCode|secondaryCode\d)$/.test(arg) && String(raw).trim().length > 6) {
+      return `<span style="font-size:8pt">${safe(raw)}</span>`;
+    }
     return arg === "observations" ? safe(raw).replaceAll("\n", "<br>") : safe(raw);
   }
   if (kind === "full") {

@@ -3301,6 +3301,21 @@ textarea {
   align-items: baseline;
 }
 
+.dx-opcion-pr {
+  grid-template-columns: 82px minmax(0, 1fr);
+}
+
+.dx-grupo {
+  margin: -8px -10px 6px;
+  padding: 3px 10px;
+  background: #eef3f2;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .dx-texto {
   display: flex;
   flex-wrap: wrap;

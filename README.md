@@ -13,7 +13,8 @@ PWA para llenar e imprimir los recetarios oficiales del Hospital El Alto Sur:
 - Aviso de restriccion al elegir un medicamento (solo en pantalla, no se imprime).
 - Psicotropicos y estupefacientes: la cantidad se escribe sola en literal, segun LINAME.
   Ej.: `Fentanilo con conservante 0,05 mg/ml (tres inyectables)`.
-- Diagnosticos CIE-10 leidos en vivo desde **diagnosticos-heas**; se buscan por nombre o por codigo.
+- Diagnosticos CIE-10 y **procedimientos** leidos en vivo desde **diagnosticos-heas**; se buscan por nombre o por codigo.
+  En el buscador los procedimientos salen aparte, debajo de los diagnosticos (codigo de una letra y ocho digitos).
 - Guardar, cargar, buscar, respaldar e importar recetas (se guardan solo en el navegador del equipo).
 - Borrador automatico: si la app se recarga (p. ej. al actualizarse), se recupera la receta en curso.
 - Impresion en hoja carta completa o dos copias en hoja carta horizontal. PDF sin necesidad de internet.
