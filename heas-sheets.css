@@ -10,6 +10,7 @@
 .hs .cc.pl{padding-left:7px;box-sizing:border-box;}
 /* filas de medicamentos: texto al centro, un poco más abajo del centro, sin tocar el borde inferior */
 .hs .cc.mc{padding-top:8px;padding-bottom:0;box-sizing:border-box;}
+.hs .cc.mc2{padding-top:3px;padding-bottom:0;box-sizing:border-box;}
 .hs .cc.w{white-space:pre-wrap;overflow:hidden;word-break:break-word;}
 .hs .cc.w>span{width:100%;}
 .hs .xi{position:absolute;pointer-events:none;}
