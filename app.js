@@ -17,7 +17,7 @@ const DATA_CACHE = "recetaheas-datos"; // debe coincidir con DATA_CACHE en sw.js
 // De donde se leen los datos. "enLinea" es el archivo publicado por la otra PWA;
 // "local" es la copia de respaldo dentro de esta app (carpeta data/).
 const FUENTE_MEDICAMENTOS = {
-  enLinea: "https://raw.githubusercontent.com/marceoviedo1980/STOCKSUR/main/medicamentos.json",
+  enLinea: "https://raw.githubusercontent.com/marceoviedo1980/stocksur/main/medicamentos.json",
   local: "./data/medicamentos.json",
 };
 const FUENTE_DIAGNOSTICOS = {
@@ -25,8 +25,8 @@ const FUENTE_DIAGNOSTICOS = {
   local: "./data/datos_heas.json",
 };
 
-// Tipo de paciente de la receta -> programa de STOCKSUR. Los demas tipos (SOAT, RGL, VENTA o vacio)
-// muestran todos los programas.
+// Tipo de paciente de la receta -> programa de STOCKSUR. En el buscador salen SIEMPRE todos los programas:
+// primero el del tipo de paciente y despues los demas, cada uno con su cabecera y su color.
 const PROGRAMA_POR_TIPO = {
   SUS: "sus",
   VIH: "vih",
@@ -34,7 +34,25 @@ const PROGRAMA_POR_TIPO = {
   "SALUD RENAL": "renal",
   "LUCHA CONTRA EL CANCER": "cancer",
 };
-const NOMBRE_PROGRAMA = { sus: "SUS", vih: "VIH", tb: "TB", renal: "Renal", cancer: "Cáncer" };
+const NOMBRE_PROGRAMA = {
+  sus: "SUS",
+  renal: "Salud Renal",
+  cancer: "Lucha contra el Cáncer",
+  tb: "Tuberculosis",
+  vih: "VIH",
+  ipas: "IPAS Bolivia",
+};
+// mismo orden y colores que las pestañas de STOCKSUR
+const ORDEN_PROGRAMAS = ["sus", "renal", "cancer", "tb", "vih", "ipas"];
+const COLOR_PROGRAMA = {
+  sus: "#1f9d57",
+  renal: "#2f8fff",
+  cancer: "#d946a0",
+  tb: "#f07d1a",
+  vih: "#8b5cf6",
+  ipas: "#0f8b8d",
+};
+const MAX_POR_PROGRAMA = 15;
 
 // Psicotropicos y estupefacientes: cantidad en literal dentro del parentesis, con la forma
 // farmaceutica tal como figura en el LINAME. Ej.: "Fentanilo con conservante 0,05 mg/ml (tres inyectables)".
@@ -788,6 +806,12 @@ function medicinesForCurrentPatient() {
   return program ? medicines.filter((medicine) => medicine.program === program) : medicines;
 }
 
+function programTag(program) {
+  if (!program) return "";
+  const color = COLOR_PROGRAMA[program] || "#666";
+  return `<em class="buscador-etiqueta" style="--c:${color}">${escapeHtml(NOMBRE_PROGRAMA[program] || program)}</em>`;
+}
+
 function medicineLabel(medicine) {
   return [medicine.name, medicine.concentration, medicine.form].filter(Boolean).join(" ");
 }
@@ -824,6 +848,7 @@ function hasRestriction(medicine) {
 
 function medicineNotes(medicine) {
   const notes = [];
+  if (medicine.program) notes.push(programTag(medicine.program));
   if (hasRestriction(medicine)) {
     notes.push(`<span class="med-note med-note-restriccion">⚠ ${escapeHtml(medicine.observation)}</span>`);
   }
@@ -852,22 +877,53 @@ function freeTextMedicine(value) {
   };
 }
 
+// Busca en TODOS los programas de STOCKSUR. Primero el programa del tipo de paciente y despues los
+// demas (orden de las pestanas de STOCKSUR), cada grupo con cabecera; asi ningun programa queda tapado por otro.
 function searchMedicines(text) {
   const terms = normalizar(text).split(" ").filter(Boolean);
-  const showProgram = !currentProgram();
-  return medicinesForCurrentPatient()
-    .filter((medicine) => terms.every((term) => medicine.search.includes(term)))
-    .sort((a, b) => Number(!a.search.startsWith(terms[0])) - Number(!b.search.startsWith(terms[0])))
-    .slice(0, 30)
-    .map((medicine) => ({ medicine, showProgram }));
+  const current = currentProgram();
+  const grupos = {};
+  for (const medicine of medicines) {
+    if (!terms.every((term) => medicine.search.includes(term))) continue;
+    (grupos[medicine.program || "otros"] ||= []).push(medicine);
+  }
+  const orden = [current, ...ORDEN_PROGRAMAS.filter((p) => p !== current), ...Object.keys(grupos)].filter(
+    (p, i, lista) => p && lista.indexOf(p) === i,
+  );
+  const resultado = [];
+  for (const program of orden) {
+    const lista = (grupos[program] || [])
+      .sort(
+        (a, b) =>
+          Number(!a.search.startsWith(terms[0])) - Number(!b.search.startsWith(terms[0])) ||
+          a.search.localeCompare(b.search),
+      )
+      .slice(0, MAX_POR_PROGRAMA);
+    lista.forEach((medicine, i) =>
+      resultado.push({
+        medicine,
+        cabecera: i === 0 ? NOMBRE_PROGRAMA[program] || "Otros" : "",
+        color: COLOR_PROGRAMA[program] || "#666",
+        otroPrograma: Boolean(current) && program !== current,
+        total: (grupos[program] || []).length,
+      }),
+    );
+  }
+  return resultado;
 }
 
 crearBuscador(medicineInput, {
   buscar: searchMedicines,
-  pintar: ({ medicine, showProgram }) =>
-    `<span class="buscador-principal">${escapeHtml(medicineLabel(medicine))}` +
-    `${showProgram && medicine.program ? ` <em class="buscador-etiqueta">${escapeHtml(NOMBRE_PROGRAMA[medicine.program] || medicine.program)}</em>` : ""}</span>` +
-    `${hasRestriction(medicine) ? `<small class="buscador-nota">⚠ ${escapeHtml(medicine.observation)}</small>` : ""}`,
+  pintar: ({ medicine, cabecera, color, otroPrograma, total }) =>
+    (cabecera
+      ? `<div class="med-grupo" style="--c:${color}">${escapeHtml(cabecera)}` +
+        `${total > MAX_POR_PROGRAMA ? ` <small>(${MAX_POR_PROGRAMA} de ${total}; escriba más para afinar)</small>` : ""}` +
+        `${otroPrograma ? ` <small>· otro programa</small>` : ""}</div>`
+      : "") +
+    `<div class="med-opcion" style="--c:${color}"><span class="buscador-principal">${escapeHtml(medicineLabel(medicine))}` +
+    ` ${programTag(medicine.program)}</span>` +
+    `${medicine.code ? `<small class="buscador-codigo-med">${escapeHtml(medicine.code)}</small>` : ""}` +
+    `${hasRestriction(medicine) ? `<small class="buscador-nota">⚠ ${escapeHtml(medicine.observation)}</small>` : ""}</div>`,
   elegir: ({ medicine }) => {
     medicineInput.value = medicineLabel(medicine);
     state.pendingMedicine = medicine;
@@ -898,6 +954,14 @@ function renderMedicineHint() {
     return;
   }
   const parts = [];
+  if (medicine.program) {
+    const current = currentProgram();
+    const aviso =
+      current && medicine.program !== current
+        ? ` — <strong>no es del programa de este paciente (${escapeHtml(NOMBRE_PROGRAMA[current])})</strong>`
+        : "";
+    parts.push(`<div class="hint-programa">Programa: ${programTag(medicine.program)}${aviso}</div>`);
+  }
   if (hasRestriction(medicine)) {
     parts.push(`<div class="hint-restriccion">⚠ <strong>Restricción:</strong> ${escapeHtml(medicine.observation)}</div>`);
   }

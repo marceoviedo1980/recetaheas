@@ -8,8 +8,9 @@ PWA para llenar e imprimir los recetarios oficiales del Hospital El Alto Sur:
 
 ## Funciones
 
-- Medicamentos leidos en vivo desde **STOCKSUR** y filtrados por el programa del tipo de paciente
-  (SUS, VIH, Tuberculosis, Salud Renal, Lucha contra el Cancer).
+- Medicamentos leidos en vivo desde **STOCKSUR**, de todas sus pestanas (SUS, Salud Renal, Lucha contra el Cancer,
+  Tuberculosis, VIH, IPAS). El buscador los agrupa por programa con el color de su pestana: primero el programa del
+  tipo de paciente y despues los demas. Cada opcion muestra su programa y su codigo.
 - Aviso de restriccion al elegir un medicamento (solo en pantalla, no se imprime).
 - Psicotropicos y estupefacientes: la cantidad se escribe sola en literal, segun LINAME.
   Ej.: `Fentanilo con conservante 0,05 mg/ml (tres inyectables)`.
@@ -23,7 +24,7 @@ PWA para llenar e imprimir los recetarios oficiales del Hospital El Alto Sur:
 
 | Dato | Se lee de | Respaldo dentro de la app |
 |---|---|---|
-| Medicamentos | `marceoviedo1980/STOCKSUR/medicamentos.json` | `data/medicamentos.json` |
+| Medicamentos | `marceoviedo1980/stocksur/medicamentos.json` | `data/medicamentos.json` |
 | Diagnosticos | `marceoviedo1980/diagnosticos-heas/datos_heas.json` | `data/datos_heas.json` |
 
 Para actualizar medicamentos o diagnosticos **no se toca esta app**: se actualiza STOCKSUR o
